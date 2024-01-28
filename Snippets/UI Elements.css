@@ -1,7 +1,7 @@
 body:is(.theme-dark) {
   --signature: "✦";
   --signature-hsl: var(--tx1);
-  --flexoki-hsl: #cfcec4;
+  --flexoki-hsl: hsl(55, 10%, 79%);
 
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
@@ -11,8 +11,8 @@ body:is(.theme-dark) {
   
   --graph-node: var(--text-muted);
   --graph-text: var(--text-muted);
+  --graph-node-attachment: var(--text-muted);
   --graph-node-unresolved: hsl(233, 14%, 22%);
-  --graph-node-attachment: hsl(232, 97%, 85%);
   --graph-line: hsl(233, 14%, 22%);
 }
 
