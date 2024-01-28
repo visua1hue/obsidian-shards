@@ -1,0 +1,76 @@
+/* PLUGIN :: List Callouts */
+.lc-list-bg {
+    left: calc(-0 * var(--lc-bg-left));
+}
+
+/* PLUGIN :: Dataview */
+div.dataview-error-box {
+    border: unset;
+}
+
+.markdown-rendered ul, .markdown-rendered ol {
+    padding-inline-start: unset;
+}
+
+.dataview.task-list-item, .dataview.task-list-basic-item {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* PLUGIN :: OmniSearch - updated* */
+@media only screen and (max-width: 600px) {
+    .omnisearch-input-container {
+        flex-direction: unset;
+    }
+}
+
+.omnisearch-default-highlight {
+    color: var(--interactive-accent);
+}
+
+.omnisearch-result__body {
+    opacity: .25;
+}
+
+.omnisearch-result__title svg.svg-icon {
+    display: none;
+}
+
+.omnisearch-result__folder-path svg.svg-icon {
+    display: none;
+}
+
+.omnisearch-result__folder-path {
+    /* display: none; */
+    font-family: var(--font-monospace);
+    font-size: 0.5rem;
+    opacity: .5;
+}
+
+input.prompt-input:not(.is-active) {
+    border: unset !important;
+}
+
+input.prompt-input:focus {
+    border: unset !important;
+}
+
+input.prompt-input.is-active {
+    border: unset !important;
+}
+
+.modal-container .prompt .prompt-results {
+    padding: 0px 12px 0px 12px !important;
+}
+
+.modal-container .prompt .prompt-instructions {
+    display: none;
+}
+
+.suggestion-item {
+    white-space: unset !important;
+}
+
+.omnisearch-default-highlight {
+    color: var(--link-external-color);
+}

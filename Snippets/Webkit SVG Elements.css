@@ -1,0 +1,50 @@
+/* 
+    https://yoksel.github.io/url-encoder/
+
+    https://icones.js.org/
+
+    Build Version: https://help.obsidian.md/Obsidian/Credits#Lucide
+    https://lucide.dev/icons/
+*/
+
+/* Remove bg shadow */
+.mod-left-split .workspace-tab-header.has-active-menu, .mod-right-split .workspace-tab-header.has-active-menu, .mod-left-split .workspace-tab-header.is-active, .mod-right-split .workspace-tab-header.is-active {
+    background-color: unset;
+}
+
+/* Obsidian CORE :: File Explorer */
+.workspace-tab-header[aria-label="Files"] .workspace-tab-header-inner-icon svg {
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M6 13c-2.2 0-4 1.8-4 4s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4zm6-10C9.8 3 8 4.8 8 7s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4zm6 10c-2.2 0-4 1.8-4 4s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* Obsidian CORE :: Search */
+.workspace-tab-header[aria-label="Search"] .workspace-tab-header-inner-icon svg {
+    height: 20px;
+    width: 20px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath stroke='%23888888' stroke-width='0.5' fill='%23888888' d='M3 5.5A2.5 2.5 0 0 1 5.5 3h9A2.5 2.5 0 0 1 17 5.5v9a2.5 2.5 0 0 1-2.5 2.5h-2.585a1.495 1.495 0 0 0-.354-.56l-.44-.44H14.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v2.756a4.484 4.484 0 0 0-1 .502zm5.303 9.096a3.5 3.5 0 1 0-.707.707l2.55 2.55a.5.5 0 0 0 .708-.707zM5.5 15a2.5 2.5 0 1 1 0-5a2.5 2.5 0 0 1 0 5m8-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0v-7a.5.5 0 0 0-.5-.5'/%3E%3C/svg%3E");
+}
+
+/* Obsidian CORE :: Outline */
+.workspace-tab-header[data-type="outline"] .workspace-tab-header-inner-icon svg {
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='currentColor' d='M2 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.25Zm0 5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 9.25Zm.75 4.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z'/%3E%3C/svg%3E");
+}
+
+/* Obsidian CORE :: Graph View Tab Symbol */
+.workspace-tab-header.is-active[aria-label="Graph view"] .workspace-tab-header-inner .workspace-tab-header-inner-icon svg {
+    height: 12px;
+    width: 12px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'%3E%3Cpath d='M2 11h5v2H2zm15 0h5v2h-5zm-6 6h2v5h-2zm0-15h2v5h-2zM4.222 5.636l1.414-1.414 3.536 3.536-1.414 1.414zm15.556 12.728-1.414 1.414-3.536-3.536 1.414-1.414zm-12.02-3.536 1.414 1.414-3.536 3.536-1.414-1.414zm7.07-7.071 3.536-3.535 1.414 1.415-3.536 3.535z'%3E%3C/path%3E%3C/svg%3E");
+    /* -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='svg-icon lucide-orbit'%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3Ccircle cx='19' cy='5' r='2'%3E%3C/circle%3E%3Ccircle cx='5' cy='19' r='2'%3E%3C/circle%3E%3Cpath d='M10.4 21.9a10 10 0 0 0 9.941-15.416'%3E%3C/path%3E%3Cpath d='M13.5 2.1a10 10 0 0 0-9.841 15.416'%3E%3C/path%3E%3C/svg%3E"); */
+}
+
+/* Obsidian CORE :: Graph View Timelapse Animation */
+.graph-controls.is-close .graph-controls-button.mod-animate[aria-label="Start timelapse animation"] svg {
+    height: 20px;
+    width: 20px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'%3E%3Cpath d='M2 11h5v2H2zm15 0h5v2h-5zm-6 6h2v5h-2zm0-15h2v5h-2zM4.222 5.636l1.414-1.414 3.536 3.536-1.414 1.414zm15.556 12.728-1.414 1.414-3.536-3.536 1.414-1.414zm-12.02-3.536 1.414 1.414-3.536 3.536-1.414-1.414zm7.07-7.071 3.536-3.535 1.414 1.415-3.536 3.535z'%3E%3C/path%3E%3C/svg%3E");
+}
