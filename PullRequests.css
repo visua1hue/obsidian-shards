@@ -1,0 +1,16 @@
+/* SETTINGS :: Button and Select Controls */
+button:not(.clickable-icon) {
+  background-color: rgba(1, 4, 9, 0.3);
+}
+
+button.mod-cta {
+  color: rgb(var(--ctp-custom-lavender));
+}
+
+button.mod-cta:hover {
+  background-color: rgba(1, 4, 9, 0.3);
+}
+
+.setting-item-control select  {
+  background-color: rgba(1, 4, 9, 0.3);
+}

@@ -1,4 +1,4 @@
-/* Media Querys :: Headings L1-6 */
+/* HEADINGS :: Media Querys L1-6 */
 @media (min-width: 1px) and (max-width: 2800px) {
     h1, .markdown-rendered h1, .HyperMD-header-1, .HyperMD-list-line .cm-header-1 {
         font-size: 2.441rem !important;
@@ -9,42 +9,37 @@
     h2, .markdown-rendered h2, .HyperMD-header-2, .HyperMD-list-line .cm-header-2 {
         font-size: 1.953rem !important;
         font-weight: 600;
-        font-family: var(--font-canvas-cards-heading-theme) !important;          
     }
 
     h3, .markdown-rendered h3, .HyperMD-header-3, .HyperMD-list-line .cm-header-3 {
         font-size: 1.663rem !important;
         font-weight: 500;
-        font-family: var(--font-canvas-cards-heading-theme) !important;
     }
 
     h4, .markdown-rendered h4, .HyperMD-header-4, .HyperMD-list-line .cm-header-4 {
         font-size: 1.063rem !important;
         font-weight: 500;
-        font-family: var(--font-canvas-cards-heading-theme) !important;
     }
 
     h5, .markdown-rendered h5, .HyperMD-header-5, .HyperMD-list-line .cm-header-5 {
         font-size: 1.563rem !important;
         font-weight: 500;
-        font-family: var(--font-canvas-cards-heading-theme) !important;
     }
 
     h6, .markdown-rendered h6, .HyperMD-header-6, .HyperMD-list-line .cm-header-6 {
         font-size: 1.563rem !important;
         font-weight: 500;
-        font-family: var(--font-canvas-cards-heading-theme) !important;
     }
 }
 
 
-/* Headings ## Symbol */
+/* HEADINGS :: ## Symbol */
 .cm-formatting-header {
     color: var(--text-muted);
     opacity: .5;
 }
 
-/* Headings HSize Symbol */
+/* HEADINGS :: HSize Symbol */
 body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header:before {
     color: var(--text-muted);
     opacity: .5;
@@ -82,7 +77,7 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-activ
 }
 
 
-/* Bold Text */
+/* FORMATING :: Bold Text */
 strong, .cm-strong {
     color: var(); /* inactive */
 }
