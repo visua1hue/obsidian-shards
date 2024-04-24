@@ -479,6 +479,10 @@ input[type=checkbox]:hover {
   display: none;
 }
 
+.expressive-code .frame pre {
+  background-color: rgb(var(--ctp-ext-crust)) !important;
+}
+
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
   background-color: var(--code-background);
