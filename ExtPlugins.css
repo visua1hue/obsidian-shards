@@ -79,6 +79,6 @@ input.prompt-input.is-active {
     border: unset;
 }
 
-/* .kanban-plugin__item-content-wrapper {
-    background-color: var();
-} */
+.kanban-plugin__item-content-wrapper {
+    background-color: rgb(var(--ctp-ext-base));
+}

@@ -132,6 +132,11 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   display: none; /* native-scrollbars */
 }
 
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, ::-webkit-scrollbar {
+  width: 0px; /* native-scrollbars */
+  height: 0px; /* native-scrollbars */
+}
+
 .tooltip {
   display: none !important;
 }
@@ -146,17 +151,6 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 
 .anp-alternate-tab-toggle .sidebar-toggle-button.mod-left, .anp-alternate-tab-toggle .sidebar-toggle-button.mod-right {
   display: none;
-}
-
-.nav-folder-title:is([data-path$="/Attachments" i], [data-path="attachments" i]) {
-  transition: 400ms, background-color 150ms ease-in-out;
-  opacity: 25%;
-	/* display: none; */
-}
-
-.nav-folder-title:is([data-path$="/Attachments" i], [data-path="attachments" i]):hover {
-  transition: 400ms, background-color 150ms ease-in-out;
-  opacity: 100%;
 }
 
 /* SETTINGS :: Ext Plugins Highlight */
@@ -265,19 +259,17 @@ padding-left: unset; /* nav indent */
   padding-top: 4px;
 }
 
-/* Overwrite hover font weight change (temporary) */
 body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .nav-folder-title.is-active:hover, .nav-file-title.is-active, .nav-folder-title.is-active {
-  font-weight: 500;
+  font-weight: 500; /* Overwrite hover font weight change (temporary) */
 }
 
 body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
   font-weight: 500;
 }
 
-/* Active file adjustments (temporary) */
 body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .nav-folder-title.is-active:hover, .nav-file-title.is-active, .nav-folder-title.is-active {
   border-color: transparent !important;
-  color: var(--nav-item-color) !important;
+  color: var(--nav-item-color) !important; /* Active file adjustments (temporary) */
 }
 
 body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
@@ -285,10 +277,20 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
   box-shadow: unset;
 }
 
-/* Active file background (temporary) */
 body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .nav-folder-title.is-active:hover, .nav-file-title.is-active, .nav-folder-title.is-active {
-  background-color: unset;
+  background-color: unset; /* Active file background (temporary) */
   box-shadow: unset;
+}
+
+.nav-folder-title:is([data-path$="/Attachments" i], [data-path="attachments" i]) {
+  transition: 400ms, background-color 150ms ease-in-out;
+  opacity: 25%;
+	/* display: none; */
+}
+
+.nav-folder-title:is([data-path$="/Attachments" i], [data-path="attachments" i]):hover {
+  transition: 400ms, background-color 150ms ease-in-out;
+  opacity: 100%;
 }
 
 /* OUTLINE :: Hide Elements */
