@@ -1,34 +1,52 @@
 /* HEADINGS :: Media Querys L1-6 */
 @media (min-width: 1px) and (max-width: 2800px) {
-    h1, .markdown-rendered h1, .HyperMD-header-1, .HyperMD-list-line .cm-header-1 {
-        font-size: 2.441rem !important;
-        font-weight: 600;
-        font-family: var(--font-canvas-cards-heading-theme) !important;
+
+    h1,
+    .markdown-rendered h1,
+    .HyperMD-header-1,
+    .HyperMD-list-line .cm-header-1 {
+        font-size: 1.802em !important;
+        font-weight: 700;
     }
 
-    h2, .markdown-rendered h2, .HyperMD-header-2, .HyperMD-list-line .cm-header-2 {
-        font-size: 1.953rem !important;
-        font-weight: 600;
+    h2,
+    .markdown-rendered h2,
+    .HyperMD-header-2,
+    .HyperMD-list-line .cm-header-2 {
+        font-size: 1.602em !important;
+        font-weight: 700;
     }
 
-    h3, .markdown-rendered h3, .HyperMD-header-3, .HyperMD-list-line .cm-header-3 {
-        font-size: 1.663rem !important;
-        font-weight: 500;
+    h3,
+    .markdown-rendered h3,
+    .HyperMD-header-3,
+    .HyperMD-list-line .cm-header-3 {
+        font-size: 1.424em !important;
+        font-weight: 700;
     }
 
-    h4, .markdown-rendered h4, .HyperMD-header-4, .HyperMD-list-line .cm-header-4 {
-        font-size: 1.063rem !important;
-        font-weight: 500;
+    h4,
+    .markdown-rendered h4,
+    .HyperMD-header-4,
+    .HyperMD-list-line .cm-header-4 {
+        font-size: 1.266em !important;
+        font-weight: 700;
     }
 
-    h5, .markdown-rendered h5, .HyperMD-header-5, .HyperMD-list-line .cm-header-5 {
-        font-size: 1.563rem !important;
-        font-weight: 500;
+    h5,
+    .markdown-rendered h5,
+    .HyperMD-header-5,
+    .HyperMD-list-line .cm-header-5 {
+        font-size: 1.125em !important;
+        font-weight: 700;
     }
 
-    h6, .markdown-rendered h6, .HyperMD-header-6, .HyperMD-list-line .cm-header-6 {
-        font-size: 1.563rem !important;
-        font-weight: 500;
+    h6,
+    .markdown-rendered h6,
+    .HyperMD-header-6,
+    .HyperMD-list-line .cm-header-6 {
+        font-size: 1em !important;
+        font-weight: 700;
     }
 }
 
@@ -78,14 +96,19 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-activ
 
 
 /* FORMATING :: Bold Text */
-strong, .cm-strong {
-    color: var(); /* inactive */
+strong,
+.cm-strong {
+    color: var();
+    /* inactive */
 }
 
 .cm-line.HyperMD-quote .cm-quote.cm-strong {
-    color: var(); /* inactive */
+    color: var();
+    /* inactive */
 }
 
-.cm-s-obsidian span.cm-formatting-strong, .cm-s-obsidian span.cm-strong {
-    color: var(); /* inactive */
+.cm-s-obsidian span.cm-formatting-strong,
+.cm-s-obsidian span.cm-strong {
+    color: var();
+    /* inactive */
 }

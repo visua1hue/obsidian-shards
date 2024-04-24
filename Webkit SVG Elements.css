@@ -1,14 +1,21 @@
 /*
-    https://yoksel.github.io/url-encoder/
+    Build Version:
+    https://help.obsidian.md/Obsidian/Credits#Lucide
 
+    SVG Sources:
     https://icones.js.org/
-
-    Build Version: https://help.obsidian.md/Obsidian/Credits#Lucide
     https://lucide.dev/icons/
+
+    SVG Converter:
+    https://yoksel.github.io/url-encoder/
 */
 
-.mod-left-split .workspace-tab-header.has-active-menu, .mod-right-split .workspace-tab-header.has-active-menu, .mod-left-split .workspace-tab-header.is-active, .mod-right-split .workspace-tab-header.is-active {
-    background-color: unset; /* Remove bg shadow */
+.mod-left-split .workspace-tab-header.has-active-menu,
+.mod-right-split .workspace-tab-header.has-active-menu,
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+    background-color: unset;
+    /* Remove bg shadow */
 }
 
 /* Obsidian CORE :: File Explorer */
