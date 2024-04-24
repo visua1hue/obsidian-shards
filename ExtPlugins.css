@@ -8,11 +8,13 @@ div.dataview-error-box {
     border: unset;
 }
 
-.markdown-rendered ul, .markdown-rendered ol {
+.markdown-rendered ul,
+.markdown-rendered ol {
     padding-inline-start: unset;
 }
 
-.dataview.task-list-item, .dataview.task-list-basic-item {
+.dataview.task-list-item,
+.dataview.task-list-basic-item {
     white-space: nowrap;
     overflow: hidden;
 }
@@ -81,4 +83,30 @@ input.prompt-input.is-active {
 
 .kanban-plugin__item-content-wrapper {
     background-color: rgb(var(--ctp-ext-base));
+}
+
+body:not(.is-mobile):not(.anp-hide-status-bar) .kanban-plugin__board>div {
+    padding-bottom: unset;
+}
+
+.kanban-plugin .kanban-plugin__lane-title-count {
+    border-radius: 0.5em;
+}
+
+.kanban-plugin__lane {
+    background-color: unset;
+    border: unset
+}
+
+.kanban-plugin__lane-header-wrapper {
+    background-color: rgba(1, 4, 9, 0.3);
+    border-bottom: unset;
+}
+
+.kanban-plugin__item-button-wrapper {
+    border-top: unset;
+}
+
+.kanban-plugin__item-content-wrapper {
+    background-color: rgb(var(--ctp-ext-crust));
 }
