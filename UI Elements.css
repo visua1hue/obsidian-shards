@@ -45,6 +45,12 @@ body:is(.theme-dark) {
   margin-right: 3px;
 }
 
+kbd {
+  font-family: var(--font-interface);
+  font-size: calc(var(--font-ui-smaller) - 2px);
+  padding: 2px 6px;
+}
+
 .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
   font-size: var(--font-ui-smaller);
   font-family: var(--font-interface);
