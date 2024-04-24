@@ -75,38 +75,3 @@ input.prompt-input.is-active {
 .omnisearch-default-highlight {
     color: var(--accent-shiny);
 }
-
-/* PLUGIN :: Kanban */
-.kanban-plugin__item {
-    border: unset;
-}
-
-.kanban-plugin__item-content-wrapper {
-    background-color: rgb(var(--ctp-ext-base));
-}
-
-body:not(.is-mobile):not(.anp-hide-status-bar) .kanban-plugin__board>div {
-    padding-bottom: unset;
-}
-
-.kanban-plugin .kanban-plugin__lane-title-count {
-    border-radius: 0.5em;
-}
-
-.kanban-plugin__lane {
-    background-color: unset;
-    border: unset
-}
-
-.kanban-plugin__lane-header-wrapper {
-    background-color: rgba(1, 4, 9, 0.3);
-    border-bottom: unset;
-}
-
-.kanban-plugin__item-button-wrapper {
-    border-top: unset;
-}
-
-.kanban-plugin__item-content-wrapper {
-    background-color: rgb(var(--ctp-ext-crust));
-}
