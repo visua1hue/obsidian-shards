@@ -211,6 +211,10 @@ button.mod-cta:hover {
   background-color: rgba(1, 4, 9, 0.3);
 }
 
+button.mod-warning {
+  background-color: var(--background-modifier-error);
+}
+
 .setting-item-control select {
   background-color: rgba(1, 4, 9, 0.3);
 }
