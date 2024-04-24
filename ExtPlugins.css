@@ -19,6 +19,11 @@ div.dataview-error-box {
     overflow: hidden;
 }
 
+.table-view-table>thead>tr>th {
+    border-color: var(--accent-base-dimmed);
+    border: unset;
+}
+
 /* PLUGIN :: OmniSearch */
 @media only screen and (max-width: 600px) {
     .omnisearch-input-container {
