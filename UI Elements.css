@@ -170,14 +170,13 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   display: none;
 }
 
-/* SETTINGS :: Ext Plugins Highlight */
-.installed-plugins-container .setting-item-name {
-  color: var(--interactive-accent);
-}
-
-/* SETTINGS :: Horizontal Nav */
+/* SETTINGS :: Vertical Nav */
 .modal.mod-settings .vertical-tab-header {
   min-width: 200px;
+}
+
+.vertical-tab-header-group-title {
+  display: none;
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -197,6 +196,10 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   opacity: .5;
 }
 
+.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(5), :nth-child(4), :last-child) {
+  font-weight: 600;
+}
+
 body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
 body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   background-color: unset;
@@ -214,6 +217,11 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 .vertical-tab-nav-item {
   white-space: nowrap;
   overflow: scroll;
+}
+
+/* SETTINGS :: Ext Plugins Highlight */
+.installed-plugins-container .setting-item-name {
+  color: var(--interactive-accent);
 }
 
 /* SETTINGS :: Button and Select Controls */
@@ -279,19 +287,6 @@ body .checkbox-container.mod-small {
   background-color: var(--interactive-accent) !important;
   /* colors */
   border-color: transparent;
-}
-
-/* SETTINGS Panel :: Tabs */
-.vertical-tab-header-group-title {
-  display: none;
-}
-
-.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(5), :nth-child(4), :last-child) {
-  font-weight: 600;
-}
-
-.vertical-tab-content-container::before {
-  display: none;
 }
 
 /* FEXP :: Opacity & Adjustments */
