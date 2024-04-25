@@ -176,6 +176,10 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 }
 
 /* SETTINGS :: Horizontal Nav */
+.modal.mod-settings .vertical-tab-header {
+  min-width: 210px;
+}
+
 .horizontal-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item.is-active:hover {
   background-color: unset;
@@ -187,15 +191,29 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   color: var(--interactive-accent);
 }
 
-body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
-body:not(.colorful-active) .vertical-tab-nav-item.is-active {
-  background-color: unset;
-}
-
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
   color: var(--accent-base-dimmed);
   opacity: .5;
+}
+
+body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
+body:not(.colorful-active) .vertical-tab-nav-item.is-active {
+  background-color: unset;
+  position: relative;
+  left: -9px;
+}
+
+.vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active) .vertical-tab-nav-item.is-active::before {
+  position: relative;
+  vertical-align: baseline;
+  content: '· ';
+  font-weight: 700;
+}
+
+.vertical-tab-nav-item {
+  white-space: nowrap;
+  overflow: scroll;
 }
 
 /* SETTINGS :: Button and Select Controls */
