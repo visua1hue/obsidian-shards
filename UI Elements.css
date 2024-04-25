@@ -177,7 +177,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 
 /* SETTINGS :: Horizontal Nav */
 .modal.mod-settings .vertical-tab-header {
-  min-width: 210px;
+  min-width: 200px;
 }
 
 .horizontal-tab-nav-item.is-active:hover,
