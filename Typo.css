@@ -94,21 +94,17 @@ body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-activ
     content: "H6";
 }
 
-
 /* FORMATING :: Bold Text */
 strong,
 .cm-strong {
-    color: var(--accent-ext-obsidian);
-    /* inactive */
+    color: var();
 }
 
 .cm-line.HyperMD-quote .cm-quote.cm-strong {
-    color: var(--accent-ext-obsidian);
-    /* inactive */
+    color: var();
 }
 
 .cm-s-obsidian span.cm-formatting-strong,
 .cm-s-obsidian span.cm-strong {
-    color: var(--accent-ext-obsidian);
-    /* inactive */
+    color: var();
 }

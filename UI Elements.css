@@ -4,7 +4,6 @@ body:is(.theme-dark) {
   --accent-base-default: hsl(227, 70%, 87%);
   --accent-base-dimmed: hsl(229, 20%, 63%);
   --accent-ext-shiny: hsl(180, 92%, 66%);
-  --accent-ext-obsidian: hsl(256, 92%, 76%);
 
   /* GitHub Dark Contrast for AnuPpuccin */
   --ctp-ext-base: 13, 17, 23;
