@@ -350,13 +350,13 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   box-shadow: unset;
 }
 
-.nav-folder-title:is([data-path$="/Attachments" i], [data-path="attachments" i]) {
+.nav-folder-title:is([data-path$="Assets" i], [data-path="attachments" i]) {
   transition: 400ms, background-color 150ms ease-in-out;
   opacity: 25%;
   /* display: none; */
 }
 
-.nav-folder-title:is([data-path$="/Attachments" i], [data-path="attachments" i]):hover {
+.nav-folder-title:is([data-path$="Assets" i], [data-path="attachments" i]):hover {
   transition: 400ms, background-color 150ms ease-in-out;
   opacity: 100%;
 }
