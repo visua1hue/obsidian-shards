@@ -483,15 +483,11 @@ input[type=checkbox]:checked {
 }
 
 @keyframes colorChange {
-  0% {
+  from {
     background-color: transparent;
   }
 
-  50% {
-    background-color: var(--checkbox-color);
-  }
-
-  100% {
+  to {
     background-color: var(--checkbox-color);
   }
 }
