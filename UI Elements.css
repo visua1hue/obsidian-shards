@@ -204,7 +204,7 @@ body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
 body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   background-color: unset;
   position: relative;
-  left: -9px;
+  left: -6px;
 }
 
 .vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active) .vertical-tab-nav-item.is-active::before {
