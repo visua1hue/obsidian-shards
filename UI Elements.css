@@ -472,10 +472,28 @@ li.is-collapsed .list-bullet:after,
   transition: opacity 300ms ease-in-out;
 }
 
-/* CHECKBOX ELEMENT :: Adjustments */
+/* CHECKBOX INPUT ELEMENT :: Adjustments */
 input[type=checkbox] {
-  border: 1.25px solid var(--checkbox-border-color);
-  /* outline: .25px solid var(--checkbox-border-color); */
+  border: 1.5px solid var(--checkbox-border-color);
+  transition: background-color 0.3s ease;
+}
+
+input[type=checkbox]:checked {
+  animation: colorChange 0.5s ease forwards;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: var(--checkbox-color);
+  }
+
+  100% {
+    background-color: var(--checkbox-color);
+  }
 }
 
 input[type=checkbox]:hover {
