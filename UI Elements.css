@@ -420,6 +420,11 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   /* Hide collapse-indicator */
 }
 
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul,
+.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
+  padding-right: 6px;
+}
+
 /* @keyframes animate-pulse {
   75%,to {
     transform: scale(1);
