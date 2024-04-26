@@ -210,8 +210,9 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 .vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active) .vertical-tab-nav-item.is-active::before {
   position: relative;
   vertical-align: baseline;
-  content: '· ';
+  content: '·';
   font-weight: 700;
+  left: -4px;
 }
 
 .vertical-tab-nav-item {
