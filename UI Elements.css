@@ -529,6 +529,12 @@ input[type=checkbox]:hover {
   --callout-color: transparent;
 }
 
+/* HIGHLIGHTED TEXT :: Adjustments */
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: hsl(180, 47%, 33%);
+}
+
 /* EXTERNAL LINK :: Unicode symbol */
 .external-link {
   background-image: none;
