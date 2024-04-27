@@ -46,7 +46,7 @@
 }
 
 /* Obsidian CORE :: Graph View Tab Symbol */
-.workspace-tab-header.is-active[aria-label="Graph view"] .workspace-tab-header-inner .workspace-tab-header-inner-icon svg {
+.workspace-tab-header[aria-label="Graph view"] .workspace-tab-header-inner .workspace-tab-header-inner-icon svg {
     height: 12px;
     width: 12px;
     background-color: currentColor;
