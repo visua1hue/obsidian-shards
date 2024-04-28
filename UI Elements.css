@@ -4,15 +4,7 @@ body:is(.theme-dark) {
   --accent-base-default: hsl(227, 70%, 87%);
   --accent-base-dimmed: hsl(229, 20%, 63%);
   --accent-ext-shiny: hsl(180, 92%, 66%);
-
-  /* GitHub Dark Contrast for AnuPpuccin */
-  --ctp-ext-base: 13, 17, 23;
-  --ctp-ext-mantle: 1, 4, 9;
-  --ctp-ext-crust: 1, 4, 9;
-
-  /* --ctp-custom-lavender: 47, 129, 247; */
-  --ctp-custom-lavender: 180, 190, 254;
-
+  --accent-ext-linear: hsl(234, 56%, 60%);
 
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
@@ -21,11 +13,12 @@ body:is(.theme-dark) {
   --checkbox-radius: 25%;
   --list-marker-color-collapsed: hsl(0, 0%, 100%);
 
-  --graph-node: var(--text-muted);
-  --graph-text: var(--text-muted);
-  --graph-node-attachment: var(--text-muted);
-  --graph-node-unresolved: hsl(233, 14%, 22%);
-  --graph-line: hsl(233, 14%, 22%);
+  /* GitHub Dark Contrast for AnuPpuccin */
+  --ctp-ext-base: 13, 17, 23;
+  --ctp-ext-mantle: 1, 4, 9;
+  --ctp-ext-crust: 1, 4, 9;
+
+  --ctp-custom-lavender: 180, 190, 254;
 }
 
 /* COMMAND PALETTE :: Adjustments */
@@ -532,7 +525,7 @@ input[type=checkbox]:hover {
 /* HIGHLIGHTED TEXT :: Adjustments */
 .cm-s-obsidian span.cm-formatting-highlight,
 .cm-s-obsidian span.cm-highlight {
-  background-color: hsl(180, 47%, 33%);
+  background-color: var(--accent-ext-linear);
 }
 
 /* EXTERNAL LINK :: Unicode symbol */
