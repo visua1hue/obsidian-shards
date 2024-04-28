@@ -524,8 +524,8 @@ input[type=checkbox]:hover {
 }
 
 .callout[data-callout="mod"] {
-  background-color: hsla(210, 10%, 4%, 0.25);
-  --callout-icon: git-pull-request;
+  background-color: hsla(210, 10%, 4%, 0.5);
+  --callout-icon: file-clock;
   --callout-color: transparent;
 }
 
