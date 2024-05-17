@@ -511,15 +511,16 @@ input[type=checkbox]:hover {
 
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
-  background-color: var(--code-background);
+  /* background-color: var(--code-background); */
+  background-color: hsla(210, 10%, 4%, 0.5);
   --callout-icon: transparent;
   --callout-color: transparent;
 }
 
 .callout[data-callout="mod"] {
-  background-color: hsla(210, 10%, 4%, 0.5);
   --callout-icon: file-clock;
-  --callout-color: transparent;
+  --callout-color: var(--callout-info);
+  background-color: rgba(var(--callout-color), 0.1);
 }
 
 /* HIGHLIGHTED TEXT :: Adjustments */
