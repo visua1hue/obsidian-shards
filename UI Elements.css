@@ -172,6 +172,11 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   display: none;
 }
 
+body:not(.is-phone) .horizontal-tab-nav-item.is-active,
+body:not(.is-phone) .vertical-tab-nav-item.is-active {
+  color: unset;
+}
+
 .horizontal-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item.is-active:hover {
   background-color: unset;
