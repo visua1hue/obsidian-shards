@@ -373,6 +373,17 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   opacity: 100%;
 }
 
+/* SIDEDOCK :: Vault Profiles */
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions:not(:hover) {
+  transition: linear .3s;
+  opacity: 0;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+  transition: linear .3s .2s;
+  opacity: 1;
+}
+
 /* OUTLINE :: Hide Elements */
 body:not(.show-sidebar-header-buttons) {
   --sidebar-tabs-unhovered-height: 8px;
