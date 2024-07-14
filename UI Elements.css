@@ -12,11 +12,19 @@ body:is(.theme-dark) {
   --titlebar-text-color-focused: var(--accent-base-dimmed);
   --checkbox-radius: 25%;
   --list-marker-color-collapsed: hsl(0, 0%, 100%);
+  --tab-outline-width: var(--divider-width);
+  --divider-width: 2px;
+  --divider-color: hsl(233, 15%, 22%);
 
   /* GitHub Dark Contrast for AnuPpuccin */
-  --ctp-ext-base: 13, 17, 23;
-  --ctp-ext-mantle: 1, 4, 9;
-  --ctp-ext-crust: 1, 4, 9;
+  /* --ctp-ext-base: 13, 17, 23; */
+  /* --ctp-ext-mantle: 1, 4, 9; */
+  /* --ctp-ext-crust: 1, 4, 9; */
+
+  /* Shimmering Focus for AnuPpuccin */
+  --ctp-ext-base: 26, 29, 34;
+  --ctp-ext-mantle: 35, 37, 47;
+  --ctp-ext-crust: 35, 37, 47;
 
   --ctp-custom-lavender: 180, 190, 254;
 }
@@ -421,6 +429,14 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 
 .pane-empty {
   display: none;
+}
+
+.workspace-ribbon {
+  border-right: var(--divider-width) solid var(--divider-color);
+}
+
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+  background-color: rgb(var(--ctp-ext-base));
 }
 
 /* BULLET LIST ELEMENT :: Collapsed list bullets animation */
