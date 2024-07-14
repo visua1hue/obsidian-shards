@@ -40,6 +40,10 @@ body:is(.theme-dark) {
   border: var(--divider-width) solid var(--divider-color);
 }
 
+.modal {
+  border: var(--divider-width) solid var(--divider-color);
+}
+
 .modal-container .prompt .suggestion-item.mod-complex .suggestion-hotkey {
   font-size: calc(var(--font-ui-smaller) - 2px);
   text-transform: uppercase;
