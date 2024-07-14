@@ -380,6 +380,11 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions:not(:hover) {
   transition: linear .3s;
   opacity: 0;
+  color: var(--nav-item-color);
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+  color: var(--nav-item-color);
 }
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
