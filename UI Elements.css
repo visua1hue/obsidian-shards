@@ -403,6 +403,13 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   transition-delay: 200ms;
 }
 
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header, .workspace-tab-header svg),
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container *) {
+  justify-content: center;
+  padding: 2px 2px 2px 2px;
+  margin: unset;
+}
+
 .workspace-leaf-content[data-type='outline'] .view-content {
   padding: 4px 0px 0px 0px;
 }
