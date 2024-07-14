@@ -439,6 +439,15 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .w
   background-color: rgb(var(--ctp-ext-base));
 }
 
+/* EDITOR :: Active Line Indicator */
+body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+  position: absolute;
+  left: -1.125em;
+  height: 100%;
+  content: "";
+  border-left: 3px solid hsl(230 15% 40%);
+}
+
 /* BULLET LIST ELEMENT :: Collapsed list bullets animation */
 .markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator,
 .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator {
