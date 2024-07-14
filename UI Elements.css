@@ -189,7 +189,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
-  color: unset;
+  color: var(--text-normal);
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -209,9 +209,9 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   opacity: .5;
 }
 
-.vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(5), :nth-child(4), :last-child) {
+/* .vertical-tab-header-group:nth-last-child(3) .vertical-tab-header-group-items .vertical-tab-nav-item:is(:nth-child(5), :nth-child(4), :last-child) {
   font-weight: 600;
-}
+} */
 
 body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
 body:not(.colorful-active) .vertical-tab-nav-item.is-active {
