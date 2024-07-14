@@ -37,6 +37,7 @@ body:is(.theme-dark) {
 
 .prompt {
   border-radius: 13px;
+  border: var(--divider-width) solid var(--divider-color);
 }
 
 .modal-container .prompt .suggestion-item.mod-complex .suggestion-hotkey {
@@ -121,7 +122,8 @@ input.prompt-input {
 }
 
 .modal-container .prompt {
-  background-color: var(--titlebar-background);
+  /* background-color: var(--titlebar-background); */
+  background-color: rgb(var(--ctp-ext-base));
 }
 
 .modal-bg {
