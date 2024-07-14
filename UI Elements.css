@@ -263,6 +263,18 @@ button.mod-warning {
   background-color: rgba(1, 4, 9, 0.3);
 }
 
+textarea,
+input.metadata-input-text,
+input[type='date'],
+input[type='datetime-local'],
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  border: 2px solid var(--divider-color);
+}
+
 /* SETTINGS :: Toggles */
 .checkbox-container::after {
   display: none;
