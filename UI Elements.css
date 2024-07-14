@@ -180,6 +180,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 /* SETTINGS :: Vertical Nav */
 .modal.mod-settings .vertical-tab-header {
   min-width: 200px;
+  border-inline-end: 2px solid var(--divider-color);
 }
 
 .vertical-tab-header-group-title {
@@ -388,13 +389,6 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   transition: 300ms;
   transition-property: opacity, height, background-color;
   transition-delay: 200ms;
-}
-
-.mod-left-split .workspace-tab-header.has-active-menu,
-.mod-right-split .workspace-tab-header.has-active-menu,
-.mod-left-split .workspace-tab-header.is-active,
-.mod-right-split .workspace-tab-header.is-active {
-  background-color: rgba(var(--mono-rgb-100), 0.075);
 }
 
 .workspace-leaf-content[data-type='outline'] .view-content {
