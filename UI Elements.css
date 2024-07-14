@@ -386,6 +386,7 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 /* SIDEDOCK :: Vault Profiles */
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   height: var(--header-height);
+  padding: unset;
 }
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions:not(:hover) {
