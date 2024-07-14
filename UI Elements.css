@@ -312,44 +312,15 @@ body .checkbox-container.mod-small {
   /* File Opacity */
 }
 
-.workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root>.nav-folder-children {
-  padding: unset;
-}
-
-.nav-file-title,
-.nav-folder-title {
-  font-size: var(--nav-item-size);
-  /* --nav-item-size: 16px; in UI Elements.css */
-}
-
-.nav-folder.mod-root .nav-folder>.nav-folder-children {
-  padding-left: unset;
-  /* nav indent */
-}
-
-.nav-folder.mod-root>.nav-folder-title {
-  display: none;
-}
-
 .workspace-leaf-content[data-type=file-explorer] .nav-files-container {
   padding: unset;
-}
-
-.workspace-leaf-content[data-type=file-explorer] .nav-folder.mod-root>.nav-folder-children {
-  padding: unset;
-  /* var(--size-4-1) */
-  padding-top: 4px;
 }
 
 body:not(.is-grabbing) .nav-file-title.is-active:hover,
 body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  font-weight: 500;
   /* Overwrite hover font weight change (temporary) */
-}
-
-body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
   font-weight: 500;
 }
 
