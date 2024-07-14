@@ -31,14 +31,6 @@
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23888888' d='M10.154 14H7.169q-.407 0-.59-.355q-.18-.355.054-.682l5.629-8.153q.153-.216.38-.286q.227-.07.48.022q.251.092.365.304q.113.212.082.463L12.865 11h3.587q.42 0 .595.383q.176.382-.095.71l-6.264 7.503q-.16.19-.386.242t-.448-.046q-.221-.098-.338-.297q-.116-.199-.085-.45z'/%3E%3C/svg%3E");
 }
 
-/* Obsidian CORE :: Search */
-.workspace-tab-header[aria-label="Search"] .workspace-tab-header-inner-icon svg {
-    height: 20px;
-    width: 20px;
-    background-color: currentColor;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath stroke='%23888888' stroke-width='0.5' fill='%23888888' d='M3 5.5A2.5 2.5 0 0 1 5.5 3h9A2.5 2.5 0 0 1 17 5.5v9a2.5 2.5 0 0 1-2.5 2.5h-2.585a1.495 1.495 0 0 0-.354-.56l-.44-.44H14.5a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v2.756a4.484 4.484 0 0 0-1 .502zm5.303 9.096a3.5 3.5 0 1 0-.707.707l2.55 2.55a.5.5 0 0 0 .708-.707zM5.5 15a2.5 2.5 0 1 1 0-5a2.5 2.5 0 0 1 0 5m8-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0v-7a.5.5 0 0 0-.5-.5'/%3E%3C/svg%3E");
-}
-
 /* Obsidian CORE :: Outline */
 .workspace-tab-header[data-type="outline"] .workspace-tab-header-inner-icon svg {
     background-color: currentColor;
