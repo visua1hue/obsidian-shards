@@ -240,7 +240,7 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 
 /* SETTINGS :: Button and Select Controls */
 button:not(.clickable-icon) {
-  background-color: rgba(1, 4, 9, 0.3);
+  background-color: hsla(210, 10%, 4%, 0.25);
 }
 
 button.mod-cta {
@@ -542,7 +542,7 @@ input[type=checkbox]:hover {
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
   /* background-color: var(--code-background); */
-  background-color: hsla(210, 10%, 4%, 0.5);
+  background-color: hsla(210, 10%, 4%, 0.25);
   --callout-icon: transparent;
   --callout-color: transparent;
 }
