@@ -660,7 +660,7 @@ input[type=checkbox]:hover {
 
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   max-width: var(--tab-max-width);
-  border: var(1.5px, 1px) solid var(--flexoki-accent);
+  border: 1.5px, 1px solid var(--tab-outline-color);
 }
 
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
