@@ -467,22 +467,6 @@ body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.Hyp
   }
 } */
 
-/* @keyframes outline-pulse {
-  0%, 100% {
-      outline: 1px solid var(--list-marker-color-collapsed);
-      opacity: 1;
-  }
-  30% {
-      outline: 3px solid hsl(254, 14%, 82%, .25);
-  }
-  50% {
-      outline: 3px solid hsl(254, 13%, 81%, .5);
-  }
-  75% {
-      outline: 3px solid hsl(254, 14%, 82%, .25);
-  }
-} */
-
 @keyframes outline-pulse-v2 {
 
   75%,
