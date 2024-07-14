@@ -490,6 +490,11 @@ li.is-collapsed .list-bullet:after,
   transition: opacity 300ms ease-in-out;
 }
 
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  /* adjusted indentation line */
+  border-inline-end: 2px solid var(--indentation-guide-color);
+}
+
 /* CHECKBOX INPUT ELEMENT :: Adjustments */
 input[type=checkbox] {
   border: 1.5px solid var(--checkbox-border-color);
