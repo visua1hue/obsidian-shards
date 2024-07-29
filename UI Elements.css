@@ -318,11 +318,14 @@ body .checkbox-container.mod-small {
 /* FEXP :: Opacity & Adjustments */
 .tree-item-self {
   font-weight: 500;
+  font-size: 0.9em;
+  margin-bottom: unset;
+  margin-top: unset;
 }
 
 .nav-file-title {
-  opacity: .5;
   /* File Opacity */
+  opacity: .5;
 }
 
 .workspace-leaf-content[data-type=file-explorer] .nav-files-container {
