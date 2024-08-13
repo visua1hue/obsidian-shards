@@ -557,7 +557,7 @@ div.expressive-code:not([data-theme='poimandres']) .expressive-code[data-theme='
 }
 
 .callout[data-callout="mod"] {
-  --callout-icon: file-clock;
+  --callout-icon: zap;
   --callout-color: var(--callout-info);
   background-color: rgba(var(--callout-color), 0.1);
 }
