@@ -543,6 +543,11 @@ input[type=checkbox]:hover {
   background-color: rgb(var(--ctp-ext-crust)) !important;
 }
 
+.expressive-code .ec-line :where(span[style^='--']:not([class])),
+div.expressive-code:not([data-theme='poimandres']) .expressive-code[data-theme='poimandres'] .ec-line :where(span[style^='--']:not([class])) {
+  font-style: unset !important;
+}
+
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
   /* background-color: var(--code-background); */
