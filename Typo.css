@@ -1,3 +1,8 @@
+/*
+   - HEADINGS :: Media Querys L1-6
+   - FORMATING :: Bold Text (inactive)
+*/
+
 /* HEADINGS :: Media Querys L1-6 */
 @media (min-width: 1px) and (max-width: 2800px) {
   h1,
@@ -49,14 +54,8 @@
   }
 }
 
-/* HEADINGS :: ## Symbol */
-.cm-formatting-header {
-  color: var(--text-muted);
-  opacity: 0.5;
-}
-
-/* FORMATING :: Bold Text */
-strong,
+/* FORMATING :: Bold Text (inactive) */
+/* strong,
 .cm-strong {
   color: var();
 }
@@ -68,4 +67,4 @@ strong,
 .cm-s-obsidian span.cm-formatting-strong,
 .cm-s-obsidian span.cm-strong {
   color: var();
-}
+} */

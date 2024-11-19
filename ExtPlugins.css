@@ -1,34 +1,15 @@
-/* PLUGIN :: List Callouts */
+/* 
+   - EXT PLUGIN :: List Callouts
+   - EXT PLUGIN :: OmniSearch
+   - EXT PLUGIN :: Dataview
+*/
+
+/* EXT PLUGIN :: List Callouts */
 .lc-list-bg {
   left: calc(-0 * var(--lc-bg-left));
 }
 
-/* PLUGIN :: Dataview */
-div.dataview-error-box {
-  border: unset;
-}
-
-.markdown-rendered ul,
-.markdown-rendered ol {
-  padding-inline-start: unset;
-}
-
-.dataview.task-list-item,
-.dataview.task-list-basic-item {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.table-view-table > thead > tr > th {
-  border-color: var(--accent-base-dimmed);
-  border: unset;
-}
-
-.table-view-table > thead > tr > th {
-  color: var(--accent-ext-linear);
-}
-
-/* PLUGIN :: OmniSearch */
+/* EXT PLUGIN :: OmniSearch */
 @media only screen and (max-width: 600px) {
   .omnisearch-input-container {
     flex-direction: unset;
@@ -83,4 +64,29 @@ input.prompt-input.is-active {
 
 .omnisearch-default-highlight {
   color: var(--accent-ext-shiny);
+}
+
+/* EXT PLUGIN :: Dataview */
+div.dataview-error-box {
+  border: unset;
+}
+
+.markdown-rendered ul,
+.markdown-rendered ol {
+  padding-inline-start: unset;
+}
+
+.dataview.task-list-item,
+.dataview.task-list-basic-item {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.table-view-table > thead > tr > th {
+  border-color: var(--accent-base-dimmed);
+  border: unset;
+}
+
+.table-view-table > thead > tr > th {
+  color: var(--accent-ext-linear);
 }

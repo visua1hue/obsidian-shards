@@ -1,3 +1,25 @@
+/* 
+   - COMMAND PALETTE :: Adjustments
+   - CORE UI :: Hider CSS Modifications
+   - SETTINGS :: Vertical Nav
+   - SETTINGS :: Ext Plugins Highlight
+   - SETTINGS :: Toggles
+   - FEXP :: Opacity & Adjustments
+   - SIDEDOCK :: Vault Profiles
+   - OUTLINE :: Hide Elements
+   - EDITOR :: Active Line Indicator
+   - BULLET LIST ELEMENT :: Collapsed list bullets animation
+   - CHECKBOX INPUT ELEMENT :: Adjustments
+   - CODE BLOCK ELEMENT :: Adjustments
+   - CALLOUT ELEMENT :: Unique Callouts
+   - HIGHLIGHTED TEXT :: Adjustments
+   - EXTERNAL LINK :: Unicode symbol
+   - INTERNAL LINK :: Opacity
+   - TAB :: Empty State (New tab)
+   - TAB :: Minimal theme layout add-on
+*/
+
+/* VARIABLE DECLARATION :: GLOBAL */
 body:is(.theme-dark) {
   --signature: "✦";
 
@@ -606,7 +628,7 @@ div.expressive-code:not([data-theme="poimandres"])
   color: var(--accent-base-default);
 }
 
-/* TABS :: Minimal theme layout add-on */
+/* TAB :: Minimal theme layout add-on */
 .is-hidden-frameless:not(.is-fullscreen)
   .workspace-tabs.mod-top-right-space
   .workspace-tab-header-container {
