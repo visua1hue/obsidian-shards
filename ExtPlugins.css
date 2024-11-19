@@ -19,12 +19,12 @@ div.dataview-error-box {
   overflow: hidden;
 }
 
-.table-view-table>thead>tr>th {
+.table-view-table > thead > tr > th {
   border-color: var(--accent-base-dimmed);
   border: unset;
 }
 
-.table-view-table>thead>tr>th {
+.table-view-table > thead > tr > th {
   color: var(--accent-ext-linear);
 }
 
@@ -40,7 +40,7 @@ div.dataview-error-box {
 }
 
 .omnisearch-result__body {
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .omnisearch-result__title svg.svg-icon {
@@ -54,7 +54,7 @@ div.dataview-error-box {
 .omnisearch-result__folder-path {
   font-family: var(--font-monospace);
   font-size: 0.5rem;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 input.prompt-input:not(.is-active) {
