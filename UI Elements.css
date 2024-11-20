@@ -1,10 +1,11 @@
-/* 
+/*
    - COMMAND PALETTE :: Adjustments
    - CORE UI :: Hider CSS Modifications
    - SETTINGS :: Vertical Nav
    - SETTINGS :: Ext Plugins Highlight
    - SETTINGS :: Toggles
-   - FEXP :: Opacity & Adjustments
+   - FEXP :: Adjustments
+   - FEXP :: Prevent filename trim while renaming
    - SIDEDOCK :: Vault Profiles
    - OUTLINE :: Hide Elements
    - EDITOR :: Active Line Indicator
@@ -293,7 +294,78 @@ body .checkbox-container.mod-small {
   border-color: transparent;
 }
 
-/* FEXP :: Opacity & Adjustments */
+/* FEXP :: Adjustments */
+@media (hover: hover) {
+  body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
+    color: var(--accent-base-shiny);
+    background-color: transparent;
+    transition: color 300ms ease-in-out;
+  }
+}
+
+.tree-item-self {
+  font-size: 0.9em;
+  margin-bottom: unset;
+  margin-top: unset;
+}
+
+.nav-folder-title {
+  color: var(--accent-base-default);
+  font-weight: 500;
+}
+
+.nav-file-title {
+  color: var(--accent-base-dimmed);
+  font-weight: 400;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
+  padding: unset;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  border-color: transparent !important;
+  color: var(--nav-item-color) !important;
+}
+
+body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
+  border-radius: unset;
+  box-shadow: unset;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background-color: unset;
+  box-shadow: unset;
+}
+
+.nav-folder-title:is(
+    [data-path$="+Ref" i],
+    [data-path="Attachments" i],
+    [data-path="Assets" i]
+  ) {
+  transition: 400ms, background-color 150ms ease-in-out;
+  opacity: 25%;
+}
+
+.nav-folder-title:is(
+    [data-path$="+Ref" i],
+    [data-path="Attachments" i],
+    [data-path="Assets" i]
+  ):hover {
+  transition: 400ms, background-color 150ms ease-in-out;
+  opacity: 100%;
+}
+
+/* FEXP :: Prevent filename trim while renaming */
+.tree-item-self.is-being-renamed .tree-item-inner {
+  white-space: normal;
+}
 
 /* SIDEDOCK :: Vault Profiles */
 body:not(.is-mobile)
