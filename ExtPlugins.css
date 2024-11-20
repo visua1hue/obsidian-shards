@@ -63,7 +63,7 @@ input.prompt-input.is-active {
 }
 
 .omnisearch-default-highlight {
-  color: var(--accent-ext-shiny);
+  color: var(--accent-base-shiny);
 }
 
 /* EXT PLUGIN :: Dataview */
