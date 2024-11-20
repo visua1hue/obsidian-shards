@@ -1,4 +1,4 @@
-/* 
+/*
    - EXT PLUGIN :: List Callouts
    - EXT PLUGIN :: OmniSearch
    - EXT PLUGIN :: Dataview
@@ -18,6 +18,10 @@
 
 .omnisearch-default-highlight {
   color: var(--interactive-accent);
+}
+
+.omnisearch-result__icon {
+  display: none;
 }
 
 .omnisearch-result__body {
