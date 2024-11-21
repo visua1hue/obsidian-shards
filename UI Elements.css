@@ -571,15 +571,22 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
   counter-reset: codeblock-line-numbers;
 }
 
-body:not(.no-codeblock-line-numbers)
+/* body:not(.no-codeblock-line-numbers)
   .is-live-preview
   .HyperMD-codeblock-end
   span:nth-child(2):before {
   content: " ";
-  background-color: rgb(var(--ctp-ext-base));
+  background-color: transparent !important;
   border-bottom-left-radius: var(--radius-s);
   margin-left: -4px;
   padding: 2px 0.85em;
+} */
+
+body:not(.no-codeblock-line-numbers)
+  .is-live-preview
+  .HyperMD-codeblock-end
+  span:nth-child(2):before {
+  display: none;
 }
 
 body:not(.no-codeblock-line-numbers)
