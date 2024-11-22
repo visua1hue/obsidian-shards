@@ -16,8 +16,16 @@
   }
 }
 
+.omnisearch-input-container__buttons {
+  display: none;
+}
+
 .omnisearch-default-highlight {
-  color: var(--interactive-accent);
+  color: var(--accent-base-shiny);
+  text-decoration: underline;
+  text-decoration-color: #2c7c7c; /* based on hsl(180, 92%, 66%) */
+  text-decoration-thickness: 3px;
+  text-underline-offset: -1px;
 }
 
 .omnisearch-result__icon {
@@ -25,6 +33,7 @@
 }
 
 .omnisearch-result__body {
+  max-width: calc(var(--prompt-max-width) - 15vh);
   opacity: 0.25;
 }
 
@@ -42,32 +51,8 @@
   opacity: 0.5;
 }
 
-input.prompt-input:not(.is-active) {
-  border: unset !important;
-}
-
-input.prompt-input:focus {
-  border: unset !important;
-}
-
-input.prompt-input.is-active {
-  border: unset !important;
-}
-
-.modal-container .prompt .prompt-results {
-  padding: 0px 12px 0px 12px !important;
-}
-
-.modal-container .prompt .prompt-instructions {
-  display: none;
-}
-
-.suggestion-item {
-  white-space: unset !important;
-}
-
-.omnisearch-default-highlight {
-  color: var(--accent-base-shiny);
+.omnisearch-highlight {
+  font-weight: 500;
 }
 
 /* EXT PLUGIN :: Dataview */
