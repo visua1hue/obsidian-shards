@@ -1,6 +1,6 @@
 /*
    - HEADINGS :: Media Querys L1-6
-   - FORMATING :: Bold Text (inactive)
+   - FORMATING :: Bold Text
 */
 
 /* HEADINGS :: Media Querys L1-6 */
@@ -54,17 +54,20 @@
   }
 }
 
-/* FORMATING :: Bold Text (inactive) */
-/* strong,
+/* FORMATING :: Bold Text */
+strong,
 .cm-strong {
   color: var();
+  font-weight: 550;
 }
 
 .cm-line.HyperMD-quote .cm-quote.cm-strong {
   color: var();
+  font-weight: 550;
 }
 
 .cm-s-obsidian span.cm-formatting-strong,
 .cm-s-obsidian span.cm-strong {
   color: var();
-} */
+  font-weight: 550;
+}
