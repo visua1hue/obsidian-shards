@@ -11,6 +11,7 @@
   .HyperMD-list-line .cm-header-1 {
     font-size: 1.802em !important;
     font-weight: 700;
+    color: var(--accent-base-default);
   }
 
   h2,
@@ -19,6 +20,7 @@
   .HyperMD-list-line .cm-header-2 {
     font-size: 1.602em !important;
     font-weight: 700;
+    color: var(--accent-base-default);
   }
 
   h3,
@@ -27,6 +29,7 @@
   .HyperMD-list-line .cm-header-3 {
     font-size: 1.424em !important;
     font-weight: 700;
+    color: var(--accent-base-default);
   }
 
   h4,
@@ -35,6 +38,7 @@
   .HyperMD-list-line .cm-header-4 {
     font-size: 1.266em !important;
     font-weight: 700;
+    color: var(--accent-base-default);
   }
 
   h5,
@@ -43,6 +47,7 @@
   .HyperMD-list-line .cm-header-5 {
     font-size: 1.125em !important;
     font-weight: 700;
+    color: var(--accent-base-default);
   }
 
   h6,
@@ -51,23 +56,24 @@
   .HyperMD-list-line .cm-header-6 {
     font-size: 1em !important;
     font-weight: 700;
+    color: var(--accent-base-default);
   }
 }
 
 /* FORMATING :: Bold Text */
 strong,
 .cm-strong {
-  color: var();
+  color: var(--accent-base-default);
   font-weight: 550;
 }
 
 .cm-line.HyperMD-quote .cm-quote.cm-strong {
-  color: var();
+  color: var(--accent-base-default);
   font-weight: 550;
 }
 
 .cm-s-obsidian span.cm-formatting-strong,
 .cm-s-obsidian span.cm-strong {
-  color: var();
+  color: var(--accent-base-default);
   font-weight: 550;
 }
