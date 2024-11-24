@@ -628,6 +628,10 @@ body:not(.no-codeblock-line-numbers)
   padding-block-end: unset;
 }
 
+.cm-s-obsidian .HyperMD-codeblock {
+  font-weight: 500;
+}
+
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
   background-color: hsla(210, 10%, 4%, 0.25);
