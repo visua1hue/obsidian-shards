@@ -684,6 +684,10 @@ body:not(.no-codeblock-line-numbers)
 }
 
 /* TAB :: Empty State (New tab) */
+.workspace-tab-header[aria-label="No file"] {
+  visibility: hidden;
+}
+
 .workspace-tab-header[aria-label="New tab"] {
   visibility: hidden;
 }
