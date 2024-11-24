@@ -35,6 +35,8 @@ body:is(.theme-dark) {
   --tab-height: calc(var(--header-height) - 12px);
   --titlebar-background: var(--titlebar-background-focused);
   --titlebar-text-color-focused: var(--accent-base-dimmed);
+  --text-normal: var(--text-muted);
+  --text-muted: var(--accent-base-dimmed);
   --checkbox-radius: 25%;
   --list-marker-color-collapsed: hsl(0, 0%, 100%);
   --tab-outline-width: var(--divider-width);
