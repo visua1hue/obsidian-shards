@@ -44,16 +44,39 @@ body:is(.theme-dark) {
   --divider-color: hsl(233, 15%, 22%);
 
   /* GitHub Dark Contrast for AnuPpuccin */
-  /* --ctp-ext-base: 13, 17, 23;
+  --ctp-ext-base: 13, 17, 23;
   --ctp-ext-mantle: 1, 4, 9;
-  --ctp-ext-crust: 1, 4, 9; */
+  --ctp-ext-crust: 1, 4, 9;
 
-  /* Kanagawa for AnuPpuccin */
-  --ctp-ext-base: 22, 22, 29;
-  --ctp-ext-mantle: 31, 31, 40;
-  --ctp-ext-crust: 31, 31, 40;
+  --ctp-ext-lavender: 180, 190, 254;
+}
 
-  --ctp-custom-lavender: 180, 190, 254;
+body:is(.theme-light) {
+  --signature: "✦";
+
+  --accent-base-shiny: var(--accent-ext-shinyfocus);
+  --accent-ext-linear: hsl(234, 56%, 60%);
+  --accent-ext-obsidian: hsl(256, 92%, 76%);
+  --accent-ext-crystalteal: hsl(180, 92%, 66%);
+  --accent-ext-shinyfocus: hsl(184.26deg 78.77% 35.1%);
+
+  --header-height: 30px;
+  --tab-height: calc(var(--header-height) - 12px);
+  --titlebar-background: var(--titlebar-background-focused);
+  --titlebar-text-color-focused: var(--accent-base-dimmed);
+  --text-normal: hsl(230 25% 35%);
+  --text-muted: hsla(230, 25%, 35%, 0.4);
+  --checkbox-border-color: var(--text-muted);
+  --checkbox-radius: 25%;
+  --list-marker-color-collapsed: hsl(0, 0%, 100%);
+  --tab-outline-width: var(--divider-width);
+  --divider-width: 2px;
+  --divider-color: hsl(230 25% 92%);
+
+  /* Gamma for AnuPpuccin */
+  --ctp-ext-base: 245, 246, 249;
+  --ctp-ext-mantle: 239, 240, 245;
+  --ctp-ext-crust: 239, 240, 245;
 }
 
 /* COMMAND PALETTE :: Adjustments */
@@ -82,6 +105,7 @@ kbd {
   font-family: var(--font-interface);
   font-size: calc(var(--font-ui-smaller) - 2px);
   padding: 2px 6px;
+  border: 1px solid var(--divider-color);
 }
 
 .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
@@ -126,6 +150,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 
 .suggestion-highlight {
   font-weight: 500;
+  text-decoration: unset;
 }
 
 .suggestion-item.mod-complex .suggestion-highlight {
@@ -160,9 +185,9 @@ input.prompt-input {
   background-color: unset;
 }
 
-.modal-container .prompt {
+/* .modal-container .prompt {
   background-color: rgb(var(--ctp-ext-base));
-}
+} */
 
 .modal-bg {
   background-color: rgba(var(--ctp-mantle), 0.25);
@@ -280,7 +305,7 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   width: 22px;
   background-color: hsla(240, 23%, 9%, 0.302);
   margin-left: 4px;
-  border: 2px solid hsl(230, 25%, 67%);
+  border: 2px solid var(--divider-color);
   transition-duration: 300ms;
   cursor: var(--cursor-link);
   border-radius: 12px;
@@ -327,7 +352,7 @@ body .checkbox-container.mod-small {
 }
 
 .nav-file-title {
-  color: var(--accent-base-dimmed);
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -340,7 +365,7 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
   border-color: transparent !important;
-  color: var(--nav-item-color) !important;
+  color: var(--text-normal) !important;
 }
 
 body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
@@ -357,7 +382,7 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 }
 
 .nav-folder-title:is(
-    [data-path$="+Ref" i],
+    /* [data-path$="+Ref" i], */
     [data-path="Attachments" i],
     [data-path="Assets" i]
   ) {
@@ -366,7 +391,7 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 }
 
 .nav-folder-title:is(
-    [data-path$="+Ref" i],
+    /* [data-path$="+Ref" i], */
     [data-path="Attachments" i],
     [data-path="Assets" i]
   ):hover {
@@ -383,8 +408,27 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 body:not(.is-mobile)
   .workspace-split.mod-left-split
   .workspace-sidedock-vault-profile {
+  align-items: center;
   height: var(--header-height);
-  padding: unset;
+  flex: 0 0 auto;
+  gap: var(--size-4-1);
+  justify-content: space-between;
+  padding: var(--size-4-2) var(--size-4-2);
+  order: 1;
+}
+
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile
+  .workspace-drawer-vault-switcher {
+  color: var(--text-muted);
+}
+
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile
+  .workspace-drawer-vault-switcher-icon {
+  color: var(--text-muted);
 }
 
 body:not(.is-mobile)
@@ -393,13 +437,6 @@ body:not(.is-mobile)
   .workspace-drawer-vault-actions:not(:hover) {
   transition: linear 0.3s;
   opacity: 0;
-  color: var(--nav-item-color);
-}
-
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-switcher {
   color: var(--nav-item-color);
 }
 
@@ -481,8 +518,7 @@ body:not(.no-active-line-highlight, .active-line-background)
   left: -1.125em;
   height: 100%;
   content: "";
-  /* border-left: 3px solid hsl(230 15% 40%); */
-  border-left: 3px solid var(--accent-base-shiny);
+  border-left: 3px solid var(--divider-color);
 }
 
 /* BULLET LIST ELEMENT :: Collapsed list bullets animation */
@@ -723,6 +759,12 @@ body:not(.no-codeblock-line-numbers)
   border-bottom: unset;
 }
 
+body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
+  .mod-top
+  .workspace-tab-header-container {
+  background-color: unset;
+}
+
 .mod-linux .titlebar-button,
 .mod-windows .titlebar-button {
   background-color: var(--background-primary);
@@ -747,7 +789,30 @@ body:not(.no-codeblock-line-numbers)
 .mod-right-split
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-icon {
-  color: var(--accent-base-default) !important;
+  color: unset !important;
+}
+
+.anp-alternate-tab-toggle
+  .mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner,
+.anp-alternate-tab-toggle
+  .mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title,
+.anp-alternate-tab-toggle
+  .mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-close-button,
+.anp-alternate-tab-toggle
+  .mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon {
+  color: var(--text-normal) !important;
 }
 
 .is-active .workspace-tab-header-inner-title {

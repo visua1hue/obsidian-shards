@@ -63,17 +63,14 @@
 /* FORMATING :: Bold Text */
 strong,
 .cm-strong {
-  color: var(--accent-base-default);
   font-weight: 550;
 }
 
 .cm-line.HyperMD-quote .cm-quote.cm-strong {
-  color: var(--accent-base-default);
   font-weight: 550;
 }
 
 .cm-s-obsidian span.cm-formatting-strong,
 .cm-s-obsidian span.cm-strong {
-  color: var(--accent-base-default);
   font-weight: 550;
 }
