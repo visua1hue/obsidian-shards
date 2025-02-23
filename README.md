@@ -1,7 +1,8 @@
-# Obsidian Shards
-Obsidian Shards is a **personal collection** of modular CSS snippets meticulously crafted to optimize the visual appearance and functionality of my Obsidian interface. Each "shard" is designed to enhance specific UI elements, creating a cohesive and tailored setup that aligns perfectly with my workflow and preferences.
+![image](https://github.com/syke9p3/Syke-VTuber-Icons/blob/main/Obsidian/Obsidian.png?raw=true)
 
-Inspired by the [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus) theme, these snippets focus on creating a minimalistic and clean user interface while maintaining essential functionality. These snippets are specifically adjusted to complement and extend [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) theme.
+**Obsidian Shards** is a **personal collection** of modular CSS snippets meticulously crafted to optimize the visual appearance and functionality of my Obsidian interface. Each "shard" is designed to enhance specific UI elements, creating a cohesive and tailored setup that aligns perfectly with my workflow and preferences.
+
+Inspired by the [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus) theme, these snippets focus on creating a minimalistic and clean user interface while maintaining essential functionality. Currently adjusted to complement and extend [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) theme.
 
 ## Features
 This collection is currently optimized for dark mode, providing a sleek and visually consistent experience. For the best results, I recommend using [Recursive Mono](https://www.recursive.design/) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/), which complement the design and enhance readability.
