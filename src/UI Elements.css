@@ -185,14 +185,6 @@ input.prompt-input {
   background-color: unset;
 }
 
-/* .modal-container .prompt {
-  background-color: rgb(var(--ctp-ext-base));
-} */
-
-.modal-bg {
-  background-color: rgba(var(--ctp-mantle), 0.25);
-}
-
 /* CORE UI :: Hider CSS Modifications */
 .workspace-ribbon.mod-left {
   display: none; /* mod left */
@@ -296,6 +288,10 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 }
 
 /* SETTINGS :: Toggles */
+.checkbox-container {
+  background-color: unset;
+}
+
 .checkbox-container::after {
   display: none;
 }
@@ -303,7 +299,7 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 .checkbox-container.checkbox-container {
   height: 22px;
   width: 22px;
-  background-color: hsla(240, 23%, 9%, 0.302);
+  /* background-color: hsla(240, 23%, 9%, 0.302); */
   margin-left: 4px;
   border: 2px solid var(--divider-color);
   transition-duration: 300ms;
@@ -318,7 +314,7 @@ body .checkbox-container.mod-small {
 
 .checkbox-container.is-enabled.is-enabled {
   background-color: var(--interactive-accent) !important;
-  border-color: transparent;
+  /* border-color: transparent; */
 }
 
 .checkbox-container.checkbox-container:hover {
@@ -619,17 +615,6 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
   counter-reset: codeblock-line-numbers;
 }
 
-/* body:not(.no-codeblock-line-numbers)
-  .is-live-preview
-  .HyperMD-codeblock-end
-  span:nth-child(2):before {
-  content: " ";
-  background-color: transparent !important;
-  border-bottom-left-radius: var(--radius-s);
-  margin-left: -4px;
-  padding: 2px 0.85em;
-} */
-
 body:not(.no-codeblock-line-numbers)
   .is-live-preview
   .HyperMD-codeblock-end
@@ -646,7 +631,7 @@ body:not(.no-codeblock-line-numbers)
   text-align: right;
   content: counter(codeblock-line-numbers);
   counter-increment: codeblock-line-numbers;
-  background-color: rgb(var(--ctp-ext-base));
+  /* background-color: rgb(var(--ctp-ext-base)); */
   width: 1.7em;
   height: 100%;
   padding-right: 1.4em;
