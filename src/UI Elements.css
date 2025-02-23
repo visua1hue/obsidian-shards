@@ -774,7 +774,7 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 .mod-right-split
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-icon {
-  color: unset !important;
+  color: var(--text-normal) !important;
 }
 
 .anp-alternate-tab-toggle
