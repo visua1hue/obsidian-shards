@@ -34,7 +34,7 @@
 
 .omnisearch-result__body {
   max-width: calc(var(--prompt-max-width) - 15vh);
-  opacity: 0.25;
+  margin-inline-start: unset;
 }
 
 .omnisearch-result__title svg.svg-icon {
@@ -46,8 +46,6 @@
 }
 
 .omnisearch-result__folder-path {
-  font-family: var(--font-monospace);
-  font-size: 0.5rem;
   opacity: 0.5;
 }
 
