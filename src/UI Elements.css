@@ -580,10 +580,10 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  animation: colorChange 0.5s ease forwards;
+  animation: fucusOutline 0.5s ease forwards;
 }
 
-@keyframes colorChange {
+@keyframes fucusOutline {
   from {
     background-color: transparent;
   }
@@ -594,8 +594,12 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:hover {
-  border: 1.25px solid var(--checkbox-border-color);
-  outline: 0.75px solid var(--checkbox-border-color);
+  outline: 1px solid var(--checkbox-border-color);
+}
+
+input[type="checkbox"]:checked:hover {
+  outline: 1px solid var(--checkbox-border-color);
+  /* outline-offset: 1px; */
 }
 
 /* CODE BLOCK ELEMENT :: Adjustments */
