@@ -657,15 +657,11 @@ body:not(.no-codeblock-line-numbers)
 
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
-  background-color: hsla(210, 10%, 4%, 0.25);
   --callout-icon: transparent;
   --callout-color: transparent;
-}
-
-.callout[data-callout="mod"] {
-  --callout-icon: zap;
-  --callout-color: var(--callout-info);
-  background-color: rgba(var(--callout-color), 0.1);
+  border-width: 2px;
+  border-color: var(--divider-color);
+  background-color: var(--background-secondary-alt);
 }
 
 /* HIGHLIGHTED TEXT :: Adjustments */
