@@ -2,6 +2,7 @@
    - COMMAND PALETTE :: Adjustments
    - CORE UI :: Hider CSS Modifications
    - SETTINGS :: Vertical Nav
+   - SETTINGS :: Hotkeys
    - SETTINGS :: Ext Plugins Highlight
    - SETTINGS :: Toggles
    - FEXP :: Adjustments
@@ -227,9 +228,14 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 }
 
 /* SETTINGS :: Vertical Nav */
+.vertical-tab-content {
+  padding: var(--size-4-3) var(--size-4-5);
+}
+
 .modal.mod-settings .vertical-tab-header {
   min-width: 200px;
   border-inline-end: 2px solid var(--divider-color);
+  padding: 0 var(--size-4-3);
 }
 
 .vertical-tab-header-group-title {
@@ -262,16 +268,16 @@ body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
 body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   background-color: unset;
   position: relative;
-  left: -6px;
+  left: -4px;
 }
 
 .vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active)
   .vertical-tab-nav-item.is-active::before {
   position: relative;
   vertical-align: baseline;
-  content: "·";
+  content: "|";
   font-weight: 700;
-  left: -4px;
+  left: -5px;
 }
 
 .vertical-tab-nav-item {
@@ -279,9 +285,22 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   overflow: scroll;
 }
 
+/* SETTINGS :: Hotkeys */
+.setting-hotkey {
+  background-color: var(--code-background);
+  font-family: var(--font-interface);
+  font-size: calc(var(--font-ui-smaller) - 2px);
+  padding: 2px 6px;
+  border: 1px solid var(--divider-color);
+}
+
 /* SETTINGS :: Ext Plugins Highlight */
 .installed-plugins-container .setting-item-name {
   color: var(--interactive-accent);
+}
+
+.setting-item-heading .setting-item-info {
+  text-transform: uppercase;
 }
 
 /* SETTINGS :: Toggles */
