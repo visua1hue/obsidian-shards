@@ -24,31 +24,28 @@
 body:is(.theme-dark) {
   --signature: "✦";
 
-  --accent-base-default: hsl(227, 70%, 87%);
-  --accent-base-dimmed: hsl(229, 20%, 63%);
   --accent-base-shiny: var(--accent-ext-crystalteal);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
+  --accent-ext-shinyfocus: hsl(184 78% 35%);
 
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
   --titlebar-background: var(--titlebar-background-focused);
   --titlebar-text-color-focused: var(--accent-base-dimmed);
-  --text-normal: var(--text-muted);
-  --text-muted: var(--accent-base-dimmed);
+  --text-normal: hsl(227, 70%, 87%);
+  --text-muted: hsl(229, 20%, 63%);
   --checkbox-radius: 25%;
   --list-marker-color-collapsed: hsl(0, 0%, 100%);
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
   --divider-color: hsl(233, 15%, 22%);
 
-  /* GitHub Dark Contrast for AnuPpuccin */
+  /* GitHub Dark Contrast (extend AnuPpuccin) */
   --ctp-ext-base: 13, 17, 23;
   --ctp-ext-mantle: 1, 4, 9;
   --ctp-ext-crust: 1, 4, 9;
-
-  --ctp-ext-lavender: 180, 190, 254;
 }
 
 body:is(.theme-light) {
@@ -58,7 +55,7 @@ body:is(.theme-light) {
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
-  --accent-ext-shinyfocus: hsl(184.26deg 78.77% 35.1%);
+  --accent-ext-shinyfocus: hsl(184 78% 35%);
 
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
@@ -73,7 +70,7 @@ body:is(.theme-light) {
   --divider-width: 2px;
   --divider-color: hsl(230 25% 92%);
 
-  /* Gamma for AnuPpuccin */
+  /* Gamma (extend AnuPpuccin) */
   --ctp-ext-base: 245, 246, 249;
   --ctp-ext-mantle: 239, 240, 245;
   --ctp-ext-crust: 239, 240, 245;
@@ -174,7 +171,7 @@ input.prompt-input:not(.is-active) {
 }
 
 .modal-container .prompt .prompt-results {
-  padding: var(--size-4-3);
+  padding: 0 var(--size-4-3);
 }
 
 .modal-container .prompt .prompt-instructions {
@@ -657,11 +654,15 @@ body:not(.no-codeblock-line-numbers)
 
 /* CALLOUT ELEMENT :: Unique Callouts */
 .callout[data-callout="blank"] {
+  background-color: hsla(210, 10%, 4%, 0.25);
   --callout-icon: transparent;
   --callout-color: transparent;
-  border-width: 2px;
-  border-color: var(--divider-color);
-  background-color: var(--background-secondary-alt);
+}
+
+.callout[data-callout="mod"] {
+  --callout-icon: zap;
+  --callout-color: var(--callout-info);
+  background-color: rgba(var(--callout-color), 0.1);
 }
 
 /* HIGHLIGHTED TEXT :: Adjustments */
