@@ -829,3 +829,8 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   .workspace-tab-header-inner-title {
   opacity: 0.4;
 }
+
+.workspace-tab-header-status-icon,
+.workspace-tab-header-inner-close-button {
+  transform: scale(0.75);
+}
