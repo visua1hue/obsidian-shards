@@ -303,6 +303,10 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   text-transform: uppercase;
 }
 
+.setting-item {
+  border-top: 1px solid var(--divider-color);
+}
+
 /* SETTINGS :: Toggles */
 .checkbox-container {
   background-color: unset;
