@@ -66,7 +66,7 @@ body:is(.theme-light) {
   --text-muted: hsla(230, 25%, 35%, 0.4);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
-  --list-marker-color-collapsed: hsl(0, 0%, 100%);
+  --list-marker-color-collapsed: var(--text-faint);
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
   --divider-color: hsl(230 25% 92%);
@@ -550,23 +550,27 @@ body:not(.no-active-line-highlight, .active-line-background)
 }
 
 @keyframes outline-pulse-v2 {
-  75%,
-  to {
+  0%,
+  100% {
     outline: 1px solid var(--list-marker-color-collapsed);
-    transform: scale(1);
-    opacity: 0.75;
+    opacity: 0.5;
   }
 
   50% {
-    outline: 3px solid hsl(254, 13%, 81%, 0.5);
-    opacity: 0.5;
+    outline: 2px solid hsla(254, 13%, 81%, 0.4);
+    opacity: 0.75;
   }
 }
 
 li.is-collapsed .list-bullet:after,
 .is-collapsed ~ .cm-formatting-list .list-bullet:after {
-  animation: outline-pulse-v2 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-  transition: opacity 300ms ease-in-out;
+  animation: outline-pulse-v2 2s ease-in-out infinite;
+  border-radius: 50%;
+  will-change: outline, opacity;
+}
+
+.list-bullet:after {
+  opacity: 0.75;
 }
 
 .markdown-source-view.mod-cm6 .cm-indent::before {
@@ -676,17 +680,10 @@ body:not(.no-codeblock-line-numbers)
 }
 
 /* CALLOUT ELEMENT :: Unique Callouts */
-.callout[data-callout="blank"] {
-  background-color: hsla(210, 10%, 4%, 0.25);
+/* .callout[data-callout="blank"] {
   --callout-icon: transparent;
-  --callout-color: transparent;
-}
-
-.callout[data-callout="mod"] {
-  --callout-icon: zap;
-  --callout-color: var(--callout-info);
-  background-color: rgba(var(--callout-color), 0.1);
-}
+  background-color: rgb(243 243 238);
+} */
 
 /* HIGHLIGHTED TEXT :: Adjustments */
 .cm-s-obsidian span.cm-formatting-highlight,
