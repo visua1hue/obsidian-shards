@@ -1,7 +1,8 @@
 /*
    - COMMAND PALETTE :: Adjustments
    - CORE UI :: Hider CSS Modifications
-   - SETTINGS :: Vertical Nav
+   - SETTINGS :: Vertical Nav Header
+   - SETTINGS :: Vertical Nav Container
    - SETTINGS :: Hotkeys
    - SETTINGS :: Ext Plugins Highlight
    - SETTINGS :: Toggles
@@ -227,7 +228,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   display: none;
 }
 
-/* SETTINGS :: Vertical Nav */
+/* SETTINGS :: Vertical Nav Header */
 .vertical-tab-content {
   padding: var(--size-4-3) var(--size-4-5);
 }
@@ -289,6 +290,29 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   overflow: scroll;
 }
 
+/* SETTINGS :: Vertical Nav Container */
+.setting-item {
+  border-top: 1px solid var(--divider-color);
+}
+
+.setting-item:first-child {
+  border-top: none;
+}
+
+.setting-item + div > .setting-item-heading,
+.setting-item + .setting-item-heading {
+  margin-top: 0.75em;
+  border-top: none;
+}
+
+.setting-item-heading .setting-item-info {
+  text-transform: uppercase;
+}
+
+body:not(.native-scrollbars) .modal-close-button {
+  display: none;
+}
+
 /* SETTINGS :: Hotkeys */
 .setting-hotkey {
   background-color: var(--code-background);
@@ -301,14 +325,6 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 /* SETTINGS :: Ext Plugins Highlight */
 .installed-plugins-container .setting-item-name {
   color: var(--interactive-accent);
-}
-
-.setting-item-heading .setting-item-info {
-  text-transform: uppercase;
-}
-
-.setting-item {
-  border-top: 1px solid var(--divider-color);
 }
 
 /* SETTINGS :: Toggles */
