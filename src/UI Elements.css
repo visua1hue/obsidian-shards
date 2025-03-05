@@ -6,6 +6,9 @@
    - SETTINGS :: Hotkeys
    - SETTINGS :: Ext Plugins Highlight
    - SETTINGS :: Toggles
+   - SETTINGS :: Button Elements
+   - SETTINGS :: Select Elements
+   - SETTINGS :: Input Elements
    - FEXP :: Adjustments
    - FEXP :: Prevent filename trim while renaming
    - SIDEDOCK :: Vault Profiles
@@ -366,6 +369,52 @@ body .checkbox-container.mod-small {
   background-color: var(--interactive-accent) !important;
   border-color: transparent;
 }
+
+/* SETTINGS :: Button Elements */
+button:not(.mod-cta) {
+  background-color: hsla(hsl(var(--background-secondary)), 50%);
+  color: var(--text-faint);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:not(.mod-cta):hover {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+/* SETTINGS :: Select Elements */
+.setting-item-control select {
+  background-color: hsla(hsl(var(--background-secondary)), 50%);
+  color: var(--text-faint);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.setting-item-control select:hover {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+select:focus,
+.dropdown:focus {
+  box-shadow: 0 0 0px 2px var(--background-modifier-border);
+  outline: none;
+  border: none;
+}
+
+/* SETTINGS :: Input Elements */
+.search-input-container input:focus {
+  box-shadow: 0 0 0px 2px var(--background-modifier-border);
+  outline: none;
+  border: none;
+}
+
+/* .search-input-container:before {
+  display: none;
+} */
+
+/* .search-input-container input {
+  padding-inline-start: 8px;
+} */
 
 /* FEXP :: Adjustments */
 @media (hover: hover) {
