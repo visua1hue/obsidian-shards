@@ -264,8 +264,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
-  color: var(--accent-base-dimmed);
-  opacity: 0.5;
+  color: var(--text-muted);
 }
 
 body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
