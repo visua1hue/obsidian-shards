@@ -789,10 +789,10 @@ body:not(.no-codeblock-line-numbers)
 } */
 
 /* HIGHLIGHTED TEXT :: Adjustments */
-.cm-s-obsidian span.cm-formatting-highlight,
+/* .cm-s-obsidian span.cm-formatting-highlight,
 .cm-s-obsidian span.cm-highlight {
   background-color: var(--accent-ext-linear);
-}
+} */
 
 /* EXTERNAL LINK :: Unicode symbol */
 .external-link {
