@@ -82,14 +82,45 @@ body:is(.theme-light) {
 }
 
 /* COMMAND PALETTE :: Adjustments */
-.vertical-tab-header-group-title {
-  text-align: left;
-  margin-left: 10px;
+.modal-bg {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-cover);
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+  pointer-events: none;
 }
 
 .prompt {
+  box-shadow: var(--shadow-l);
   border-radius: 13px;
   border: var(--divider-width) solid var(--divider-color);
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(-2px);
+  animation: blurFadeIn 0.15s ease-out forwards;
+  will-change: opacity, filter, transform;
+}
+
+.modal-container:hover .modal-bg,
+.modal-container:focus-within .modal-bg {
+  opacity: 1;
+}
+
+@keyframes blurFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
 }
 
 .modal {
