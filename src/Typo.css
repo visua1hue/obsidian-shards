@@ -11,7 +11,7 @@
   .HyperMD-list-line .cm-header-1 {
     font-size: 1.802em !important;
     font-weight: 700;
-    color: var(--accent-base-default);
+    font-family: "Glyseric", var(--font-interface-override), sans-serif;
   }
 
   h2,
@@ -20,7 +20,7 @@
   .HyperMD-list-line .cm-header-2 {
     font-size: 1.602em !important;
     font-weight: 700;
-    color: var(--accent-base-default);
+    font-family: "Glyseric", var(--font-interface-override), sans-serif;
   }
 
   h3,
@@ -29,7 +29,7 @@
   .HyperMD-list-line .cm-header-3 {
     font-size: 1.424em !important;
     font-weight: 700;
-    color: var(--accent-base-default);
+    font-family: "Glyseric", var(--font-interface-override), sans-serif;
   }
 
   h4,
@@ -38,7 +38,7 @@
   .HyperMD-list-line .cm-header-4 {
     font-size: 1.266em !important;
     font-weight: 700;
-    color: var(--accent-base-default);
+    font-family: "Glyseric", var(--font-interface-override), sans-serif;
   }
 
   h5,
@@ -47,7 +47,7 @@
   .HyperMD-list-line .cm-header-5 {
     font-size: 1.125em !important;
     font-weight: 700;
-    color: var(--accent-base-default);
+    font-family: "Glyseric", var(--font-interface-override), sans-serif;
   }
 
   h6,
@@ -56,7 +56,7 @@
   .HyperMD-list-line .cm-header-6 {
     font-size: 1em !important;
     font-weight: 700;
-    color: var(--accent-base-default);
+    font-family: "Glyseric", var(--font-interface-override), sans-serif;
   }
 }
 
