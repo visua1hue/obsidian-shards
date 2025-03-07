@@ -1,5 +1,6 @@
 /*
    - COMMAND PALETTE :: Adjustments
+   - BOOKMARKS :: Adjustments
    - CORE UI :: Hider CSS Modifications
    - SETTINGS :: Vertical Nav Header
    - SETTINGS :: Vertical Nav Container
@@ -216,6 +217,23 @@ input.prompt-input:not(.is-active) {
 
 input.prompt-input {
   background-color: unset;
+}
+
+/* BOOKMARKS :: Adjustments */
+.workspace-leaf-content[data-type="bookmarks"] .view-content {
+  padding: 0;
+}
+
+/* body:not(.show-bookmark-icons) .bookmark.tree-item-self {
+    padding-left: 10px;
+} */
+
+body:not(.show-bookmark-icons) .bookmark.tree-item-self .tree-item-icon {
+  display: none;
+}
+
+.tree-item-self.bookmark {
+  border-radius: 0;
 }
 
 /* CORE UI :: Hider CSS Modifications */
