@@ -23,6 +23,7 @@
    - EXTERNAL LINK :: Unicode symbol
    - INTERNAL LINK :: Opacity
    - TAB :: Empty State (New tab)
+   - TAB :: Workspace Mod Left
    - TAB :: Minimal theme layout add-on
 */
 
@@ -872,6 +873,34 @@ body:not(.no-codeblock-line-numbers)
   font-size: 4rem;
   font-weight: 600;
   color: var(--accent-base-default);
+}
+
+/* TAB :: Workspace Mod Left */
+.workspace-tab-header-inner .workspace-tab-header-inner-icon {
+  color: var(--text-normal);
+  opacity: 0.25;
+}
+
+.workspace-tab-header-inner:hover .workspace-tab-header-inner-icon {
+  color: var(--text-normal);
+}
+
+.mod-left-split .workspace-tab-header.has-active-menu:hover,
+.mod-right-split .workspace-tab-header.has-active-menu:hover,
+.mod-left-split .workspace-tab-header.is-active:hover,
+.mod-right-split .workspace-tab-header.is-active:hover {
+  color: var(--text-normal);
+}
+
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background-color: unset;
+}
+
+.mod-left-split .workspace-tab-header.has-active-menu:hover,
+.mod-right-split .workspace-tab-header.has-active-menu:hover,
+.mod-left-split .workspace-tab-header.is-active:hover,
+.mod-right-split .workspace-tab-header.is-active:hover {
+  background-color: unset;
 }
 
 /* TAB :: Minimal theme layout add-on */
