@@ -340,6 +340,8 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
 .vertical-tab-nav-item {
   white-space: nowrap;
   overflow: scroll;
+  padding: var(--size-2-1) var(--size-4-2);
+  font-size: var(--font-ui-medium);
 }
 
 /* SETTINGS :: Vertical Nav Container */
