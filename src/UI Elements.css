@@ -129,6 +129,13 @@ body:is(.theme-light) {
   border: var(--divider-width) solid var(--divider-color);
 }
 
+.modal-container
+  .prompt
+  .suggestion-item.mod-complex.is-selected
+  .suggestion-hotkey {
+  opacity: 1;
+}
+
 .modal-container .prompt .suggestion-item.mod-complex .suggestion-hotkey {
   font-size: calc(var(--font-ui-smaller) - 2px);
   text-transform: uppercase;
@@ -176,11 +183,15 @@ body:not(.is-mobile) .prompt .suggestion-item {
   white-space: unset !important;
 }
 
+.suggestion-item.is-selected {
+  background-color: hsl(from var(--divider-color) h s l / 0.5);
+}
+
 .suggestion-item,
 .suggestion-empty {
   font-size: var(--font-ui-medium);
   border-radius: 10px;
-  margin-bottom: 3px;
+  margin-bottom: unset !important;
 }
 
 .suggestion-highlight {
