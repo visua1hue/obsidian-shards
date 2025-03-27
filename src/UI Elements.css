@@ -528,6 +528,15 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   box-shadow: unset;
 }
 
+.tree-item-children {
+  border-inline-start: var(--nav-indentation-guide-width) solid
+    rgba(67, 74, 112, 0.4);
+}
+
+.collapse-icon svg.svg-icon {
+  color: unset;
+}
+
 .nav-folder-title:is(
     /* [data-path$="+Ref" i], */
     [data-path="Attachments" i],
