@@ -275,7 +275,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   height: 0px; /* native-scrollbars */
 }
 
-.tooltip {
+.tooltip:not(.mod-top) {
   display: none !important;
 }
 
