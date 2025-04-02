@@ -163,6 +163,17 @@ kbd {
   display: none; /* Remove ':' after prefix */
 }
 
+.suggestion-item.mod-complex .suggestion-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: clamp(200px, calc(20vw + 120px), 500px);
+}
+
+input.prompt-input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
 body:not(.is-mobile) .prompt .suggestion-item {
   position: relative;
 }
