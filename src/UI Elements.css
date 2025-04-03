@@ -193,9 +193,11 @@ body:not(.is-mobile) .prompt .suggestion-item {
   padding-left: 12px;
   white-space: pre-wrap;
   white-space: unset !important;
+  color: var(--text-muted);
 }
 
 .suggestion-item.is-selected {
+  color: var(--text-normal);
   background-color: hsl(from var(--divider-color) h s l / 0.5);
 }
 
@@ -212,7 +214,13 @@ body:not(.is-mobile) .prompt .suggestion-item {
 }
 
 .suggestion-item.mod-complex .suggestion-highlight {
+  font-weight: unset;
+}
+
+.suggestion-item.mod-complex
+  .suggestion-highlight:not(.suggestion-prefix):not(.suggestion-prefix *) {
   color: var(--accent-base-shiny);
+  font-weight: 500;
 }
 
 .prompt-input-container {
@@ -231,8 +239,14 @@ input.prompt-input:not(.is-active) {
   border: unset !important;
 }
 
-.modal-container .prompt .prompt-results {
+.modal-container .omnisearch-modal.prompt .prompt-results {
   padding: 0 var(--size-4-3);
+}
+
+.suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(
+    :has(.suggestion-highlight)
+  ) {
+  display: none; /* Hide all non-pinned commands EXCEPT search results */
 }
 
 .modal-container .prompt .prompt-instructions {
