@@ -370,7 +370,7 @@ body:not(.colorful-active) .vertical-tab-nav-item.is-active {
   left: -6px;
   display: inline-block;
   line-height: 0;
-  transform: translateY(-1px);
+  transform: translateY(-1.5px);
   vertical-align: middle;
 }
 
