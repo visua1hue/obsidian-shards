@@ -10,8 +10,8 @@
   .HyperMD-header-1,
   .HyperMD-list-line .cm-header-1 {
     font-size: 1.802em !important;
-    font-weight: 700;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-weight: 600;
+    font-family: "Inter", var(--font-interface-override), sans-serif;
   }
 
   h2,
@@ -19,8 +19,8 @@
   .HyperMD-header-2,
   .HyperMD-list-line .cm-header-2 {
     font-size: 1.602em !important;
-    font-weight: 700;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-weight: 600;
+    font-family: "Inter", var(--font-interface-override), sans-serif;
   }
 
   h3,
@@ -28,8 +28,9 @@
   .HyperMD-header-3,
   .HyperMD-list-line .cm-header-3 {
     font-size: 1.424em !important;
-    font-weight: 700;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-weight: 600;
+    font-family: "Inter", var(--font-interface-override), sans-serif;
+    color: var(--interactive-accent);
   }
 
   h4,
@@ -37,8 +38,9 @@
   .HyperMD-header-4,
   .HyperMD-list-line .cm-header-4 {
     font-size: 1.266em !important;
-    font-weight: 700;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-weight: 600;
+    font-family: "Inter", var(--font-interface-override), sans-serif;
+    color: var(--interactive-accent);
   }
 
   h5,
@@ -46,8 +48,9 @@
   .HyperMD-header-5,
   .HyperMD-list-line .cm-header-5 {
     font-size: 1.125em !important;
-    font-weight: 700;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-weight: 600;
+    font-family: "Inter", var(--font-interface-override), sans-serif;
+    color: var(--interactive-accent);
   }
 
   h6,
@@ -55,8 +58,9 @@
   .HyperMD-header-6,
   .HyperMD-list-line .cm-header-6 {
     font-size: 1em !important;
-    font-weight: 700;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-weight: 600;
+    font-family: "Inter", var(--font-interface-override), sans-serif;
+    color: var(--interactive-accent);
   }
 }
 
