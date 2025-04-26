@@ -1,8 +1,15 @@
 /*
+   - CORE PLUGIN :: Search
    - EXT PLUGIN :: List Callouts
    - EXT PLUGIN :: OmniSearch
    - EXT PLUGIN :: Dataview
 */
+
+/* EXT PLUGIN :: List Callouts */
+.popover,
+.suggestion-container {
+  display: none;
+}
 
 /* EXT PLUGIN :: List Callouts */
 .lc-list-bg {
@@ -23,7 +30,7 @@
 .omnisearch-default-highlight {
   color: var(--accent-base-shiny);
   text-decoration: underline;
-  text-decoration-color: #2c7c7c; /* based on hsl(180, 92%, 66%) */
+  text-decoration-color: var(--accent-ext-shinyfocus);
   text-decoration-thickness: 3px;
   text-underline-offset: -1px;
 }
