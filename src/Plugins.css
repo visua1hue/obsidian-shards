@@ -6,12 +6,6 @@
 */
 
 /* EXT PLUGIN :: List Callouts */
-.popover,
-.suggestion-container {
-  display: none;
-}
-
-/* EXT PLUGIN :: List Callouts */
 .lc-list-bg {
   left: calc(-0 * var(--lc-bg-left));
 }
