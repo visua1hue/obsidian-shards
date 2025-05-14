@@ -11,7 +11,7 @@
   .HyperMD-list-line .cm-header-1 {
     font-size: 1.802em !important;
     font-weight: 600;
-    font-family: "Inter", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
   }
 
   h2,
@@ -20,7 +20,7 @@
   .HyperMD-list-line .cm-header-2 {
     font-size: 1.602em !important;
     font-weight: 600;
-    font-family: "Inter", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
   }
 
   h3,
@@ -29,7 +29,7 @@
   .HyperMD-list-line .cm-header-3 {
     font-size: 1.424em !important;
     font-weight: 600;
-    font-family: "Inter", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
     color: var(--interactive-accent);
   }
 
@@ -39,7 +39,7 @@
   .HyperMD-list-line .cm-header-4 {
     font-size: 1.266em !important;
     font-weight: 600;
-    font-family: "Inter", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
     color: var(--interactive-accent);
   }
 
@@ -49,7 +49,7 @@
   .HyperMD-list-line .cm-header-5 {
     font-size: 1.125em !important;
     font-weight: 600;
-    font-family: "Inter", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
     color: var(--interactive-accent);
   }
 
@@ -59,7 +59,7 @@
   .HyperMD-list-line .cm-header-6 {
     font-size: 1em !important;
     font-weight: 600;
-    font-family: "Inter", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
     color: var(--interactive-accent);
   }
 }
