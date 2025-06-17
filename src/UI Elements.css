@@ -888,10 +888,10 @@ body:not(.no-codeblock-line-numbers)
 }
 
 /* CALLOUT ELEMENT :: Unique Callouts */
-/* .callout[data-callout="blank"] {
+.callout[data-callout="blank"] {
   --callout-icon: transparent;
-  background-color: rgb(243 243 238);
-} */
+  background-color: rgba(217, 217, 208, 0.125);
+}
 
 /* HIGHLIGHTED TEXT :: Adjustments */
 /* .cm-s-obsidian span.cm-formatting-highlight,
