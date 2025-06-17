@@ -555,8 +555,11 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 }
 
 .tree-item-children {
-  border-inline-start: var(--nav-indentation-guide-width) solid
-    rgba(67, 74, 112, 0.4);
+  margin-inline-start: calc(
+    var(--nav-item-children-margin-start, var(--nav-item-children-margin-left)) -
+      1px
+  );
+  border-inline-start: 2px solid var(--indentation-guide-color);
 }
 
 .collapse-icon svg.svg-icon {
@@ -783,6 +786,11 @@ li.is-collapsed .list-bullet:after,
 
 .markdown-source-view.mod-cm6 .cm-indent::before {
   border-inline-end: 2px solid var(--indentation-guide-color); /* adjusted indentation line */
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .cm-indent::before {
+  --indentation-guide-editing-indent: 0.9em;
+  margin-inline-start: var(--indentation-guide-editing-indent);
 }
 
 /* CHECKBOX INPUT ELEMENT :: Adjustments */
