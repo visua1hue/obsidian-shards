@@ -787,7 +787,7 @@ li.is-collapsed .list-bullet:after,
 
 /* CHECKBOX INPUT ELEMENT :: Adjustments */
 input[type="checkbox"] {
-  border: 1.5px solid var(--checkbox-border-color);
+  border: 1px solid var(--checkbox-border-color);
   transition: background-color 0.3s ease;
 }
 
@@ -805,14 +805,13 @@ input[type="checkbox"]:checked {
   }
 }
 
-input[type="checkbox"]:hover {
+/* input[type="checkbox"]:hover {
   outline: 1px solid var(--checkbox-border-color);
 }
 
 input[type="checkbox"]:checked:hover {
   outline: 1px solid var(--checkbox-border-color);
-  /* outline-offset: 1px; */
-}
+} */
 
 /* CODE BLOCK ELEMENT :: Adjustments */
 body:not(.no-codeblock-line-numbers)
