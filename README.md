@@ -5,7 +5,7 @@
 Inspired by the [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus) theme, these snippets focus on creating a minimalistic and clean user interface while maintaining essential functionality. Currently adjusted to complement and extend [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) theme.
 
 ## Features
-It is recommended to use [Recursive Mono](https://www.recursive.design/) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/), which complement the design and enhance readability.
+Consider using [Recursive Sans Linear](https://www.recursive.design/) and [Glyseric](https://www.behance.net/gallery/204616623/Glyseric-Free-Serif-Typeface), which complement the design and enhance readability.
 
 - **Command Palette**: Custom adjustments for improved navigation and user focus within the interface
 - **Enhanced Core UI**: CSS modifications to hide unnecessary elements - no Hider plugin required anymore
