@@ -5,6 +5,7 @@
 Inspired by the [Shimmering Focus](https://github.com/chrisgrieser/shimmering-focus) theme, these snippets focus on creating a minimalistic and clean user interface while maintaining essential functionality. Currently adjusted to complement and extend [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) theme.
 
 ## Features
+
 Consider using [Recursive Sans Linear](https://www.recursive.design/) and [Glyseric](https://www.behance.net/gallery/204616623/Glyseric-Free-Serif-Typeface), which complement the design and enhance readability.
 
 - **Command Palette**: Custom adjustments for improved navigation and user focus within the interface
@@ -13,19 +14,19 @@ Consider using [Recursive Sans Linear](https://www.recursive.design/) and [Glyse
 - **New Tab**: Redesigned empty state for new tabs page
 - **Editor**: Active line indicator for improved focus
 - **Bullet Lists**: Animated transitions for collapsed list bullets
+- **Unique Checkbox**: Animated playful transitions
 - **External Links**: Addition of Unicode symbols for enhanced recognition
 - **Internal Links**: Subtle opacity adjustments for a cleaner interface.
-<br>...
-
+  <br>...
 
 ## Credits
-This repository includes snippets and inspirations from various sources. Arigato (ありがとう) to:
 
+This repository includes snippets and inspirations from various sources. Arigato (ありがとう) to:
 
 - [@chrisgrieser](https://github.com/chrisgrieser)
 - [@kepano](https://github.com/kepano)
 - [@AnubisNekhet](https://github.com/AnubisNekhet)
 
-
 ## License
+
 This project is licensed under the [MIT License](https://github.com/visua1hue/obsidian-shards/blob/main/LICENSE). Note: Obsidian is a registered trademark of [Obsidian](https://obsidian.md/). This project is **not affiliated** with or **endorsed** by [Obsidian](https://obsidian.md/).

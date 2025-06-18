@@ -54,27 +54,6 @@
   font-weight: 500;
 }
 
-/* EXT PLUGIN :: Dataview */
-div.dataview-error-box {
-  border: unset;
-}
-
-.markdown-rendered ul,
-.markdown-rendered ol {
-  padding-inline-start: unset;
-}
-
-.dataview.task-list-item,
-.dataview.task-list-basic-item {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.table-view-table > thead > tr > th {
-  border-color: var(--accent-base-dimmed);
-  border: unset;
-}
-
-.table-view-table > thead > tr > th {
-  color: var(--accent-ext-linear);
+body .modal-container .omnisearch-modal.prompt .prompt-results {
+  padding: 0.5rem var(--size-4-3);
 }
