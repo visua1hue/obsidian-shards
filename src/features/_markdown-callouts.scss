@@ -1,0 +1,5 @@
+/* CALLOUT ELEMENT :: Unique Callouts */
+.callout[data-callout="blank"] {
+  --callout-icon: transparent;
+  background-color: rgba(217, 217, 208, 0.125);
+}

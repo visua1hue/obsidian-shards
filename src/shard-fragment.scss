@@ -16,6 +16,7 @@
 @use 'features/markdown-typo-format';
 @use 'features/markdown-links';
 @use 'features/markdown-code-block';
+@use 'features/markdown-callouts';
 
 @use 'plugins/omnisearch';
 @use 'plugins/listcallouts';

@@ -1276,6 +1276,12 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
   font-weight: 500;
 }
 
+/* CALLOUT ELEMENT :: Unique Callouts */
+.callout[data-callout=blank] {
+  --callout-icon: transparent;
+  background-color: rgba(217, 217, 208, 0.125);
+}
+
 @media only screen and (max-width: 600px) {
   .omnisearch-input-container {
     flex-direction: unset;
