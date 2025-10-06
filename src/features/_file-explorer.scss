@@ -14,13 +14,17 @@
 }
 
 .nav-folder-title {
-  color: var(--accent-base-default);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
 .nav-file-title {
-  color: var(--text-muted);
+  color: var(--text-faint);
   font-weight: 400;
+}
+
+.nav-file-title.is-active {
+  color: var(--text-normal);
 }
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
