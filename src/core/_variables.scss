@@ -1,6 +1,7 @@
 body:is(.theme-dark) {
   --signature: "✦";
 
+  --interactive-accent: var(--accent-base-shiny);
   --accent-base-shiny: var(--accent-ext-crystalteal);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
@@ -11,37 +12,36 @@ body:is(.theme-dark) {
   // --tab-height: calc(var(--header-height) - 12px);
   --titlebar-background: var(--titlebar-background-focused);
   --titlebar-text-color-focused: var(--accent-base-dimmed);
-  // --text-normal: hsl(227, 70%, 87%);
-  // --text-muted: hsl(229, 20%, 63%);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --list-marker-color-collapsed: hsl(0, 0%, 100%);
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
   // --divider-color: hsl(233, 15%, 22%);
+  // --text-normal: hsl(227, 70%, 87%);
 }
 
 body:is(.theme-light) {
   --signature: "✦";
 
+  --interactive-accent: var(--accent-base-shiny);
   --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
 
-  // --header-height: 30px;
-  // --tab-height: calc(var(--header-height) - 12px);
+  --header-height: 30px;
+  --tab-height: calc(var(--header-height) - 12px);
   --titlebar-background: var(--titlebar-background-focused);
   --titlebar-text-color-focused: var(--accent-base-dimmed);
-  // --text-normal: hsl(230 25% 35%);
-  // --text-muted: hsla(230, 25%, 35%, 0.4);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --list-marker-color-collapsed: var(--text-faint);
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
   // --divider-color: hsl(230 25% 92%);
+  --text-normal: hsl(60, 3%, 23%);
 
   /* Gamma (extend AnuPpuccin) */
   // --ctp-ext-base: 245, 246, 249;
