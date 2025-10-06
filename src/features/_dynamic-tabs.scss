@@ -1,0 +1,298 @@
+:root {
+  --header-height: 40px;
+  --tab-stacked-header-width: 40px;
+  --dynamic-tab-align: center;
+  --dynamic-tab-gap: 10px;
+  --dynamic-tab-radius: 6px;
+  --dynamic-tab-border-width: 2px;
+
+  /* Smooth animation settings */
+  --anim-duration-normal: 480ms;
+  --anim-duration-slow: 640ms;
+  --anim-motion-smooth: cubic-bezier(0.32, 0.72, 0, 1);
+  --anim-motion-bouncy: cubic-bezier(0.32, 0.72, 0, 1.1);
+}
+
+/* Base tab styling for horizontal tabs */
+.workspace-tabs:not(.mod-stacked) {
+  --tab-background: var(--background-secondary);
+  --tab-background-active: var(--background-primary);
+  --tab-font-size: 12px;
+  --tab-height: calc(var(--header-height) * 0.7);
+  --tab-max-width: 200px;
+  --tab-max-width-active: 300px;
+}
+
+/* Prevent tab jumping by hiding spacer and aligning new tab button */
+.workspace-split.mod-vertical .workspace-tab-header-spacer {
+  display: none;
+}
+
+.workspace-split.mod-vertical .workspace-tab-header-new-tab {
+  margin-left: auto;
+}
+
+/* Remove default tab decorations */
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header::after,
+.workspace
+  .mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-inner::after {
+  display: none;
+}
+
+/* Tab container alignment */
+.mod-vertical:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container-inner,
+.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container-inner {
+  align-items: center;
+  justify-content: var(--dynamic-tab-align);
+  margin: 0;
+  width: 100%;
+  gap: var(--dynamic-tab-gap);
+}
+
+/* Individual tab styling - smooth transform animations */
+.mod-vertical:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header,
+.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header {
+  background: var(--tab-background);
+  border-radius: var(--dynamic-tab-radius);
+  box-shadow: none !important;
+  height: var(--tab-height);
+  padding: 0 !important;
+
+  /* Smooth transitions */
+  transition: transform var(--anim-duration-normal) var(--anim-motion-smooth),
+    background-color 200ms ease-in-out, opacity 300ms ease-out,
+    filter 300ms ease-out;
+
+  /* Animate new tabs appearing */
+  animation: tabEnter var(--anim-duration-slow) var(--anim-motion-bouncy)
+    backwards;
+
+  /* Starting state for new tabs */
+  @starting-style {
+    transform: scale(0.85) translateY(-8px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+/* Keyframe animation for new tabs */
+@keyframes tabEnter {
+  from {
+    transform: scale(0.85) translateY(-8px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Keyframe animation for closing tabs */
+@keyframes tabExit {
+  from {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    transform: scale(0.85) translateY(8px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+/* Keyframe for tab becoming active */
+@keyframes tabActivate {
+  from {
+    transform: scale(0.92);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Keyframe for tab becoming inactive */
+@keyframes tabDeactivate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.96);
+  }
+}
+
+/* Tab borders and max width */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  max-width: var(--tab-max-width);
+  border: var(--dynamic-tab-border-width) solid var(--tab-outline-color);
+}
+
+/* Remove left margin from first tab */
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header:first-child {
+  margin-left: 0;
+}
+
+/* Tab inner content padding and colors */
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-inner {
+  padding: 0 4px 0 8px;
+  transition: background-color 200ms ease-in-out, color 220ms ease-in-out;
+}
+
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-inner,
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-inner-close-button,
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-inner-icon {
+  color: var(--text-muted);
+  transition: color 220ms ease-in-out;
+}
+
+/* Active tab styling - animate into active state */
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active {
+  flex-grow: 1.67;
+  max-width: var(--tab-max-width-active);
+  background-color: var(--background-primary);
+  transform: scale(1);
+  opacity: 1;
+
+  /* Animation when becoming active */
+  animation: tabActivate var(--anim-duration-slow) var(--anim-motion-bouncy);
+
+  /* Smooth transition when becoming active */
+  transition: background-color 250ms ease-in-out, opacity 300ms ease-out;
+
+  /* Starting state when tab becomes active */
+  @starting-style {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+}
+
+/* Inactive tabs subtle scale */
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header:not(.is-active) {
+  transform: scale(0.96);
+  opacity: 0.75;
+
+  /* Animation when becoming inactive */
+  animation: tabDeactivate 420ms var(--anim-motion-smooth);
+
+  transition: opacity 280ms ease-out;
+}
+
+/* Hover effect for inactive tabs */
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header:not(.is-active):hover {
+  opacity: 0.9;
+  background-color: var(--background-modifier-hover);
+}
+
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title {
+  color: var(--color-accent);
+  transition: color 220ms ease-in-out;
+}
+
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner,
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title,
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-close-button,
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon {
+  color: var(--text-faint);
+  transition: color 220ms ease-in-out;
+}
+
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner:hover {
+  background-color: rgba(var(--ctp-surface1), 0.4);
+}
+
+/* Active tab in focused window */
+.mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner,
+.mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title,
+.mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-close-button,
+.mod-root
+  .workspace-tabs:not(.mod-stacked).mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon {
+  color: var(--color-accent) !important;
+}
+
+.mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active:hover {
+  background-color: var(--background-modifier-border);
+}
+
+/* Sidebar toggle buttons */
+.sidebar-toggle-button.mod-left,
+.sidebar-toggle-button.mod-right {
+  align-items: center;
+}
+
+.sidebar-toggle-button.mod-left .clickable-icon,
+.sidebar-toggle-button.mod-right .clickable-icon {
+  height: var(--tab-height);
+}
+
+/* Focused window active tab accent color */
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon,
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title {
+  color: var(--color-accent);
+}

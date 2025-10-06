@@ -1,0 +1,118 @@
+/* https://github.com/aaaaalexis/obsidian-baseline/blob/a15e86f21197bd9144413ee1e18400cc630f2d81/src/features/compact-actions.scss */
+
+/* Base selectors for transition animations */
+.mod-sidedock .workspace-leaf-content > .nav-header,
+.mod-sidedock .workspace-leaf-content > .view-content > .nav-header,
+.mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header
+  .nav-action-button,
+.mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button::after,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header
+  .nav-action-button::after,
+.mod-sidedock .workspace-leaf-content > .nav-header svg.svg-icon,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header
+  svg.svg-icon {
+  --anim-speed-modifier: 1;
+  --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
+  --anim-duration-moderate: calc(320ms * var(--anim-speed-modifier));
+  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+}
+
+/* Compact state when not hovering */
+.mod-sidedock
+  .workspace-leaf-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container {
+  gap: 4px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.mod-sidedock
+  .workspace-leaf-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button {
+  padding: 2px;
+  flex: 0;
+  background-color: var(--background-modifier-hover);
+  box-shadow: none;
+}
+
+.mod-sidedock
+  .workspace-leaf-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button.is-active,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button.is-active {
+  background-color: var(--background-modifier-hover);
+}
+
+.mod-sidedock
+  .workspace-leaf-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button.clickable-icon[aria-disabled="true"],
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button.clickable-icon[aria-disabled="true"] {
+  opacity: var(--icon-opacity);
+}
+
+.mod-sidedock
+  .workspace-leaf-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button::after,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  .nav-action-button::after {
+  opacity: 0;
+  font-size: 0 !important;
+  margin-left: 0px !important;
+}
+
+.mod-sidedock
+  .workspace-leaf-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  svg.svg-icon,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header:not(:hover)
+  .nav-buttons-container
+  svg.svg-icon {
+  --icon-size: 0px;
+}

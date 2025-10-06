@@ -1,0 +1,29 @@
+/* EXTERNAL LINK :: Unicode symbol */
+.external-link {
+  background-image: none;
+  padding-right: 0;
+}
+
+.external-link::after {
+  vertical-align: text-top;
+  margin-right: unset;
+  content: "↗";
+  font-size: 12px;
+  font-family: "Inter";
+  color: var(--text-muted);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-url,
+.cm-s-obsidian span.cm-url {
+  text-decoration-line: unset !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-link .cm-underline,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline {
+  color: var(--accent-base-shiny);
+}
+
+/* INTERNAL LINK :: Opacity */
+.markdown-source-view.mod-cm6 .is-unresolved {
+  opacity: 0.5;
+}

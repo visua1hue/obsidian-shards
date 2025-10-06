@@ -1,0 +1,48 @@
+/* BULLET LIST ELEMENT :: Collapsed list bullets animation */
+.markdown-source-view.mod-cm6
+  .cm-line:hover
+  .cm-fold-indicator
+  .collapse-indicator,
+.markdown-source-view.mod-cm6
+  .cm-fold-indicator.is-collapsed
+  .collapse-indicator {
+  opacity: 0; /* Hide collapse-indicator */
+}
+
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul,
+.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
+  padding-right: 6px;
+}
+
+@keyframes outline-pulse-v2 {
+  0%,
+  100% {
+    outline: 1px solid var(--list-marker-color-collapsed);
+    opacity: 0.5;
+  }
+
+  50% {
+    outline: 2px solid hsla(254, 13%, 81%, 0.4);
+    opacity: 0.75;
+  }
+}
+
+li.is-collapsed .list-bullet:after,
+.is-collapsed ~ .cm-formatting-list .list-bullet:after {
+  animation: outline-pulse-v2 2s ease-in-out infinite;
+  border-radius: 50%;
+  will-change: outline, opacity;
+}
+
+.list-bullet:after {
+  opacity: 0.75;
+}
+
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  border-inline-end: 2px solid var(--indentation-guide-color); /* adjusted indentation line */
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .cm-indent::before {
+  --indentation-guide-editing-indent: 0.9em;
+  margin-inline-start: var(--indentation-guide-editing-indent);
+}

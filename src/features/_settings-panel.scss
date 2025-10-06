@@ -1,0 +1,194 @@
+.modal.mod-settings {
+  --anim-duration-slow: 640ms;
+  --anim-motion-out: cubic-bezier(0.32, 0.72, 0, 1.1);
+  transition: var(--anim-duration-slow) var(--anim-motion-out);
+  @starting-style {
+    transform: scale(0.98);
+  }
+}
+
+/* SETTINGS :: Vertical Nav Header */
+.vertical-tab-content {
+  padding: var(--size-4-3) var(--size-4-5);
+}
+
+.modal.mod-settings .vertical-tab-header {
+  min-width: 200px;
+  border-inline-end: 2px solid var(--divider-color);
+  padding: 0 var(--size-4-3);
+}
+
+.vertical-tab-header-group-title {
+  display: none;
+}
+
+body:not(.is-phone) .horizontal-tab-nav-item.is-active,
+body:not(.is-phone) .vertical-tab-nav-item.is-active {
+  color: var(--text-normal);
+}
+
+.horizontal-tab-nav-item.is-active:hover,
+.vertical-tab-nav-item.is-active:hover {
+  background-color: unset;
+}
+
+.horizontal-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active {
+  background-color: unset;
+  color: var(--interactive-accent);
+}
+
+.horizontal-tab-nav-item,
+.vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
+  color: var(--text-muted);
+}
+
+body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
+body:not(.colorful-active) .vertical-tab-nav-item.is-active {
+  background-color: unset;
+  position: relative;
+  transform: translateX(-2.5px);
+}
+
+.vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active)
+  .vertical-tab-nav-item.is-active::before {
+  position: relative;
+  content: "|";
+  font-weight: 700;
+  font-size: 0.6em;
+  left: -6px;
+  display: inline-block;
+  line-height: 0;
+  transform: translateY(-1.5px);
+  vertical-align: middle;
+}
+
+.vertical-tab-nav-item {
+  white-space: nowrap;
+  overflow: scroll;
+  padding: var(--size-2-1) var(--size-4-2);
+  font-size: var(--font-ui-medium);
+}
+
+/* SETTINGS :: Vertical Nav Container */
+.setting-item {
+  border-top: 1px solid var(--divider-color);
+}
+
+.setting-item:first-child {
+  border-top: none;
+}
+
+.setting-item + div > .setting-item-heading,
+.setting-item + .setting-item-heading {
+  margin-top: 0.75em;
+  border-top: none;
+}
+
+.setting-item-heading .setting-item-info {
+  text-transform: uppercase;
+}
+
+body:not(.native-scrollbars) .modal-close-button {
+  display: none;
+}
+
+/* SETTINGS :: Hotkeys */
+.setting-hotkey {
+  background-color: var(--code-background);
+  font-family: var(--font-interface);
+  font-size: calc(var(--font-ui-smaller) - 2px);
+  padding: 2px 6px;
+  border: 1px solid var(--divider-color);
+}
+
+/* SETTINGS :: Ext Plugins Highlight */
+.installed-plugins-container .setting-item-name {
+  color: var(--interactive-accent);
+}
+
+/* SETTINGS :: Toggles */
+.checkbox-container {
+  background-color: unset;
+}
+
+.checkbox-container::after {
+  display: none;
+}
+
+.checkbox-container.checkbox-container {
+  height: 22px;
+  width: 22px;
+  /* background-color: hsla(240, 23%, 9%, 0.302); */
+  margin-left: 4px;
+  border: 2px solid var(--divider-color);
+  transition-duration: 300ms;
+  cursor: var(--cursor-link);
+  border-radius: 12px;
+}
+
+body .checkbox-container.mod-small {
+  height: var(--icon-l);
+  width: var(--icon-l);
+}
+
+.checkbox-container.is-enabled.is-enabled {
+  background-color: var(--interactive-accent) !important;
+  /* border-color: transparent; */
+}
+
+.checkbox-container.checkbox-container:hover {
+  border: 9px solid var(--interactive-accent) !important;
+  border-color: var(--interactive-accent) !important;
+}
+
+.checkbox-container.is-enabled:hover {
+  background-color: var(--interactive-accent) !important;
+  border-color: transparent;
+}
+
+/* SETTINGS :: Button Elements */
+button:not(.mod-cta) {
+  background-color: hsla(var(--background-secondary), 0.5);
+  color: var(--text-faint);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:not(.mod-cta):hover {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+/* SETTINGS :: Select Elements */
+.setting-item-control select {
+  background-color: hsla(var(--background-secondary), 0.5);
+  color: var(--text-faint);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.setting-item-control select:hover {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+select:focus,
+.dropdown:focus {
+  box-shadow: 0 0 0px 2px var(--background-modifier-border);
+  outline: none;
+  border: none;
+}
+
+/* SETTINGS :: Input Elements */
+.search-input-container input:focus {
+  box-shadow: 0 0 0px 2px var(--background-modifier-border);
+  outline: none;
+  border: none;
+}
+
+/* .search-input-container:before {
+  display: none;
+} */
+
+/* .search-input-container input {
+  padding-inline-start: 8px;
+} */
