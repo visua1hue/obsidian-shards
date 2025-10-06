@@ -46,3 +46,8 @@ li.is-collapsed .list-bullet:after,
   --indentation-guide-editing-indent: 0.9em;
   margin-inline-start: var(--indentation-guide-editing-indent);
 }
+
+.markdown-source-view.mod-cm6 .task-list-label {
+  padding: 0;
+  margin-inline-start: -0.15em;
+}
