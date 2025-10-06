@@ -2,11 +2,13 @@
 body:is(.theme-dark) {
   --signature: "✦";
   --interactive-accent: var(--accent-base-shiny);
-  --accent-base-shiny: var(--accent-ext-crystalteal);
+  --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
+  --header-height: 30px;
+  --tab-height: calc(var(--header-height) - 12px);
   --titlebar-background: var(--titlebar-background-focused);
   --titlebar-text-color-focused: var(--accent-base-dimmed);
   --checkbox-border-color: var(--text-muted);
@@ -14,6 +16,7 @@ body:is(.theme-dark) {
   --list-marker-color-collapsed: hsl(0, 0%, 100%);
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
+  --text-normal: hsl(55, 10%, 79%);
 }
 
 body:is(.theme-light) {
