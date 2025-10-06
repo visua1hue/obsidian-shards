@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body:is(.theme-dark) {
   --signature: "✦";
+  --interactive-accent: var(--accent-base-shiny);
   --accent-base-shiny: var(--accent-ext-crystalteal);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
@@ -17,11 +18,14 @@ body:is(.theme-dark) {
 
 body:is(.theme-light) {
   --signature: "✦";
+  --interactive-accent: var(--accent-base-shiny);
   --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
+  --header-height: 30px;
+  --tab-height: calc(var(--header-height) - 12px);
   --titlebar-background: var(--titlebar-background-focused);
   --titlebar-text-color-focused: var(--accent-base-dimmed);
   --checkbox-border-color: var(--text-muted);
@@ -29,6 +33,7 @@ body:is(.theme-light) {
   --list-marker-color-collapsed: var(--text-faint);
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
+  --text-normal: hsl(60, 3%, 23%);
   /* Gamma (extend AnuPpuccin) */
 }
 
@@ -726,6 +731,24 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 .workspace-tab-header-status-icon,
 .workspace-tab-header-inner-close-button {
   transform: scale(0.75);
+}
+
+.mod-left-split .workspace-tab-header, .mod-right-split .workspace-tab-header {
+  height: var(--tab-height);
+}
+
+.workspace-tab-header-inner {
+  padding: var(--size-2-2) var(--size-2-3);
+}
+
+.mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner {
+  padding: 1px 0 7px;
+  margin: 3px 0 0 0;
+  gap: 3px;
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+  background-color: transparent;
 }
 
 /* FEXP :: Adjustments */

@@ -73,3 +73,22 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 .workspace-tab-header-inner-close-button {
   transform: scale(0.75);
 }
+
+.mod-left-split .workspace-tab-header, .mod-right-split .workspace-tab-header {
+  height: var(--tab-height);
+}
+
+.workspace-tab-header-inner {
+  padding: var(--size-2-2) var(--size-2-3);
+}
+
+.mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner {
+  padding: 1px 0 7px;
+  margin: 3px 0 0 0;
+  gap: 3px;
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+    background-color: transparent;
+}
+
