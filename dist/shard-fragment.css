@@ -810,6 +810,36 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   white-space: normal;
 }
 
+/* SIDEDOCK :: Vault Profiles */
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  align-items: center;
+  height: var(--header-height);
+  flex: 0 0 auto;
+  gap: var(--size-4-1);
+  justify-content: space-between;
+  padding: var(--size-4-2) var(--size-4-2);
+  order: 1;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+  color: var(--text-muted);
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
+  color: var(--text-faint);
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions:not(:hover) {
+  transition: linear 0.3s;
+  opacity: 0;
+  color: var(--nav-item-color);
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+  transition: linear 0.3s 0.2s;
+  opacity: 1;
+}
+
 /* https://github.com/aaaaalexis/obsidian-baseline/blob/a15e86f21197bd9144413ee1e18400cc630f2d81/src/features/compact-actions.scss */
 /* Base selectors for transition animations */
 .mod-sidedock .workspace-leaf-content > .nav-header,
