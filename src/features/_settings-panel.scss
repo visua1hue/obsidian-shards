@@ -24,7 +24,9 @@
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
+  background-color: unset;
   color: var(--text-normal);
+  transition: color 0.2s ease-in;
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -32,38 +34,34 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: unset;
 }
 
-.horizontal-tab-nav-item.is-active,
-.vertical-tab-nav-item.is-active {
-  background-color: unset;
-  color: var(--interactive-accent);
-}
-
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
   color: var(--text-muted);
+  transition: color 0.2s ease-out;
 }
 
-body:not(.colorful-active) .horizontal-tab-nav-item.is-active,
-body:not(.colorful-active) .vertical-tab-nav-item.is-active {
-  background-color: unset;
-  position: relative;
-  transform: translateX(-2.5px);
+.vertical-tab-nav-item::before {
+  position: absolute;
+  content: "|";
+  color: var(--text-normal);
+  font-weight: 700;
+  font-size: 0.7em;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  line-height: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
 }
 
 .vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active)
   .vertical-tab-nav-item.is-active::before {
-  position: relative;
-  content: "|";
-  font-weight: 700;
-  font-size: 0.6em;
-  left: -6px;
-  display: inline-block;
-  line-height: 0;
-  transform: translateY(-1.5px);
-  vertical-align: middle;
+  opacity: 1;
 }
 
 .vertical-tab-nav-item {
+  position: relative;
   white-space: nowrap;
   overflow: scroll;
   padding: var(--size-2-1) var(--size-4-2);
