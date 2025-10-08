@@ -198,7 +198,6 @@ body:not(.native-scrollbars) .modal-close-button {
 .checkbox-container.checkbox-container {
   height: 22px;
   width: 22px;
-  /* background-color: hsla(240, 23%, 9%, 0.302); */
   margin-left: 4px;
   border: 2px solid var(--divider-color);
   transition-duration: 300ms;
@@ -213,7 +212,6 @@ body .checkbox-container.mod-small {
 
 .checkbox-container.is-enabled.is-enabled {
   background-color: var(--interactive-accent) !important;
-  /* border-color: transparent; */
 }
 
 .checkbox-container.checkbox-container:hover {
@@ -264,12 +262,6 @@ select:focus,
   border: none;
 }
 
-/* .search-input-container:before {
-  display: none;
-} */
-/* .search-input-container input {
-  padding-inline-start: 8px;
-} */
 /* COMMAND PALETTE :: Adjustments */
 .modal-bg {
   position: absolute;
