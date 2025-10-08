@@ -417,7 +417,11 @@ input.prompt-input:not(.is-active) {
 }
 
 .modal-container .omnisearch-modal.prompt .prompt-results {
-  padding: 0 var(--size-4-3);
+  padding: 0 var(--size-4-3) var(--size-4-3) var(--size-4-3);
+}
+
+.modal-container .omnisearch-modal.prompt .prompt-results:empty {
+  padding: 0;
 }
 
 .suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(:has(.suggestion-highlight)) {
@@ -1396,7 +1400,6 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 }
 
 .omnisearch-result__body {
-  max-width: calc(var(--prompt-max-width) - 15vh);
   margin-inline-start: unset;
 }
 

@@ -145,7 +145,11 @@ input.prompt-input:not(.is-active) {
 }
 
 .modal-container .omnisearch-modal.prompt .prompt-results {
-  padding: 0 var(--size-4-3);
+  padding: 0 var(--size-4-3) var(--size-4-3) var(--size-4-3);
+}
+
+.modal-container .omnisearch-modal.prompt .prompt-results:empty {
+  padding: 0;
 }
 
 .suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(
