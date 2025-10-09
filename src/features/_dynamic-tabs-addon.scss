@@ -37,6 +37,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   color: var(--text-normal) !important;
 }
 
+.workspace-tab-header-inner .workspace-tab-header-inner-icon {
+    transition: color 0.3s ease-out !important;
+}
+
 .mod-root
   .workspace-tabs:not(.mod-stacked).mod-active
   .workspace-tab-header.is-active
