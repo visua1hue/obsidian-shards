@@ -708,6 +708,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   color: var(--text-normal) !important;
 }
 
+.workspace-tab-header-inner .workspace-tab-header-inner-icon {
+  transition: color 0.3s ease-out !important;
+}
+
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner,
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
@@ -999,6 +1003,18 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 
 .workspace-ribbon {
   border-right: var(--divider-width) solid var(--divider-color);
+}
+
+.suggestion-container.mod-search-suggestion {
+  display: none;
+}
+
+.search-input-container input {
+  padding-inline-start: 8px;
+}
+
+.search-input-container:before {
+  display: none;
 }
 
 /* CHECKBOX INPUT ELEMENT :: Unique Checkbox */
@@ -1391,6 +1407,8 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 
 .omnisearch-result__body {
   margin-inline-start: unset;
+  max-width: calc(0.9 * var(--prompt-max-width));
+  height: 15vh;
 }
 
 .omnisearch-result__title svg.svg-icon {
