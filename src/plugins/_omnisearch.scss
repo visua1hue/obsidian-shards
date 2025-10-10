@@ -23,7 +23,8 @@
 .omnisearch-result__body {
   margin-inline-start: unset;
   max-width: calc(0.9 * var(--prompt-max-width));
-  height: 15vh;
+  overflow: hidden;
+  height: 10vh !important;
 }
 
 .omnisearch-result__title svg.svg-icon {
