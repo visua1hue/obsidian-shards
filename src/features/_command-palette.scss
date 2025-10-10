@@ -152,11 +152,10 @@ input.prompt-input:not(.is-active) {
         min-height: 0;
     }
 }
-
-.suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(
+.modal-container .suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(
     :has(.suggestion-highlight)
   ) {
-  display: none; /* Hide all non-pinned commands EXCEPT search results */
+  display: none;
 }
 
 .modal-container .prompt .prompt-instructions {
