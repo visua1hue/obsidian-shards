@@ -1,4 +1,4 @@
-![Banner](.github/preview.jpg)
+![Preview](.github/preview.jpg)
 
 Built with SCSS, each "shard fragment" is a modular component designed to enhance specific UI elements, optimizing the interface for productivity and visual clarity.
 
@@ -45,9 +45,9 @@ Built with SCSS. Modules in [src/](https://github.com/visua1hue/obsidian-shards/
 
 This repository includes snippets and inspirations from various sources. Arigato (ありがとう) to:
 
-- [@chrisgrieser](https://github.com/chrisgrieser)
-- [@kepano](https://github.com/kepano)
-- [@AnubisNekhet](https://github.com/AnubisNekhet)
+- [@chrisgrieser · Shimmering Focus](https://github.com/chrisgrieser)
+- [@kepano · Minimal](https://github.com/kepano)
+- [@AnubisNekhet · AnuPpuccin](https://github.com/AnubisNekhet)
 
 ## License
 
