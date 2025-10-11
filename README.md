@@ -1,5 +1,16 @@
 **Obsidian Shards** — curated, modular CSS shards built for [Obsidian](https://obsidian.md/). Built with SCSS, each "shard fragment" is a modular component designed to enhance specific UI elements, optimizing the interface for productivity and visual clarity.
 
+<br>
+
+- [Features](#features)
+- [Development](#development)
+  - [Quick Start](#quick-start)
+  - [Continuous Build](#continuous-build)
+- [Credits](#credits)
+- [License](#license)
+
+<br>
+
 ## Features
 
 Consider using [Recursive Sans Linear](https://www.recursive.design/) and [Glyseric](https://www.behance.net/gallery/204616623/Glyseric-Free-Serif-Typeface), which complement the design and enhance readability.
@@ -15,6 +26,19 @@ Consider using [Recursive Sans Linear](https://www.recursive.design/) and [Glyse
 - **Internal Links**: Subtle opacity adjustments for a cleaner interface.
   <br>...
 
+## Development
+
+Built with SCSS. Modules in [src/](https://github.com/visua1hue/obsidian-shards/tree/main/src), compiled output in [dist/](https://github.com/visua1hue/obsidian-shards/tree/main/dist).
+
+### Quick Start
+
+- Run `npm install && npm run build` to compile.
+- Copy `dist/shard-fragments.css` to `.obsidian/snippets/`.
+
+### Continuous Build
+
+- Use `npm run watch` for live recompilation.
+
 ## Credits
 
 This repository includes snippets and inspirations from various sources. Arigato (ありがとう) to:
@@ -25,4 +49,4 @@ This repository includes snippets and inspirations from various sources. Arigato
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/visua1hue/obsidian-shards/blob/main/LICENSE). Note: Obsidian is a registered trademark of [Obsidian](https://obsidian.md/). This project is **not affiliated** with or **endorsed** by [Obsidian](https://obsidian.md/).
+Built for personal use only, from MIT-licensed sources (see [Credits](#credits)). **Not intended for, and will not be submitted to**, the [Obsidian](https://obsidian.md/) store.
