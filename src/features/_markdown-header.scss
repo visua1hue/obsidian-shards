@@ -44,7 +44,7 @@
   .HyperMD-list-line .cm-header-5 {
     font-size: 1.125em !important;
     font-weight: 600;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
     color: var(--interactive-accent);
   }
 
@@ -54,7 +54,7 @@
   .HyperMD-list-line .cm-header-6 {
     font-size: 1em !important;
     font-weight: 600;
-    font-family: "Glyseric", var(--font-interface-override), sans-serif;
+    font-family: var(--font-interface-override), sans-serif;
     color: var(--interactive-accent);
   }
 }
