@@ -28,7 +28,7 @@
 }
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
-  padding: unset;
+  padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
 }
 
 body:not(.is-grabbing) .nav-file-title.is-active:hover,
