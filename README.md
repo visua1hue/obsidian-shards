@@ -1,4 +1,6 @@
-**Obsidian Shards** — curated, modular CSS shards built for [Obsidian](https://obsidian.md/). Built with SCSS, each "shard fragment" is a modular component designed to enhance specific UI elements, optimizing the interface for productivity and visual clarity.
+![Banner](.github/preview.jpg)
+
+Built with SCSS, each "shard fragment" is a modular component designed to enhance specific UI elements, optimizing the interface for productivity and visual clarity.
 
 <br>
 
