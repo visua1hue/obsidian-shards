@@ -279,17 +279,14 @@ select:focus,
   --anim-duration-slow: 640ms;
   --anim-motion-out: cubic-bezier(0.32, 0.72, 0, 1.1);
   transition: var(--anim-duration-slow) var(--anim-motion-out);
+  box-shadow: var(--shadow-l);
+  border-radius: 13px;
+  border: var(--divider-width) solid var(--divider-color);
 }
 @starting-style {
   .prompt {
     transform: scale(0.98);
   }
-}
-
-.prompt {
-  box-shadow: var(--shadow-l);
-  border-radius: 13px;
-  border: var(--divider-width) solid var(--divider-color);
 }
 
 .modal-container:hover .modal-bg,
@@ -359,7 +356,6 @@ body:not(.is-mobile) .prompt .suggestion-item {
   cursor: var(--cursor);
   padding: var(--size-2-3) var(--size-4-3);
   padding-left: 12px;
-  white-space: pre-wrap;
   white-space: unset !important;
   color: var(--text-muted);
 }
@@ -394,15 +390,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
   border-bottom: unset;
 }
 
-input.prompt-input.is-active {
-  border: unset !important;
-}
-
-input.prompt-input:focus {
-  border: unset !important;
-}
-
-input.prompt-input:not(.is-active) {
+input.prompt-input {
   border: unset !important;
 }
 
@@ -412,6 +400,12 @@ input.prompt-input:not(.is-active) {
 .modal-container .omnisearch-modal.prompt .prompt-results:not(:has(.svelte-lazy)) {
   padding: 0;
   min-height: 0;
+}
+
+.modal-container:has(.prompt-input:placeholder-shown) .prompt .prompt-results:not(:has(.suggestion-flair)) {
+  display: none;
+  min-height: 0;
+  padding: 0;
 }
 
 .modal-container .suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(:has(.suggestion-highlight)) {
