@@ -677,6 +677,11 @@ input.prompt-input {
   height: var(--tab-height);
 }
 
+.sidebar-toggle-button {
+  padding: 1px 0 7px;
+  margin: 3px 0 0 0;
+}
+
 /* Focused window active tab accent color */
 .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
 .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
@@ -736,6 +741,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 
 .mod-left-split .workspace-tab-header, .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
+}
+
+.workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon {
+  color: var(--text-faint);
 }
 
 .workspace-tab-header-inner {

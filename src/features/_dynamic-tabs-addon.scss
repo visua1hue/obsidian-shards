@@ -82,6 +82,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   height: var(--tab-height);
 }
 
+.workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon {
+  color: var(--text-faint);
+}
+
 .workspace-tab-header-inner {
   padding: var(--size-2-2) var(--size-2-3);
 }
@@ -95,4 +99,3 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
     background-color: transparent;
 }
-

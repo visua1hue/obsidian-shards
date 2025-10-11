@@ -285,6 +285,11 @@
   height: var(--tab-height);
 }
 
+.sidebar-toggle-button {
+  padding: 1px 0 7px;
+  margin: 3px 0 0 0;
+}
+
 /* Focused window active tab accent color */
 .is-focused
   .mod-active
