@@ -32,6 +32,8 @@ Consider using [Recursive Sans Linear](https://www.recursive.design/), which com
 
 Built with SCSS. Modules in [src/](https://github.com/visua1hue/obsidian-shards/tree/main/src), compiled output in [dist/](https://github.com/visua1hue/obsidian-shards/tree/main/dist).
 
+Each shard is a separate module - comment out unwanted `@use` statements in the main SCSS file to exclude specific features from compilation.
+
 ### Quick Start
 
 - Run `npm install && npm run build` to compile.
