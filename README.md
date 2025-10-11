@@ -13,7 +13,7 @@
 
 ## Features
 
-Consider using [Recursive Sans Linear](https://www.recursive.design/) and [Glyseric](https://www.behance.net/gallery/204616623/Glyseric-Free-Serif-Typeface), which complement the design and enhance readability.
+Consider using [Recursive Sans Linear](https://www.recursive.design/), which complements the design and enhances readability.
 
 - **Command Palette**: Custom adjustments for improved navigation and user focus within the interface
 - **Enhanced Core UI**: CSS modifications to hide unnecessary elements - no Hider plugin required anymore
