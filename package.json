@@ -1,7 +1,7 @@
 {
   "name": "obsidian-shards",
-  "version": "1.0.0",
-  "description": "![image](https://github.com/syke9p3/Syke-VTuber-Icons/blob/main/Obsidian/Obsidian.png?raw=true)",
+  "version": "1.1.0",
+  "description": "Curated, modular CSS shards built for Obsidian MD",
   "main": "index.js",
   "scripts": {
     "build": "sass src:dist",
