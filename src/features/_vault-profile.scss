@@ -15,7 +15,15 @@ body:not(.is-mobile)
   .workspace-split.mod-left-split
   .workspace-sidedock-vault-profile
   .workspace-drawer-vault-switcher {
-  color: var(--text-muted);
+  color: var(--text-faint);
+  transition: all 0.3s ease-in;
+}
+
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile
+  .workspace-drawer-vault-switcher {
+  transition: all 0.3s ease-out;
 }
 
 body:not(.is-mobile)
@@ -28,16 +36,17 @@ body:not(.is-mobile)
 body:not(.is-mobile)
   .workspace-split.mod-left-split
   .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-actions:not(:hover) {
-  transition: linear 0.3s;
+  .workspace-drawer-vault-actions
+  .clickable-icon {
+  transition: opacity 0.3s ease-out;
   opacity: 0;
-  color: var(--nav-item-color);
 }
 
 body:not(.is-mobile)
   .workspace-split.mod-left-split
   .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-actions {
-  transition: linear 0.3s 0.2s;
+  .workspace-drawer-vault-actions
+  .clickable-icon:hover {
+  transition: opacity 0.3s ease-in;
   opacity: 1;
 }
