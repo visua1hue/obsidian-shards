@@ -868,7 +868,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   flex: 0 0 auto;
   gap: var(--size-4-1);
   justify-content: space-between;
-  padding: var(--size-4-2) var(--size-4-2);
+  padding: var(--size-2-2) var(--size-2-2);
   order: 1;
 }
 
