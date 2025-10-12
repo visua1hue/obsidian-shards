@@ -1355,6 +1355,10 @@ strong,
 }
 
 /* CODE BLOCK ELEMENT :: Adjustments */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock:not(.HyperMD-list-line) {
+  padding-inline-start: calc(var(--size-4-4) * 1.6);
+}
+
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,
 .HyperMD-codeblock-end) {
   padding-left: 2.8em;
@@ -1394,7 +1398,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
   text-align: right;
   content: counter(codeblock-line-numbers);
   counter-increment: codeblock-line-numbers;
-  width: 1.15em;
+  width: 1.6em;
   height: 100%;
   padding-right: 1.4em;
   font-size: 0.75em;
