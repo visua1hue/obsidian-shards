@@ -17,6 +17,17 @@ body:is(.theme-dark) {
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
   --text-normal: hsl(55, 10%, 79%);
+  --code-normal: var(--text-normal);
+  --code-comment: var(--text-faint);
+  --code-function: var(--accent-ext-linear);
+  --code-string: var(--text-muted);
+  --code-important: var(--accent-ext-obsidian);
+  --code-keyword: var(--accent-ext-linear);
+  --code-operator: var(--accent-ext-obsidian);
+  --code-property: var(--accent-ext-shinyfocus);
+  --code-punctuation: var(--text-muted);
+  --code-tag: var(--text-faint);
+  --code-value: var(--text-normal);
 }
 
 body:is(.theme-light) {
@@ -37,6 +48,17 @@ body:is(.theme-light) {
   --tab-outline-width: var(--divider-width);
   --divider-width: 2px;
   --text-normal: hsl(60, 3%, 23%);
+  --code-normal: var(--text-normal);
+  --code-comment: var(--text-faint);
+  --code-function: var(--accent-ext-linear);
+  --code-string: var(--text-muted);
+  --code-important: var(--accent-ext-obsidian);
+  --code-keyword: var(--accent-ext-linear);
+  --code-operator: var(--accent-ext-obsidian);
+  --code-property: var(--accent-ext-shinyfocus);
+  --code-punctuation: var(--text-muted);
+  --code-tag: var(--text-faint);
+  --code-value: var(--text-normal);
   /* Gamma (extend AnuPpuccin) */
 }
 
@@ -1372,8 +1394,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
   text-align: right;
   content: counter(codeblock-line-numbers);
   counter-increment: codeblock-line-numbers;
-  /* background-color: rgb(var(--ctp-ext-base)); */
-  width: 1.3em;
+  width: 1.15em;
   height: 100%;
   padding-right: 1.4em;
   font-size: 0.75em;

@@ -19,6 +19,17 @@ body:is(.theme-dark) {
   --divider-width: 2px;
   // --divider-color: hsl(233, 15%, 22%);
   --text-normal: hsl(55, 10%, 79%);
+    --code-normal: var(--text-normal);
+  --code-comment: var(--text-faint);
+  --code-function: var(--accent-ext-linear);
+  --code-string: var(--text-muted);
+  --code-important: var(--accent-ext-obsidian);
+  --code-keyword: var(--accent-ext-linear);
+  --code-operator: var(--accent-ext-obsidian);
+  --code-property: var(--accent-ext-shinyfocus);
+  --code-punctuation: var(--text-muted);
+  --code-tag: var(--text-faint);
+  --code-value: var(--text-normal);
 }
 
 body:is(.theme-light) {
@@ -42,6 +53,17 @@ body:is(.theme-light) {
   --divider-width: 2px;
   // --divider-color: hsl(230 25% 92%);
   --text-normal: hsl(60, 3%, 23%);
+  --code-normal: var(--text-normal);
+  --code-comment: var(--text-faint);
+  --code-function: var(--accent-ext-linear);
+  --code-string: var(--text-muted);
+  --code-important: var(--accent-ext-obsidian);
+  --code-keyword: var(--accent-ext-linear);
+  --code-operator: var(--accent-ext-obsidian);
+  --code-property: var(--accent-ext-shinyfocus);
+  --code-punctuation: var(--text-muted);
+  --code-tag: var(--text-faint);
+  --code-value: var(--text-normal);
 
   /* Gamma (extend AnuPpuccin) */
   // --ctp-ext-base: 245, 246, 249;

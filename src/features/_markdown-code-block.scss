@@ -47,8 +47,7 @@ body:not(.no-codeblock-line-numbers)
   text-align: right;
   content: counter(codeblock-line-numbers);
   counter-increment: codeblock-line-numbers;
-  /* background-color: rgb(var(--ctp-ext-base)); */
-  width: 1.3em;
+  width: 1.15em;
   height: 100%;
   padding-right: 1.4em;
   font-size: 0.75em;
