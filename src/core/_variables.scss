@@ -19,7 +19,7 @@ body:is(.theme-dark) {
   --divider-width: 2px;
   // --divider-color: hsl(233, 15%, 22%);
   --text-normal: hsl(55, 10%, 79%);
-    --code-normal: var(--text-normal);
+  --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
   --code-function: var(--accent-ext-linear);
   --code-string: var(--text-muted);
