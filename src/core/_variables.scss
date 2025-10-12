@@ -5,6 +5,7 @@ body:is(.theme-dark) {
   --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
+  --accent-ext-anysphere: hsl(247, 90%, 80%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
 
@@ -39,6 +40,7 @@ body:is(.theme-light) {
   --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
+  --accent-ext-anysphere: hsl(247, 90%, 80%);
   --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
 
