@@ -1,0 +1,18 @@
+.nav-folder-title:is(
+    [data-path$="_" i],
+    [data-path="Attachments" i],
+    [data-path="Assets" i]
+  ) {
+  transition: 400ms, background-color 150ms ease-in-out;
+  opacity: 25%;
+  display: none;
+}
+
+.nav-folder-title:is(
+    [data-path$="_" i],
+    [data-path="Attachments" i],
+    [data-path="Assets" i]
+  ):hover {
+  transition: 400ms, background-color 150ms ease-in-out;
+  opacity: 100%;
+}

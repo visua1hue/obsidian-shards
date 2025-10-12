@@ -839,6 +839,11 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   color: unset;
 }
 
+/* FEXP :: Prevent filename trim while renaming */
+.tree-item-self.is-being-renamed .tree-item-inner {
+  white-space: normal;
+}
+
 .nav-folder-title:is([data-path$=_ i],
 [data-path=Attachments i],
 [data-path=Assets i]) {
@@ -852,11 +857,6 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 [data-path=Assets i]):hover {
   transition: 400ms, background-color 150ms ease-in-out;
   opacity: 100%;
-}
-
-/* FEXP :: Prevent filename trim while renaming */
-.tree-item-self.is-being-renamed .tree-item-inner {
-  white-space: normal;
 }
 
 /* SIDEDOCK :: Vault Profiles */

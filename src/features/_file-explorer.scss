@@ -64,25 +64,6 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   color: unset;
 }
 
-.nav-folder-title:is(
-    [data-path$="_" i],
-    [data-path="Attachments" i],
-    [data-path="Assets" i]
-  ) {
-  transition: 400ms, background-color 150ms ease-in-out;
-  opacity: 25%;
-  display: none;
-}
-
-.nav-folder-title:is(
-    [data-path$="_" i],
-    [data-path="Attachments" i],
-    [data-path="Assets" i]
-  ):hover {
-  transition: 400ms, background-color 150ms ease-in-out;
-  opacity: 100%;
-}
-
 /* FEXP :: Prevent filename trim while renaming */
 .tree-item-self.is-being-renamed .tree-item-inner {
   white-space: normal;
