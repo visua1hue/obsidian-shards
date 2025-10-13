@@ -201,8 +201,7 @@
 
   /* Animation when becoming inactive */
   animation: tabDeactivate 420ms var(--anim-motion-smooth);
-
-  transition: opacity 280ms ease-out;
+  transition: background-color 200ms ease-in-out, opacity 280ms ease-out;
 }
 
 /* Hover effect for inactive tabs */
@@ -210,7 +209,22 @@
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header:not(.is-active):hover {
   opacity: 0.9;
-  background-color: var(--background-modifier-hover);
+  background-color: var(--background-secondary);
+}
+
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header:not(.is-active):hover
+  .workspace-tab-header-inner,
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header:not(.is-active):hover
+  .workspace-tab-header-inner-title,
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header:not(.is-active):hover
+  .workspace-tab-header-inner-icon {
+  transition: background-color 200ms ease-in-out;
 }
 
 .mod-root

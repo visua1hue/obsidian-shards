@@ -646,13 +646,19 @@ input.prompt-input {
   opacity: 0.75;
   /* Animation when becoming inactive */
   animation: tabDeactivate 420ms var(--anim-motion-smooth);
-  transition: opacity 280ms ease-out;
+  transition: background-color 200ms ease-in-out, opacity 280ms ease-out;
 }
 
 /* Hover effect for inactive tabs */
 .mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover {
   opacity: 0.9;
-  background-color: var(--background-modifier-hover);
+  background-color: var(--background-secondary);
+}
+
+.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner,
+.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-title,
+.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
+  transition: background-color 200ms ease-in-out;
 }
 
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-title {
@@ -715,26 +721,6 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   background-color: unset;
 }
 
-.mod-linux .titlebar-button,
-.mod-windows .titlebar-button {
-  background-color: var(--background-primary);
-}
-
-.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-  background-color: var(--background-secondary-alt);
-}
-
-.mod-left-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
-.mod-right-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
-.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
-.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--text-normal) !important;
-}
-
-.workspace-tab-header-inner .workspace-tab-header-inner-icon {
-  transition: color 0.3s ease-out !important;
-}
-
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner,
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
@@ -748,10 +734,6 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   text-rendering: geometricPrecision;
 }
 
-.workspace .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title {
-  opacity: 0.4;
-}
-
 .workspace-tab-header-status-icon,
 .workspace-tab-header-inner-close-button {
   transform: scale(0.75);
@@ -763,10 +745,6 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 
 .workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon {
   color: var(--text-faint);
-}
-
-.workspace-tab-header-inner {
-  padding: var(--size-2-2) var(--size-2-3);
 }
 
 .mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner {
