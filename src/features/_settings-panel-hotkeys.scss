@@ -1,0 +1,28 @@
+.hotkey-list-container .setting-item {
+  padding: 0.5em 0;
+  // font-family: var(--font-monospace);
+}
+
+.hotkey-list-container .setting-item .setting-item-name {
+  font-size: var(--font-ui-small);
+}
+
+.setting-item-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--size-4-2);
+}
+
+/* Move the Restore Default button (first) */
+.setting-item-control .clickable-icon[aria-label="Restore default"] {
+  order: -1;
+}
+
+.setting-item-control .setting-command-hotkeys {
+  order: 0;
+}
+
+.setting-item-control .clickable-icon.setting-add-hotkey-button {
+  order: 1;
+}
