@@ -1,12 +1,13 @@
 @charset "UTF-8";
 body:is(.theme-dark) {
   --signature: "✦";
+  --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-base-shiny);
+  --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
   --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-anysphere: hsl(247, 90%, 80%);
-  --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
@@ -33,12 +34,13 @@ body:is(.theme-dark) {
 
 body:is(.theme-light) {
   --signature: "✦";
+  --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-base-shiny);
+  --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
   --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
   --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-anysphere: hsl(247, 90%, 80%);
-  --accent-ext-crystalteal: hsl(180, 92%, 66%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
@@ -258,6 +260,10 @@ button:not(.mod-cta) {
 button:not(.mod-cta):hover {
   background-color: var(--background-secondary);
   color: var(--text-normal);
+}
+
+button.mod-cta {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* SETTINGS :: Select Elements */
