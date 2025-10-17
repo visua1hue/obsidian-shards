@@ -787,6 +787,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   gap: 3px;
 }
 
+.mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable .workspace-tab-header-inner {
+  padding: var(--size-2-2) var(--size-2-3);
+}
+
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
   background-color: transparent;
 }
