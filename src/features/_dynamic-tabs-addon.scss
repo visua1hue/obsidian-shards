@@ -11,25 +11,6 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   background-color: unset;
 }
 
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner,
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-title,
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-close-button,
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-icon {
-  color: var(--text-normal) !important;
-}
-
 .is-active .workspace-tab-header-inner-title {
   font-weight: 500;
   color: var(--typo-hsl);
@@ -43,6 +24,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 
 .mod-left-split .workspace-tab-header, .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
+}
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon, .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--text-normal);
 }
 
 .workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon {

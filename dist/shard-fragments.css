@@ -755,13 +755,6 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   background-color: unset;
 }
 
-.mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner,
-.mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
-.mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
-.mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-  color: var(--text-normal) !important;
-}
-
 .is-active .workspace-tab-header-inner-title {
   font-weight: 500;
   color: var(--typo-hsl);
@@ -775,6 +768,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 
 .mod-left-split .workspace-tab-header, .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
+}
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon, .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--text-normal);
 }
 
 .workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon {
@@ -820,19 +817,11 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 }
 
 .nav-file-title.is-active {
-  color: var(--text-normal);
+  color: var(--interactive-accent);
 }
 
 .workspace-leaf-content[data-type=file-explorer] .nav-files-container {
   padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
-}
-
-body:not(.is-grabbing) .nav-file-title.is-active:hover,
-body:not(.is-grabbing) .nav-folder-title.is-active:hover,
-.nav-file-title.is-active,
-.nav-folder-title.is-active {
-  border-color: transparent !important;
-  color: var(--text-normal) !important;
 }
 
 body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
