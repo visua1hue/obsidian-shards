@@ -1390,6 +1390,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
 .markdown-source-view.mod-cm6 .code-block-flair {
   position: absolute;
   right: 6px;
+  top: 2px;
   z-index: 1;
   display: inline-block;
   padding: unset;
