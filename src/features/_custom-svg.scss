@@ -64,6 +64,11 @@ mod-left-split
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='currentColor' stroke-width='1.5'%3E%3Cpath d='M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m8 14l4-4l4 4'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+.setting-item-control .clickable-icon.extra-setting-button[aria-label*="Configure hotkeys"] svg {
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='currentColor' stroke-width='1.5'%3E%3Cpath d='M3 19V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m8 14l4-4l4 4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 /* Obsidian CORE :: Outline */
 .workspace-tab-header[data-type="outline"]
   .workspace-tab-header-inner-icon
