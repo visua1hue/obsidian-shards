@@ -150,13 +150,23 @@ button:not(.mod-cta) {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:not(.mod-cta):hover {
+button:not(.mod-cta):not(.mod-warning):hover {
   background-color: var(--background-secondary);
   color: var(--text-normal);
 }
 
+button:not(.mod-cta):focus-visible {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 0 0 0 transparent;
+}
+
 button.mod-cta {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.mod-warning:hover {
+  color: hsl(348, 100%, 59%);
 }
 
 /* SETTINGS :: Select Elements */
