@@ -478,6 +478,37 @@ input.prompt-input {
   background-color: unset;
 }
 
+.notice-container {
+  --notice-spacing: 10px;
+  padding: var(--notice-spacing);
+  top: 0;
+}
+
+.notices-at-bottom-right .notice-container {
+  /* reverse order of notices, stacking from bottom to top */
+  bottom: calc(var(--status-bar-font-size) + var(--notice-spacing));
+  top: unset;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.notice {
+  min-width: 10rem;
+  padding: 6px 12px;
+  margin-bottom: 6px;
+  font-size: var(--font-small);
+  line-height: 1.3;
+}
+.notice.mod-success {
+  color: var(--color-accent);
+}
+.notice.mod-error {
+  color: hsl(348, 100%, 59%);
+}
+.notice:hover {
+  opacity: 0.8;
+}
+
 /* TAB :: Empty State (New tab) */
 .workspace-tab-header[aria-label="No file"] {
   visibility: hidden;
