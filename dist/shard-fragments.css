@@ -17,6 +17,8 @@ body:is(.theme-dark) {
   --list-marker-color-collapsed: var(--text-faint);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
+  --link-color: var(--interactive-accent);
+  --link-color-hover: var(--interactive-accent-hover);
   --link-external-color: var(--interactive-accent);
   --link-external-color-hover: var(--interactive-accent-hover);
   --code-normal: var(--text-normal);
@@ -50,6 +52,8 @@ body:is(.theme-light) {
   --list-marker-color-collapsed: var(--text-faint);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
+  --link-color: var(--interactive-accent);
+  --link-color-hover: var(--interactive-accent-hover);
   --link-external-color: var(--interactive-accent);
   --link-external-color-hover: var(--interactive-accent-hover);
   --code-normal: var(--text-normal);
@@ -1408,7 +1412,7 @@ strong,
 
 .markdown-source-view.mod-cm6 .cm-link .cm-underline,
 .markdown-source-view.mod-cm6 .cm-url .cm-underline {
-  color: var(--accent-ext-shinyfocus);
+  color: var(--link-external-color);
 }
 
 /* INTERNAL LINK :: Opacity */
