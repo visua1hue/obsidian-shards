@@ -3,20 +3,22 @@ body:is(.theme-dark) {
   --signature: "✦";
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
-  --accent-ext-linear: hsl(234, 56%, 60%);
-  --accent-ext-anysphere: hsl(247, 90%, 80%);
-  --accent-ext-shinyfocus: hsl(184 78% 35%);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+  --text-normal: oklch(0.8491 0.0134 102.47);
+  --accent-ext-linear: oklch(0.5712 0.1565 275.52);
+  --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
+  --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
+  --accent-ext-shinyfocus: oklch(0.6133 0.1011 202.85);
+  --divider-width: 2px;
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
+  --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
-  --titlebar-text-color-focused: var(--accent-base-dimmed);
+  --list-marker-color-collapsed: var(--text-faint);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
-  --list-marker-color-collapsed: hsl(0, 0%, 100%);
-  --tab-outline-width: var(--divider-width);
-  --divider-width: 2px;
-  --text-normal: hsl(55, 10%, 79%);
+  --link-external-color: var(--interactive-accent);
+  --link-external-color-hover: var(--interactive-accent-hover);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
   --code-function: var(--accent-ext-linear);
@@ -34,20 +36,22 @@ body:is(.theme-light) {
   --signature: "✦";
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
-  --accent-ext-linear: hsl(234, 56%, 60%);
-  --accent-ext-anysphere: hsl(247, 90%, 80%);
-  --accent-ext-shinyfocus: hsl(184 78% 35%);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+  --text-normal: oklch(0.3565 0.006 106.7);
+  --accent-ext-linear: oklch(0.5712 0.1565 275.52);
+  --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
+  --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
+  --accent-ext-shinyfocus: oklch(0.6133 0.1011 202.85);
+  --divider-width: 2px;
   --header-height: 30px;
   --tab-height: calc(var(--header-height) - 12px);
+  --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
-  --titlebar-text-color-focused: var(--accent-base-dimmed);
+  --list-marker-color-collapsed: var(--text-faint);
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
-  --list-marker-color-collapsed: var(--text-faint);
-  --tab-outline-width: var(--divider-width);
-  --divider-width: 2px;
-  --text-normal: hsl(60, 3%, 23%);
+  --link-external-color: var(--interactive-accent);
+  --link-external-color-hover: var(--interactive-accent-hover);
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
   --code-function: var(--accent-ext-linear);
@@ -59,7 +63,6 @@ body:is(.theme-light) {
   --code-punctuation: var(--text-muted);
   --code-tag: var(--text-faint);
   --code-value: var(--text-normal);
-  /* Gamma (extend AnuPpuccin) */
 }
 
 /* CORE UI :: Hider CSS Modifications */
