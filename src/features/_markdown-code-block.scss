@@ -74,3 +74,22 @@ body:not(.no-codeblock-line-numbers)
 .cm-s-obsidian .HyperMD-codeblock {
   font-weight: 500;
 }
+
+/* CODE BLOCK ELEMENT :: Outer Border */
+.cm-s-obsidian .HyperMD-codeblock {
+    border-left: 2px solid var(--background-modifier-border) !important;
+    border-right: 2px solid var(--background-modifier-border) !important;
+}
+
+.cm-s-obsidian .HyperMD-codeblock-begin {
+    border-top: 2px solid var(--background-modifier-border) !important;
+    border-top-left-radius: calc(var(--dynamic-tab-radius) + 2px) !important;
+    border-top-right-radius: calc(var(--dynamic-tab-radius) + 2px) !important;
+}
+
+.cm-s-obsidian .HyperMD-codeblock-end {
+    border-bottom: 2px solid var(--background-modifier-border) !important;
+    border-bottom-left-radius: calc(var(--dynamic-tab-radius) + 2px) !important;
+    border-bottom-right-radius: calc(var(--dynamic-tab-radius) + 2px) !important;
+}
+
