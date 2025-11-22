@@ -2,11 +2,9 @@
 body:is(.theme-dark) {
   --signature: "✦";
   --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-base-shiny);
+  --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
-  --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
-  --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-anysphere: hsl(247, 90%, 80%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
   --header-height: 30px;
@@ -35,11 +33,9 @@ body:is(.theme-dark) {
 body:is(.theme-light) {
   --signature: "✦";
   --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-base-shiny);
+  --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
-  --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
-  --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-anysphere: hsl(247, 90%, 80%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
   --header-height: 30px;
@@ -450,7 +446,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 }
 
 .suggestion-item.mod-complex .suggestion-highlight:not(.suggestion-prefix):not(.suggestion-prefix *) {
-  color: var(--accent-base-shiny);
+  color: var(--accent-ext-shinyfocus);
   font-weight: 500;
 }
 
@@ -836,7 +832,7 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 /* FEXP :: Adjustments */
 @media (hover: hover) {
   body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
-    color: var(--accent-base-shiny);
+    color: var(--accent-ext-shinyfocus);
     background-color: transparent;
     transition: color 300ms ease-in-out;
   }
@@ -1043,7 +1039,7 @@ mod-left-split .workspace-tab-header .mod-left-split .workspace-tab-header.has-a
 /* Obsidian CORE :: Command palette command (pinned) */
 .suggestion-item.mod-complex .suggestion-flair svg {
   background-color: currentColor;
-  color: var(--accent-base-shiny);
+  color: var(--accent-ext-shinyfocus);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23888888' d='M10.154 14H7.169q-.407 0-.59-.355q-.18-.355.054-.682l5.629-8.153q.153-.216.38-.286q.227-.07.48.022q.251.092.365.304q.113.212.082.463L12.865 11h3.587q.42 0 .595.383q.176.382-.095.71l-6.264 7.503q-.16.19-.386.242t-.448-.046q-.221-.098-.338-.297q-.116-.199-.085-.45z'/%3E%3C/svg%3E");
 }
 
@@ -1409,7 +1405,7 @@ strong,
 
 .markdown-source-view.mod-cm6 .cm-link .cm-underline,
 .markdown-source-view.mod-cm6 .cm-url .cm-underline {
-  color: var(--accent-base-shiny);
+  color: var(--accent-ext-shinyfocus);
 }
 
 /* INTERNAL LINK :: Opacity */
@@ -1501,7 +1497,7 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 }
 
 .omnisearch-default-highlight {
-  color: var(--accent-base-shiny);
+  color: var(--accent-ext-shinyfocus);
   text-decoration: underline;
   text-decoration-color: var(--accent-ext-shinyfocus);
   text-decoration-thickness: 3px;

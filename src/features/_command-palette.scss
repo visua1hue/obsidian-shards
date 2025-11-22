@@ -121,7 +121,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 
 .suggestion-item.mod-complex
   .suggestion-highlight:not(.suggestion-prefix):not(.suggestion-prefix *) {
-  color: var(--accent-base-shiny);
+  color: var(--accent-ext-shinyfocus);
   font-weight: 500;
 }
 

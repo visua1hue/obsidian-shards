@@ -1,7 +1,7 @@
 /* FEXP :: Adjustments */
 @media (hover: hover) {
   body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
-    color: var(--accent-base-shiny);
+    color: var(--accent-ext-shinyfocus);
     background-color: transparent;
     transition: color 300ms ease-in-out;
   }

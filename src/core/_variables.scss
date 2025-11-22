@@ -2,12 +2,10 @@ body:is(.theme-dark) {
   --signature: "✦";
 
   --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-base-shiny);
+  --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
 
-  --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
-  --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-anysphere: hsl(247, 90%, 80%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
 
@@ -39,12 +37,10 @@ body:is(.theme-light) {
   --signature: "✦";
 
   --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-base-shiny);
+  --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: color-mix(in srgb, var(--interactive-accent), white 15%);
 
-  --accent-base-shiny: var(--accent-ext-shinyfocus);
   --accent-ext-linear: hsl(234, 56%, 60%);
-  --accent-ext-obsidian: hsl(256, 92%, 76%);
   --accent-ext-anysphere: hsl(247, 90%, 80%);
   --accent-ext-shinyfocus: hsl(184 78% 35%);
 
