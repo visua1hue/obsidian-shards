@@ -142,10 +142,19 @@ input.prompt-input {
     }
 }
 
-.modal-container:has(.prompt-input:placeholder-shown) .prompt .prompt-results:not(:has(.suggestion-flair)) {
+.modal-container:has(.prompt-input[placeholder="Type a command..."]:placeholder-shown) .prompt .prompt-results {
     display: none;
     min-height: 0;
     padding: 0;
+}
+
+.modal-container .omnisearch-modal.prompt {
+    /* When input is empty (placeholder shown), hide results */
+    &:has(.prompt-input:placeholder-shown) .prompt-results {
+        display: none;
+        min-height: 0;
+        padding: 0;
+    }
 }
 
 .modal-container .suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(
