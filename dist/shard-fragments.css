@@ -457,38 +457,24 @@ body:not(.is-mobile) .prompt .suggestion-item {
   font-weight: 500;
 }
 
-.prompt-input-container {
-  border-bottom: unset;
+.modal-container .prompt:has(.prompt-input[placeholder="Type a command..."]:placeholder-shown) .suggestion-item:not(:has(.lucide-pin)),
+.modal-container .prompt:has(.prompt-input[placeholder="Select a command..."]:placeholder-shown) .suggestion-item:not(:has(.lucide-pin)) {
+  display: none;
 }
 
-input.prompt-input {
-  border: unset !important;
+.modal-container .prompt:has(.prompt-input[placeholder="Type a command..."]:placeholder-shown):not(:has(.lucide-pin)) .prompt-results,
+.modal-container .prompt:has(.prompt-input[placeholder="Select a command..."]:placeholder-shown):not(:has(.lucide-pin)) .prompt-results {
+  display: none;
+  padding: 0;
+  min-height: 0;
 }
 
-.modal-container .omnisearch-modal.prompt .prompt-results {
-  padding: 0 var(--size-4-3) var(--size-4-3) var(--size-4-3);
-}
 .modal-container .omnisearch-modal.prompt .prompt-results:not(:has(.svelte-lazy)) {
   padding: 0;
   min-height: 0;
 }
 
-.modal-container:has(.prompt-input[placeholder="Type a command..."]:placeholder-shown) .prompt .prompt-results {
-  display: none;
-  min-height: 0;
-  padding: 0;
-}
-
-.modal-container .omnisearch-modal.prompt {
-  /* When input is empty (placeholder shown), hide results */
-}
 .modal-container .omnisearch-modal.prompt:has(.prompt-input:placeholder-shown) .prompt-results {
-  display: none;
-  min-height: 0;
-  padding: 0;
-}
-
-.modal-container .suggestion-item.mod-complex:not(:has(.suggestion-aux .suggestion-flair)):not(:has(.suggestion-highlight)) {
   display: none;
 }
 
@@ -496,8 +482,13 @@ input.prompt-input {
   display: none;
 }
 
-input.prompt-input {
-  background-color: unset;
+.modal-container .prompt .prompt-input-container {
+  border-bottom: unset;
+}
+
+.modal-container .prompt .prompt-input {
+  background-color: transparent;
+  border: unset !important;
 }
 
 .notice-container {
