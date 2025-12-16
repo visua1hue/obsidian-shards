@@ -341,8 +341,12 @@ select:focus,
   width: 100%;
   height: 100%;
   background-color: var(--background-modifier-cover);
+  background-image: linear-gradient(45deg, oklch(100% 0 0deg / 0.03) 1px, transparent 1px), linear-gradient(-45deg, oklch(100% 0 0deg / 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-repeat: repeat;
   opacity: 0;
-  transition: opacity 0.15s ease-out;
+  will-change: opacity;
+  transition: opacity 0.2s ease-out;
   pointer-events: none;
 }
 
@@ -350,7 +354,7 @@ select:focus,
   --anim-duration-slow: 640ms;
   --anim-motion-out: cubic-bezier(0.32, 0.72, 0, 1.1);
   transition: var(--anim-duration-slow) var(--anim-motion-out);
-  box-shadow: var(--shadow-l);
+  box-shadow: 0 0 0 1px oklch(100% 0 0deg / 0.03), 0 30px 60px -10px oklch(20% 0.01 260deg / 0.1), 0 60px 120px -20px oklch(20% 0.01 260deg / 0.05);
   border-radius: 13px;
   border: var(--divider-width) solid var(--divider-color);
 }
