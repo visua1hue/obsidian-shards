@@ -1,6 +1,4 @@
 body:is(.theme-dark) {
-  --signature: "✦";
-
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
@@ -38,8 +36,6 @@ body:is(.theme-dark) {
 }
 
 body:is(.theme-light) {
-  --signature: "✦";
-
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
