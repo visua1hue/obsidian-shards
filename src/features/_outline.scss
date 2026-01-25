@@ -8,6 +8,14 @@ body:not(.show-sidebar-header-buttons)
   .workspace-tabs:not(.mod-top)
   .workspace-tab-header-container:not(:hover) {
   height: var(--sidebar-tabs-unhovered-height);
+  overflow: hidden;
+}
+
+body:not(.show-sidebar-header-buttons)
+  :is(.mod-left-split, .mod-right-split)
+  .workspace-tabs:not(.mod-top)
+  .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+  opacity: 0;
 }
 
 body:not(.show-sidebar-header-buttons)
@@ -31,14 +39,6 @@ body:not(.show-sidebar-header-buttons)
   font-weight: 600;
 }
 
-.outline .pane-empty {
+.workspace-leaf-content[data-type="outline"] .view-content .pane-empty {
   display: none;
-}
-
-.pane-empty {
-  display: none;
-}
-
-.workspace-ribbon {
-  border-right: var(--divider-width) solid var(--divider-color);
 }

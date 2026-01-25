@@ -36,7 +36,7 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 
 .mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner {
   padding: 1px 0 7px;
-  margin: 3px 0 0 0;
+  margin: 3px 0 0 0 !important;
   gap: 3px;
 }
 
