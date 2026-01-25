@@ -199,6 +199,10 @@ body:not(.native-scrollbars) .modal-close-button {
   display: none;
 }
 
+.vertical-tab-nav-item-icon {
+  display: none;
+}
+
 /* SETTINGS :: Hotkeys */
 .setting-hotkey {
   background-color: var(--code-background);
