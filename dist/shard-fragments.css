@@ -1532,6 +1532,11 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
   background-color: rgba(217, 217, 208, 0.125);
 }
 
+.callout[data-callout=blank] .callout-title {
+  gap: 0;
+  color: var(--color-accent);
+}
+
 @media only screen and (max-width: 600px) {
   .omnisearch-input-container {
     flex-direction: unset;

@@ -3,3 +3,8 @@
   --callout-icon: transparent;
   background-color: rgba(217, 217, 208, 0.125);
 }
+
+.callout[data-callout="blank"] .callout-title {
+  gap: 0;
+  color: (var(--color-accent))
+}
