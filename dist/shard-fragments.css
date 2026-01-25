@@ -856,48 +856,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 }
 
 /* FEXP :: Adjustments */
-@media (hover: hover) {
-  body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
-    color: var(--interactive-accent);
-    background-color: transparent;
-    transition: color 300ms ease-in-out;
-  }
-}
 .tree-item-self {
   font-size: 0.9em;
-  margin-bottom: unset;
+  margin-bottom: 0.09em;
   margin-top: unset;
-}
-
-.nav-folder-title {
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.nav-file-title {
-  color: var(--text-faint);
-  font-weight: 400;
-}
-
-.nav-file-title.is-active {
-  color: var(--interactive-accent);
-}
-
-.workspace-leaf-content[data-type=file-explorer] .nav-files-container {
-  padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
-}
-
-body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
-  border-radius: unset;
-  box-shadow: unset;
-}
-
-body:not(.is-grabbing) .nav-file-title.is-active:hover,
-body:not(.is-grabbing) .nav-folder-title.is-active:hover,
-.nav-file-title.is-active,
-.nav-folder-title.is-active {
-  background-color: unset;
-  box-shadow: unset;
 }
 
 .tree-item-children {
@@ -905,13 +867,46 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
   border-inline-start: 2px solid var(--indentation-guide-color);
 }
 
+/* Prevent filename trim while renaming */
+.tree-item-self.is-being-renamed .tree-item-inner {
+  white-space: normal;
+}
+
+.workspace-leaf-content[data-type=file-explorer] .nav-files-container {
+  padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
+}
+
 .collapse-icon svg.svg-icon {
   color: unset;
 }
 
-/* FEXP :: Prevent filename trim while renaming */
-.tree-item-self.is-being-renamed .tree-item-inner {
-  white-space: normal;
+.nav-folder-title {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.nav-file-title {
+  color: var(--text-faint);
+  font-weight: 400;
+}
+
+body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
+  border-radius: unset;
+  box-shadow: unset;
+}
+
+body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active) {
+  transition: 200ms;
+  transition-property: background, color;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover {
+  color: var(--interactive-accent);
+}
+
+.nav-file-title.is-active:not(:hover) {
+  color: var(--interactive-accent);
 }
 
 .nav-folder-title:is([data-path$=_ i],
@@ -1116,7 +1111,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 }
 
 .workspace-leaf-content[data-type=outline] .view-content {
-  padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
+  padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
 }
 
 .outline .tree-item.is-collapsed > .tree-item-self.tree-item-self.tree-item-self {

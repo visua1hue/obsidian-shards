@@ -1,21 +1,31 @@
 /* FEXP :: Adjustments */
-@media (hover: hover) {
-  body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
-    color: var(--interactive-accent);
-    background-color: transparent;
-    transition: color 300ms ease-in-out;
-  }
-}
-
 .tree-item-self {
   font-size: 0.9em;
-  margin-bottom: unset;
+  margin-bottom: 0.09em;
   margin-top: unset;
+}
+
+.tree-item-children {
+  margin-inline-start: calc(var(--nav-item-children-margin-start, var(--nav-item-children-margin-left)) - 1px);
+  border-inline-start: 2px solid var(--indentation-guide-color);
+}
+
+/* Prevent filename trim while renaming */
+.tree-item-self.is-being-renamed .tree-item-inner {
+  white-space: normal;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
+  padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
+}
+
+.collapse-icon svg.svg-icon {
+  color: unset;
 }
 
 .nav-folder-title {
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .nav-file-title {
@@ -23,40 +33,21 @@
   font-weight: 400;
 }
 
-.nav-file-title.is-active {
-  color: var(--interactive-accent);
-}
-
-.workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
-  padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
-}
-
 body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
   border-radius: unset;
   box-shadow: unset;
 }
 
+body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active) {
+  transition: 200ms;
+  transition-property: background, color;
+}
+
 body:not(.is-grabbing) .nav-file-title.is-active:hover,
-body:not(.is-grabbing) .nav-folder-title.is-active:hover,
-.nav-file-title.is-active,
-.nav-folder-title.is-active {
-  background-color: unset;
-  box-shadow: unset;
+body:not(.is-grabbing) .nav-folder-title.is-active:hover {
+    color: var(--interactive-accent);
 }
 
-.tree-item-children {
-  margin-inline-start: calc(
-    var(--nav-item-children-margin-start, var(--nav-item-children-margin-left)) -
-      1px
-  );
-  border-inline-start: 2px solid var(--indentation-guide-color);
-}
-
-.collapse-icon svg.svg-icon {
-  color: unset;
-}
-
-/* FEXP :: Prevent filename trim while renaming */
-.tree-item-self.is-being-renamed .tree-item-inner {
-  white-space: normal;
+.nav-file-title.is-active:not(:hover) {
+  color: var(--interactive-accent);
 }
