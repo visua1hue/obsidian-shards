@@ -7,8 +7,9 @@
 .external-link::after {
   vertical-align: text-top;
   margin-right: unset;
+  margin-left: 2px;
   content: "↗";
-  font-size: 12px;
+  font-size: 10px;
   font-family: "Inter";
   color: var(--text-muted);
 }
