@@ -98,13 +98,6 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   display: none;
 }
 
-/* .nav-header {
-  display: none;
-} */
-/* .anp-alternate-tab-toggle .sidebar-toggle-button.mod-left,
-.anp-alternate-tab-toggle .sidebar-toggle-button.mod-right {
-  display: none;
-} */
 .modal.mod-settings {
   --anim-duration-slow: 640ms;
   --anim-motion-out: cubic-bezier(0.32, 0.72, 0, 1.1);
@@ -1317,7 +1310,7 @@ li.is-collapsed .list-bullet:after,
 }
 
 .markdown-source-view.mod-cm6 .cm-indent::before {
-  border-inline-end: 2px solid var(--indentation-guide-color); /* adjusted indentation line */
+  border-inline-end: 2px solid var(--indentation-guide-color);
 }
 
 .markdown-source-view.mod-cm6.is-live-preview .cm-indent::before {
