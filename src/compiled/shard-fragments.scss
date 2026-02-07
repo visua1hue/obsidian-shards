@@ -1,0 +1,27 @@
+@use '../core/variables';
+
+@use '../features/hide-core-elements';
+@use '../features/settings-panel';
+@use '../features/settings-panel-hotkeys';
+@use '../features/command-palette';
+@use '../features/notifications';
+@use '../features/empty-tab-state';
+@use '../features/dynamic-tabs';
+@use '../features/dynamic-tabs-addon';
+@use '../features/file-explorer';
+@use '../features/file-explorer-hide-folder';
+@use '../features/vault-profile';
+@use '../features/compact-actions';
+@use '../features/custom-svg';
+@use '../features/outline';
+@use '../features/unique-checkbox';
+@use '../features/collapsed-list-bullets';
+@use '../features/active-line-indicator';
+@use '../features/markdown-header';
+@use '../features/markdown-typo-format';
+@use '../features/markdown-links';
+@use '../features/markdown-code-block';
+@use '../features/markdown-callouts';
+
+@use '../plugins/omnisearch';
+@use '../plugins/listcallouts';
