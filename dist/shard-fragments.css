@@ -1115,26 +1115,6 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   display: none;
 }
 
-.suggestion-container.mod-search-suggestion {
-  display: none;
-}
-
-.search-input-container input {
-  padding-inline-start: 8px;
-}
-
-.search-input-container:before {
-  display: none;
-}
-
-.workspace-leaf-content[data-type=bookmarks] .tree-item-icon .svg-icon.lucide-file {
-  display: none;
-}
-
-.workspace-leaf-content[data-type=bookmarks] .view-content {
-  padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
-}
-
 /* CHECKBOX INPUT ELEMENT :: Unique Checkbox */
 /*  Unchecked Checkbox Style  */
 input.task-list-item-checkbox {

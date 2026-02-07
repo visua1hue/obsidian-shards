@@ -1,12 +1,12 @@
 {
   "name": "obsidian-shards",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Curated, modular CSS shards built for Obsidian MD",
   "main": "index.js",
   "scripts": {
-    "build": "sass src:dist",
-    "watch": "sass --watch src:dist",
-    "dev": "npm run build && npm run watch"
+    "build": "sass src/compiled/shard-extended.scss:dist/shard-extended.css src/compiled/shard-fragments.scss:dist/shard-fragments.css",
+    "watch": "sass --watch src/compiled:dist",
+    "dev": "npm run watch"
   },
   "repository": {
     "type": "git",
