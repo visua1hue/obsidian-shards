@@ -902,6 +902,17 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover {
   color: var(--interactive-accent);
 }
 
+/* Smooth side panels entrance transitions (desktop only) */
+body:not(.is-mobile) .mod-sidedock .workspace-leaf {
+  animation: 300ms cubic-bezier(0.3, 0.75, 0, 1) reveal-panels;
+}
+
+@keyframes reveal-panels {
+  0% {
+    transform: scale(1.0625);
+    opacity: 0;
+  }
+}
 .nav-folder-title:is([data-path$=_ i],
 [data-path=Attachments i],
 [data-path=Assets i]) {
@@ -1113,26 +1124,6 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 
 .workspace-leaf-content[data-type=outline] .view-content .pane-empty {
   display: none;
-}
-
-.suggestion-container.mod-search-suggestion {
-  display: none;
-}
-
-.search-input-container input {
-  padding-inline-start: 8px;
-}
-
-.search-input-container:before {
-  display: none;
-}
-
-.workspace-leaf-content[data-type=bookmarks] .tree-item-icon .svg-icon.lucide-file {
-  display: none;
-}
-
-.workspace-leaf-content[data-type=bookmarks] .view-content {
-  padding: var(--size-4-2) var(--size-2-2) var(--size-4-6) var(--size-2-2);
 }
 
 /* CHECKBOX INPUT ELEMENT :: Unique Checkbox */
