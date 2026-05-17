@@ -42,3 +42,10 @@ body:not(.show-sidebar-header-buttons)
 .workspace-leaf-content[data-type="outline"] .view-content .pane-empty {
   display: none;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  body:not(.is-grabbing) .workspace-leaf-content[data-type="outline"] .tree-item-self.is-clickable:not(.is-active):hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}

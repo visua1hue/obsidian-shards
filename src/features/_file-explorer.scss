@@ -55,6 +55,10 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.04);
   }
+
+  body:not(.is-grabbing) .nav-folder-title:not(.is-active):hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
 }
 
 .nav-file-title.is-active,
