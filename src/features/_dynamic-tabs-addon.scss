@@ -34,6 +34,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   color: var(--text-faint);
 }
 
+.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
+  border-bottom: unset;
+}
+
 .mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner {
   padding: 1px 0 7px;
   margin: 3px 0 0 0 !important;

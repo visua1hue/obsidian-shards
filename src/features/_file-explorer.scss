@@ -38,17 +38,23 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
   box-shadow: unset;
 }
 
-body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active) {
-  transition: 200ms;
-  transition-property: background, color;
+.tree-item-self.is-clickable:not(.is-active) {
+  opacity: 0.5;
+  transition: opacity 120ms ease-out;
 }
 
-body:not(.is-grabbing) .nav-file-title.is-active:hover,
-body:not(.is-grabbing) .nav-folder-title.is-active:hover {
-    color: var(--interactive-accent);
+@media (hover: hover) and (pointer: fine) {
+  body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):hover {
+    opacity: 1;
+  }
 }
 
-.nav-file-title.is-active:not(:hover) {
+.tree-item-self.is-active {
+  opacity: 1;
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
   color: var(--interactive-accent);
 }
 

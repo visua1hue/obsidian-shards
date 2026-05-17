@@ -130,7 +130,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: unset;
   color: var(--text-normal);
-  transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in, opacity 0.2s ease-in;
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -141,7 +141,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
   color: var(--text-muted);
-  transition: color 0.2s ease-out;
+  opacity: 0.5;
+  transition: color 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .vertical-tab-nav-item::before {
@@ -836,6 +837,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   color: var(--text-faint);
 }
 
+.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
+  border-bottom: unset;
+}
+
 .mod-left-split .workspace-tab-header-container-inner, .mod-right-split .workspace-tab-header-container-inner {
   padding: 1px 0 7px;
   margin: 3px 0 0 0 !important;
@@ -890,17 +895,22 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
   box-shadow: unset;
 }
 
-body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active) {
-  transition: 200ms;
-  transition-property: background, color;
+.tree-item-self.is-clickable:not(.is-active) {
+  opacity: 0.5;
+  transition: opacity 120ms ease-out;
 }
 
-body:not(.is-grabbing) .nav-file-title.is-active:hover,
-body:not(.is-grabbing) .nav-folder-title.is-active:hover {
-  color: var(--interactive-accent);
+@media (hover: hover) and (pointer: fine) {
+  body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):hover {
+    opacity: 1;
+  }
+}
+.tree-item-self.is-active {
+  opacity: 1;
 }
 
-.nav-file-title.is-active:not(:hover) {
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
   color: var(--interactive-accent);
 }
 
@@ -938,6 +948,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   gap: var(--size-4-1);
   justify-content: space-between;
   padding: var(--size-2-2) var(--size-2-2);
+  border-top: unset;
   order: 1;
 }
 

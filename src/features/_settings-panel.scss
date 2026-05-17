@@ -26,7 +26,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: unset;
   color: var(--text-normal);
-  transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in, opacity 0.2s ease-in;
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -37,7 +37,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
   color: var(--text-muted);
-  transition: color 0.2s ease-out;
+  opacity: 0.5;
+  transition: color 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .vertical-tab-nav-item::before {
