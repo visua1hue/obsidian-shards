@@ -24,7 +24,7 @@
 	}
 
 	&.mod-error {
-		color: hsl(348, 100%, 59%);
+		color: var(--text-error);
 	}
 
 	&:hover {

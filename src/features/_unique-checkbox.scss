@@ -15,7 +15,7 @@ input.task-list-item-checkbox {
   cursor: pointer;
   vertical-align: middle;
   top: -2px;
-  transition: box-shadow 300ms ease, transform 300ms ease;
+  transition: box-shadow var(--motion-dur-base) ease, transform var(--motion-dur-base) ease;
   transform: scale(1) translateZ(0);
 }
 
@@ -39,7 +39,7 @@ input.task-list-item-checkbox::before {
   background-color: var(--interactive-accent);
   border-radius: 3px;
   opacity: 0;
-  transition: opacity 300ms ease;
+  transition: opacity var(--motion-dur-base) ease;
   transform: translateZ(0);
 }
 
@@ -88,7 +88,7 @@ input.task-list-item-checkbox::after {
 /*  Completed Task Text Styling  */
 .HyperMD-task-line,
 .task-list-item {
-  transition: color 0.4s ease;
+  transition: color var(--motion-dur-base) ease;
 }
 .HyperMD-task-line[data-task="x"],
 .task-list-item[data-task="x"] {
@@ -107,7 +107,7 @@ input.task-list-item-checkbox::after {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   background-size: 0% 1.5px;
-  transition: background-size 0.4s ease;
+  transition: background-size var(--motion-dur-base) ease;
 }
 .HyperMD-task-line[data-task="x"] span[class*="cm-list"],
 .task-list-item[data-task="x"] > span {

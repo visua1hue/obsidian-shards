@@ -4,13 +4,6 @@
   --dynamic-tab-align: center;
   --dynamic-tab-gap: 10px;
   --dynamic-tab-radius: 8px;
-  --dynamic-tab-border-width: 2px;
-
-  /* Smooth animation settings */
-  --anim-duration-normal: 480ms;
-  --anim-duration-slow: 640ms;
-  --anim-motion-smooth: cubic-bezier(0.32, 0.72, 0, 1);
-  --anim-motion-bouncy: cubic-bezier(0.32, 0.72, 0, 1.1);
 }
 
 /* Base tab styling for horizontal tabs */
@@ -18,18 +11,25 @@
   --tab-background: var(--background-secondary);
   --tab-background-active: var(--background-primary);
   --tab-font-size: 12px;
-  --tab-height: calc(var(--header-height) * 0.7);
-  --tab-max-width: 200px;
-  --tab-max-width-active: 300px;
+  --tab-height: calc(var(--header-height) * 0.7 + 2px);
+  --tab-max-width: 160px;
+  --tab-max-width-active: 240px;
 }
 
-/* Prevent tab jumping by hiding spacer and aligning new tab button */
+/* Prevent tab jumping by hiding spacer; center new-tab button absolutely */
 .workspace-split.mod-vertical .workspace-tab-header-spacer {
   display: none;
 }
 
+.workspace-split.mod-vertical .workspace-tab-header-container {
+  position: relative;
+}
+
 .workspace-split.mod-vertical .workspace-tab-header-new-tab {
-  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Remove default tab decorations */
@@ -42,6 +42,16 @@
   display: none;
 }
 
+/* Tab bar always matches editor — inactive tabs (secondary) float on it, active blends in */
+.mod-vertical:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container,
+.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container {
+  background-color: var(--background-primary);
+}
+
 /* Tab container alignment */
 .mod-vertical:not(.mod-left-split):not(.mod-right-split)
   .workspace-tabs:not(.mod-stacked)
@@ -52,11 +62,11 @@
   align-items: center;
   justify-content: var(--dynamic-tab-align);
   margin: 0;
-  width: 100%;
+  flex: 1 1 0;
   gap: var(--dynamic-tab-gap);
 }
 
-/* Individual tab styling - smooth transform animations */
+/* Individual tab — compositor-only transitions */
 .mod-vertical:not(.mod-left-split):not(.mod-right-split)
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header,
@@ -68,17 +78,16 @@
   box-shadow: none !important;
   height: var(--tab-height);
   padding: 0 !important;
+  will-change: transform, opacity;
 
-  /* Smooth transitions */
-  transition: transform var(--anim-duration-normal) var(--anim-motion-smooth),
-    background-color 200ms ease-in-out, opacity 300ms ease-out,
-    filter 300ms ease-out;
+  transition:
+    max-width var(--motion-dur-base) var(--motion-ease-smooth),
+    transform var(--motion-dur-enter) var(--motion-ease-smooth),
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    filter var(--motion-dur-base) var(--motion-ease-out);
 
-  /* Animate new tabs appearing */
-  animation: tabEnter var(--anim-duration-slow) var(--anim-motion-bouncy)
-    backwards;
+  animation: tabEnter var(--motion-dur-enter) var(--motion-ease-spring) backwards;
 
-  /* Starting state for new tabs */
   @starting-style {
     transform: scale(0.85) translateY(-8px);
     opacity: 0;
@@ -86,7 +95,6 @@
   }
 }
 
-/* Keyframe animation for new tabs */
 @keyframes tabEnter {
   from {
     transform: scale(0.85) translateY(-8px);
@@ -100,7 +108,6 @@
   }
 }
 
-/* Keyframe animation for closing tabs */
 @keyframes tabExit {
   from {
     transform: scale(1) translateY(0);
@@ -114,33 +121,10 @@
   }
 }
 
-/* Keyframe for tab becoming active */
-@keyframes tabActivate {
-  from {
-    transform: scale(0.92);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-/* Keyframe for tab becoming inactive */
-@keyframes tabDeactivate {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.96);
-  }
-}
-
 /* Tab borders and max width */
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   max-width: var(--tab-max-width);
-  border: var(--dynamic-tab-border-width) solid var(--tab-outline-color);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
 }
 
 /* Remove left margin from first tab */
@@ -148,12 +132,12 @@
   margin-left: 0;
 }
 
-/* Tab inner content padding and colors */
+/* Tab inner content padding */
 .mod-root:not(.mod-left-split):not(.mod-right-split)
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header-inner {
   padding: 0 4px 0 8px;
-  transition: background-color 200ms ease-in-out, color 220ms ease-in-out;
+  border-radius: inherit;
 }
 
 .mod-root:not(.mod-left-split):not(.mod-right-split)
@@ -166,73 +150,44 @@
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header-inner-icon {
   color: var(--text-muted);
-  transition: color 220ms ease-in-out;
 }
 
-/* Active tab styling - animate into active state */
+/* Active tab */
 .mod-root:not(.mod-left-split):not(.mod-right-split)
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active {
-  flex-grow: 1.67;
   max-width: var(--tab-max-width-active);
-  background-color: var(--background-primary);
-  transform: scale(1);
+  background-color: var(--background-modifier-hover);
   opacity: 1;
 
-  /* Animation when becoming active */
-  animation: tabActivate var(--anim-duration-slow) var(--anim-motion-bouncy);
-
-  /* Smooth transition when becoming active */
-  transition: background-color 250ms ease-in-out, opacity 300ms ease-out;
-
-  /* Starting state when tab becomes active */
-  @starting-style {
-    transform: scale(0.92);
-    opacity: 0.7;
-  }
+  transition:
+    max-width var(--motion-dur-base) var(--motion-ease-smooth),
+    opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
-/* Inactive tabs subtle scale */
+/* Inactive tabs */
 .mod-root:not(.mod-left-split):not(.mod-right-split)
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header:not(.is-active) {
-  transform: scale(0.96);
   opacity: 0.75;
-
-  /* Animation when becoming inactive */
-  animation: tabDeactivate 420ms var(--anim-motion-smooth);
-  transition: background-color 200ms ease-in-out, opacity 280ms ease-out;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
-/* Hover effect for inactive tabs */
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active):hover {
-  opacity: 0.9;
-  background-color: var(--background-secondary);
+/* Hover — inactive tabs */
+@media (hover: hover) and (pointer: fine) {
+  .mod-root:not(.mod-left-split):not(.mod-right-split)
+    .workspace-tabs:not(.mod-stacked)
+    .workspace-tab-header:not(.is-active):hover {
+    opacity: 0.9;
+  }
 }
 
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active):hover
-  .workspace-tab-header-inner,
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active):hover
-  .workspace-tab-header-inner-title,
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active):hover
-  .workspace-tab-header-inner-icon {
-  transition: background-color 200ms ease-in-out;
-}
-
+/* Active tab title accent */
 .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-title {
   color: var(--color-accent);
-  transition: color 220ms ease-in-out;
 }
 
 .mod-root
@@ -252,14 +207,6 @@
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-icon {
   color: var(--text-faint);
-  transition: color 220ms ease-in-out;
-}
-
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner:hover {
-  background-color: rgba(var(--ctp-surface1), 0.4);
 }
 
 /* Active tab in focused window */
@@ -280,12 +227,6 @@
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-icon {
   color: var(--color-accent) !important;
-}
-
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active:hover {
-  background-color: var(--background-modifier-border);
 }
 
 /* Sidebar toggle buttons */
@@ -314,4 +255,62 @@
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-title {
   color: var(--color-accent);
+}
+
+/* Tab addon — frameless, sidebar tabs, active title */
+.is-hidden-frameless:not(.is-fullscreen)
+  .workspace-tabs.mod-top-right-space
+  .workspace-tab-header-container {
+  background-color: var(--background-primary);
+  border-bottom: unset;
+}
+
+body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
+  .mod-top
+  .workspace-tab-header-container {
+  background-color: unset;
+}
+
+.is-active .workspace-tab-header-inner-title {
+  font-weight: 500;
+  text-rendering: geometricPrecision;
+}
+
+.workspace-tab-header-status-icon,
+.workspace-tab-header-inner-close-button {
+  transform: scale(0.75);
+}
+
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+  height: var(--tab-height);
+}
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--text-normal);
+}
+
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-new-tab .clickable-icon {
+  color: var(--text-faint);
+}
+
+.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
+  border-bottom: unset;
+}
+
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+  padding: 1px 0 7px;
+  margin: 3px 0 0 0 !important;
+  gap: 3px;
+}
+
+.mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable .workspace-tab-header-inner {
+  padding: var(--size-2-2) var(--size-2-3);
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+  background-color: transparent;
 }

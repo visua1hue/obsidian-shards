@@ -13,14 +13,12 @@
   background-repeat: repeat;
   opacity: 0;
   will-change: opacity;
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
   pointer-events: none;
 }
 
 .prompt {
-  --anim-duration-slow: 640ms;
-  --anim-motion-out: cubic-bezier(0.32, 0.72, 0, 1.1);
-  transition: var(--anim-duration-slow) var(--anim-motion-out);
+  transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   box-shadow:
     0 0 0 1px oklch(100% 0 0 / 0.03),
     0 30px 60px -10px oklch(20% 0.01 260 / 0.1),

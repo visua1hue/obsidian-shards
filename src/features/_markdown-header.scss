@@ -1,60 +1,29 @@
-/* HEADINGS :: Media Querys L1-6 */
-@media (min-width: 1px) and (max-width: 2800px) {
-  h1,
-  .markdown-rendered h1,
-  .HyperMD-header-1,
-  .HyperMD-list-line .cm-header-1 {
-    font-size: 1.802em !important;
-    font-weight: 600;
-    font-family: var(--font-interface-override), sans-serif;
-  }
+/* HEADINGS :: Size variables (Obsidian reads --h1-size → --h6-size natively) */
+body {
+  --h1-size: 1.802em;
+  --h2-size: 1.602em;
+  --h3-size: 1.424em;
+  --h4-size: 1.266em;
+  --h5-size: 1.125em;
+  --h6-size: 1em;
+}
 
-  h2,
-  .markdown-rendered h2,
-  .HyperMD-header-2,
-  .HyperMD-list-line .cm-header-2 {
-    font-size: 1.602em !important;
-    font-weight: 600;
-    font-family: var(--font-interface-override), sans-serif;
-  }
+/* HEADINGS :: Font family + weight overrides */
+h1, .markdown-rendered h1, .HyperMD-header-1, .HyperMD-list-line .cm-header-1,
+h2, .markdown-rendered h2, .HyperMD-header-2, .HyperMD-list-line .cm-header-2,
+h3, .markdown-rendered h3, .HyperMD-header-3, .HyperMD-list-line .cm-header-3,
+h4, .markdown-rendered h4, .HyperMD-header-4, .HyperMD-list-line .cm-header-4,
+h5, .markdown-rendered h5, .HyperMD-header-5, .HyperMD-list-line .cm-header-5,
+h6, .markdown-rendered h6, .HyperMD-header-6, .HyperMD-list-line .cm-header-6 {
+  font-weight: 600;
+  font-family: var(--font-interface-override), sans-serif;
+  text-rendering: optimizeLegibility;
+}
 
-  h3,
-  .markdown-rendered h3,
-  .HyperMD-header-3,
-  .HyperMD-list-line .cm-header-3 {
-    font-size: 1.424em !important;
-    font-weight: 600;
-    font-family: var(--font-interface-override), sans-serif;
-    color: var(--interactive-accent);
-  }
-
-  h4,
-  .markdown-rendered h4,
-  .HyperMD-header-4,
-  .HyperMD-list-line .cm-header-4 {
-    font-size: 1.266em !important;
-    font-weight: 600;
-    font-family: var(--font-interface-override), sans-serif;
-    color: var(--interactive-accent);
-  }
-
-  h5,
-  .markdown-rendered h5,
-  .HyperMD-header-5,
-  .HyperMD-list-line .cm-header-5 {
-    font-size: 1.125em !important;
-    font-weight: 600;
-    font-family: var(--font-interface-override), sans-serif;
-    color: var(--interactive-accent);
-  }
-
-  h6,
-  .markdown-rendered h6,
-  .HyperMD-header-6,
-  .HyperMD-list-line .cm-header-6 {
-    font-size: 1em !important;
-    font-weight: 600;
-    font-family: var(--font-interface-override), sans-serif;
-    color: var(--interactive-accent);
-  }
+/* HEADINGS :: Color (h3-h6 accent) */
+h3, .markdown-rendered h3, .HyperMD-header-3, .HyperMD-list-line .cm-header-3,
+h4, .markdown-rendered h4, .HyperMD-header-4, .HyperMD-list-line .cm-header-4,
+h5, .markdown-rendered h5, .HyperMD-header-5, .HyperMD-list-line .cm-header-5,
+h6, .markdown-rendered h6, .HyperMD-header-6, .HyperMD-list-line .cm-header-6 {
+  color: var(--interactive-accent);
 }

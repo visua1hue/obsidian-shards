@@ -1,8 +1,20 @@
 /* https://github.com/aaaaalexis/obsidian-baseline/blob/a15e86f21197bd9144413ee1e18400cc630f2d81/src/features/compact-actions.scss */
 
+@property --icon-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 18px;
+}
+
 /* Base selectors for transition animations */
 .mod-sidedock .workspace-leaf-content > .nav-header,
 .mod-sidedock .workspace-leaf-content > .view-content > .nav-header,
+.mod-sidedock .workspace-leaf-content > .nav-header .nav-buttons-container,
+.mod-sidedock
+  .workspace-leaf-content
+  > .view-content
+  > .nav-header
+  .nav-buttons-container,
 .mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button,
 .mod-sidedock
   .workspace-leaf-content
@@ -21,10 +33,8 @@
   > .view-content
   > .nav-header
   svg.svg-icon {
-  --anim-speed-modifier: 1;
-  --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
-  --anim-duration-moderate: calc(320ms * var(--anim-speed-modifier));
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+  transition: var(--motion-dur-base) var(--motion-ease-spring);
+  transition-delay: 250ms;
 }
 
 /* Compact state when not hovering */
@@ -40,6 +50,7 @@
   gap: 4px;
   padding: 0;
   background-color: transparent;
+  transition-delay: 0ms;
 }
 
 .mod-sidedock
@@ -57,6 +68,7 @@
   flex: 0;
   background-color: var(--background-modifier-hover);
   box-shadow: none;
+  transition-delay: 0ms;
 }
 
 .mod-sidedock
@@ -101,6 +113,7 @@
   opacity: 0;
   font-size: 0 !important;
   margin-left: 0px !important;
+  transition-delay: 0ms;
 }
 
 .mod-sidedock
@@ -115,4 +128,5 @@
   .nav-buttons-container
   svg.svg-icon {
   --icon-size: 0px;
+  transition-delay: 0ms;
 }

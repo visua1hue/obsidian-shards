@@ -1,3 +1,14 @@
+body {
+  --motion-dur-quick: 120ms;
+  --motion-dur-base: 220ms;
+  --motion-dur-enter: 500ms;
+  --motion-ease-out:  cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
+  --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
+
+  font-optical-sizing: auto;
+}
+
 body:is(.theme-dark) {
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);

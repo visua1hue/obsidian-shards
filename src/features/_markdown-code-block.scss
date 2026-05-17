@@ -71,6 +71,9 @@ body:not(.no-codeblock-line-numbers)
   padding-block-end: unset;
 }
 
-.cm-s-obsidian .HyperMD-codeblock {
+.cm-s-obsidian .HyperMD-codeblock,
+.cm-s-obsidian .cm-inline-code,
+code {
   font-weight: 500;
+  font-feature-settings: "calt" 1, "liga" 1;
 }

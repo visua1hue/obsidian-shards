@@ -4,7 +4,7 @@
   "description": "Curated, modular CSS shards built for Obsidian MD",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/compiled/shard-extended.scss:dist/shard-extended.css src/compiled/shard-fragments.scss:dist/shard-fragments.css",
+    "build": "sass src/compiled/shard-fragments.scss:dist/shard-fragments.css",
     "prewatch": "pkill -f 'sass --watch' || true",
     "watch": "sass --watch src/compiled:dist",
     "dev": "npm run watch"
