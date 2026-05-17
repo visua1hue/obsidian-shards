@@ -11,31 +11,38 @@
 
 .markdown-source-view.mod-cm6 .cm-formatting-list-ul,
 .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-  padding-right: 6px;
+  padding-right: 0px;
 }
 
-@keyframes outline-pulse-v2 {
+@keyframes bullet-pulse {
   0%,
   100% {
-    outline: 1px solid var(--list-marker-color-collapsed);
-    opacity: 0.5;
+    box-shadow: 0 0 0 2px var(--list-marker-color-collapsed);
+    opacity: 0.4;
   }
 
   50% {
-    outline: 2px solid hsla(254, 13%, 81%, 0.4);
-    opacity: 0.75;
+    box-shadow: 0 0 0 3px var(--divider-color);
+    opacity: 0.9;
   }
 }
 
 li.is-collapsed .list-bullet:after,
 .is-collapsed ~ .cm-formatting-list .list-bullet:after {
-  animation: outline-pulse-v2 2s ease-in-out infinite;
+  animation: bullet-pulse 2s ease-in-out infinite;
   border-radius: 50%;
-  will-change: outline, opacity;
 }
 
 .list-bullet:after {
   opacity: 0.75;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .list-bullet:hover::after {
+    background-color: var(--list-marker-color-collapsed);
+    box-shadow: 0 0 0 2.5px var(--divider-color);
+    border-radius: 50%;
+  }
 }
 
 .markdown-source-view.mod-cm6 .cm-indent::before {
@@ -43,11 +50,17 @@ li.is-collapsed .list-bullet:after,
 }
 
 .markdown-source-view.mod-cm6.is-live-preview .cm-indent::before {
-  --indentation-guide-editing-indent: 0.9em;
+  --indentation-guide-editing-indent: 0.85em;
   margin-inline-start: var(--indentation-guide-editing-indent);
 }
 
-.markdown-source-view.mod-cm6 .task-list-label {
-  padding: 0;
-  margin-inline-start: -0.15em;
+.cm-s-obsidian .cm-formatting-list {
+  color: var(--text-faint);
+}
+
+/* Outliner plugin — list bullet size override */
+.outliner-plugin-better-lists .list-bullet::after {
+  width: var(--list-bullet-size);
+  height: var(--list-bullet-size);
+  background-color: var(--text-faint);
 }

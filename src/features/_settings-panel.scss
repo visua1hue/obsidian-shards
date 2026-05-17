@@ -1,7 +1,5 @@
 .modal.mod-settings {
-  --anim-duration-slow: 640ms;
-  --anim-motion-out: cubic-bezier(0.32, 0.72, 0, 1.1);
-  transition: var(--anim-duration-slow) var(--anim-motion-out);
+  transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   @starting-style {
     transform: scale(0.98);
   }
@@ -26,7 +24,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: unset;
   color: var(--text-normal);
-  transition: color 0.2s ease-in;
+  transition: color var(--motion-dur-base) ease-in, opacity var(--motion-dur-base) ease-in;
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -37,7 +35,9 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
   color: var(--text-muted);
-  transition: color 0.2s ease-out;
+  opacity: 0.5;
+  transition: color var(--motion-dur-base) var(--motion-ease-out),
+    opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .vertical-tab-nav-item::before {
@@ -52,7 +52,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   display: block;
   line-height: 0;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active)
@@ -77,15 +77,6 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   border-top: none;
 }
 
-.setting-item + div > .setting-item-heading,
-.setting-item + .setting-item-heading {
-  margin-top: 0.75em;
-  border-top: none;
-}
-
-.setting-item-heading .setting-item-info {
-  text-transform: uppercase;
-}
 
 body:not(.native-scrollbars) .modal-close-button {
   display: none;
@@ -123,9 +114,14 @@ body:not(.native-scrollbars) .modal-close-button {
   width: 22px;
   margin-left: 4px;
   border: 2px solid var(--divider-color);
-  transition-duration: 300ms;
+  box-shadow: none;
   cursor: var(--cursor-link);
   border-radius: 12px;
+  transition:
+    background-color var(--motion-dur-base) var(--motion-ease-out),
+    border-color var(--motion-dur-base) var(--motion-ease-out),
+    box-shadow var(--motion-dur-base) var(--motion-ease-out),
+    transform var(--motion-dur-quick) var(--motion-ease-spring);
 }
 
 body .checkbox-container.mod-small {
@@ -134,67 +130,56 @@ body .checkbox-container.mod-small {
 }
 
 .checkbox-container.is-enabled.is-enabled {
-  background-color: var(--interactive-accent) !important;
+  background-color: var(--interactive-accent);
+  border-color: var(--divider-color);
+  @starting-style {
+    background-color: transparent;
+  }
 }
 
-.checkbox-container.checkbox-container:hover {
-  border: 9px solid var(--interactive-accent) !important;
-  border-color: var(--interactive-accent) !important;
+@media (hover: hover) and (pointer: fine) {
+  .checkbox-container.checkbox-container:not(.is-enabled):hover {
+    border-color: var(--interactive-accent);
+  }
+
+  .checkbox-container.is-enabled:hover {
+    box-shadow: 0 0 0 1px var(--divider-color);
+  }
 }
 
-.checkbox-container.is-enabled:hover {
-  background-color: var(--interactive-accent) !important;
-  border-color: transparent;
+.checkbox-container:active {
+  transform: scale(0.88);
 }
 
 /* SETTINGS :: Button Elements */
-button:not(.mod-cta) {
-  background-color: hsla(var(--background-secondary), 0.5);
-  color: var(--text-faint);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-button:not(.mod-cta):not(.mod-warning):hover {
-  background-color: var(--background-secondary);
-  color: var(--text-normal);
-}
-
-button:not(.mod-cta):focus-visible {
-  background-color: var(--background-secondary);
-  color: var(--text-normal);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 0 0 0 transparent;
-}
-
 button.mod-cta {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--motion-dur-base) ease, color var(--motion-dur-base) ease;
 }
 
-button.mod-warning:hover {
-  color: hsl(348, 100%, 59%);
+/* SETTINGS :: Hotkey List */
+.hotkey-list-container .setting-item {
+  padding: 0.5em 0;
 }
 
-/* SETTINGS :: Select Elements */
-.setting-item-control select {
-  background-color: hsla(var(--background-secondary), 0.5);
-  color: var(--text-faint);
-  transition: background-color 0.3s ease, color 0.3s ease;
+.hotkey-list-container .setting-item .setting-item-name {
+  font-size: var(--font-ui-small);
 }
 
-.setting-item-control select:hover {
-  background-color: var(--background-secondary);
-  color: var(--text-normal);
+.setting-item-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--size-4-2);
 }
 
-select:focus,
-.dropdown:focus {
-  box-shadow: 0 0 0px 2px var(--background-modifier-border);
-  outline: none;
-  border: none;
+.setting-item-control .clickable-icon[aria-label="Restore default"] {
+  order: -1;
 }
 
-/* SETTINGS :: Input Elements */
-.search-input-container input:focus {
-  box-shadow: 0 0 0px 2px var(--background-modifier-border);
-  outline: none;
-  border: none;
+.setting-item-control .setting-command-hotkeys {
+  order: 0;
+}
+
+.setting-item-control .clickable-icon.setting-add-hotkey-button {
+  order: 1;
 }

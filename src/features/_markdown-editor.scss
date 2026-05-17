@@ -1,0 +1,66 @@
+/* EDITOR :: Active Line Indicator */
+body:not(.no-active-line-highlight, .active-line-background)
+  .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+  position: absolute;
+  left: -1.125em;
+  height: 100%;
+  content: "";
+  border-left: 3px solid var(--divider-color);
+}
+
+/* FORMAT :: Bold Text */
+strong,
+.cm-strong {
+  font-weight: 550;
+}
+
+.cm-line.HyperMD-quote .cm-quote.cm-strong {
+  font-weight: 550;
+}
+
+.cm-s-obsidian span.cm-formatting-strong,
+.cm-s-obsidian span.cm-strong {
+  font-weight: 550;
+}
+
+/* CALLOUT ELEMENT :: Unique Callouts */
+.callout[data-callout="blank"] {
+  --callout-icon: transparent;
+  background-color: rgba(217, 217, 208, 0.125);
+}
+
+.callout[data-callout="blank"] .callout-title {
+  gap: 0;
+  color: var(--color-accent);
+}
+
+/* EXTERNAL LINK :: Unicode symbol */
+.external-link {
+  background-image: none;
+  padding-right: 0;
+}
+
+.external-link::after {
+  vertical-align: text-top;
+  margin-right: unset;
+  margin-left: 2px;
+  content: "↗";
+  font-size: 10px;
+  font-family: "Inter";
+  color: var(--text-muted);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-url,
+.cm-s-obsidian span.cm-url {
+  text-decoration-line: unset !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-link .cm-underline,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline {
+  color: var(--link-external-color);
+}
+
+/* INTERNAL LINK :: Opacity */
+.markdown-source-view.mod-cm6 .is-unresolved {
+  opacity: 0.5;
+}

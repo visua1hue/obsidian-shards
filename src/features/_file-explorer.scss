@@ -25,7 +25,7 @@
 
 .nav-folder-title {
   color: var(--text-muted);
-  font-weight: 400;
+  font-weight: 450;
 }
 
 .nav-file-title {
@@ -38,18 +38,35 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
   box-shadow: unset;
 }
 
-body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active) {
-  transition: 200ms;
-  transition-property: background, color;
+.tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title) {
+  opacity: 0.5;
+  background-color: transparent;
+  transition:
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
-body:not(.is-grabbing) .nav-file-title.is-active:hover,
-body:not(.is-grabbing) .nav-folder-title.is-active:hover {
-    color: var(--interactive-accent);
+.tree-item-self.is-active {
+  opacity: 1;
 }
 
-.nav-file-title.is-active:not(:hover) {
+@media (hover: hover) and (pointer: fine) {
+  body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title):hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
   color: var(--interactive-accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:not(.is-grabbing) .nav-file-title.is-active:hover,
+  body:not(.is-grabbing) .nav-folder-title.is-active:hover {
+    color: var(--interactive-accent);
+  }
 }
 
 /* Smooth side panels entrance transitions (desktop only) */
@@ -62,4 +79,9 @@ body:not(.is-mobile) .mod-sidedock .workspace-leaf {
     transform: scale(1.0625);
     opacity: 0;
   }
+}
+
+/* Hidden system folders */
+.nav-folder-title:is([data-path$="_" i], [data-path="Attachments" i], [data-path="Assets" i]) {
+  display: none;
 }

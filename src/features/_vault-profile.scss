@@ -8,45 +8,39 @@ body:not(.is-mobile)
   gap: var(--size-4-1);
   justify-content: space-between;
   padding: var(--size-2-2) var(--size-2-2);
+  border-top: unset;
   order: 1;
 }
 
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-switcher {
-  color: var(--text-faint);
-  transition: all 0.3s ease-in;
+.workspace-drawer-vault-switcher {
+  font-weight: 450;
+  opacity: 0.5;
+  background-color: transparent;
+  border-radius: var(--radius-s);
+  transition:
+    opacity var(--motion-dur-quick) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-switcher {
-  transition: all 0.3s ease-out;
-}
-
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-switcher-icon {
-  color: var(--text-faint);
-}
-
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-actions
-  .clickable-icon {
-  transition: opacity 0.3s ease-out;
+.workspace-drawer-vault-actions .clickable-icon {
   opacity: 0;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile
-  .workspace-drawer-vault-actions
-  .clickable-icon:hover {
-  transition: opacity 0.3s ease-in;
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  body:not(.is-mobile)
+    .workspace-split.mod-left-split
+    .workspace-sidedock-vault-profile
+    .workspace-drawer-vault-switcher:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  body:not(.is-mobile)
+    .workspace-split.mod-left-split
+    .workspace-sidedock-vault-profile
+    .workspace-drawer-vault-actions
+    .clickable-icon:hover {
+    opacity: 1;
+  }
 }

@@ -24,8 +24,8 @@ body:not(.show-sidebar-header-buttons)
 body:not(.show-sidebar-header-buttons)
   :is(.mod-left-split, .mod-right-split)
   :is(.workspace-tab-header-container, .workspace-tab-header-container *) {
-  transition: 300ms;
-  transition-property: opacity, height, background-color;
+  transition: var(--motion-dur-base);
+  transition-property: opacity, height;
   transition-delay: 200ms;
 }
 
