@@ -14,6 +14,7 @@ body:is(.theme-dark) {
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
   --list-marker-color-collapsed: var(--text-faint);
+  --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
@@ -48,6 +49,7 @@ body:is(.theme-light) {
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
   --list-marker-color-collapsed: var(--text-faint);
+  --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
@@ -1274,11 +1276,6 @@ input.task-list-item-checkbox::after {
   opacity: 0; /* Hide collapse-indicator */
 }
 
-.markdown-source-view.mod-cm6 .cm-formatting-list-ul,
-.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-  padding-right: 6px;
-}
-
 @keyframes outline-pulse-v2 {
   0%, 100% {
     outline: 1px solid var(--list-marker-color-collapsed);
@@ -1312,6 +1309,10 @@ li.is-collapsed .list-bullet:after,
 .markdown-source-view.mod-cm6 .task-list-label {
   padding: 0;
   margin-inline-start: -0.15em;
+}
+
+.cm-s-obsidian .cm-formatting-list {
+  color: var(--text-faint);
 }
 
 /* EDITOR :: Active Line Indicator */
@@ -1563,6 +1564,12 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
 
 .omnisearch-highlight {
   font-weight: 500;
+}
+
+.outliner-plugin-better-lists .list-bullet::after {
+  width: var(--list-bullet-size);
+  height: var(--list-bullet-size);
+  background-color: var(--text-faint);
 }
 
 .lc-list-bg {

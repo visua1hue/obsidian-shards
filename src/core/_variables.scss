@@ -15,6 +15,7 @@ body:is(.theme-dark) {
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
   --list-marker-color-collapsed: var(--text-faint);
+  --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
@@ -52,6 +53,7 @@ body:is(.theme-light) {
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
   --list-marker-color-collapsed: var(--text-faint);
+  --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);

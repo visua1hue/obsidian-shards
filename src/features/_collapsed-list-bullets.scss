@@ -11,7 +11,7 @@
 
 .markdown-source-view.mod-cm6 .cm-formatting-list-ul,
 .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-  padding-right: 6px;
+  padding-right: 0px;
 }
 
 @keyframes outline-pulse-v2 {
@@ -50,4 +50,8 @@ li.is-collapsed .list-bullet:after,
 .markdown-source-view.mod-cm6 .task-list-label {
   padding: 0;
   margin-inline-start: -0.15em;
+}
+
+.cm-s-obsidian .cm-formatting-list {
+  color: var(--text-faint);
 }
