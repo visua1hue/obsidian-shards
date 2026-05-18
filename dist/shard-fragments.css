@@ -955,14 +955,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
    SVG Converter:
    https://yoksel.github.io/url-encoder/
 */
-/* Obsidian MOD :: Remove shadow  */
-.mod-left-split .workspace-tab-header.has-active-menu,
-.mod-right-split .workspace-tab-header.has-active-menu,
-.mod-left-split .workspace-tab-header.is-active,
-.mod-right-split .workspace-tab-header.is-active {
-  background-color: unset;
-}
-
 /* Obsidian CORE :: File Explorer */
 .workspace-tab-header[aria-label=Files] .workspace-tab-header-inner-icon svg {
   background-color: currentColor;
@@ -1015,6 +1007,35 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   transition-delay: 200ms;
 }
 
+/* Sidebar tabs — opacity hover system */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active),
+.mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active) {
+  opacity: 0.5;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
+  transition-delay: 0s !important;
+}
+
+/* Left sidebar toggle — !important on delay only to escape 200ms bleed from outline rule */
+.mod-left-split .workspace-tab-header-container .sidebar-toggle-button.mod-left {
+  opacity: 0.5;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
+  transition-delay: 0s !important;
+}
+
+/* Right sidebar toggle lives in mod-root top-right-space, outside mod-left/right-split */
+.workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right {
+  opacity: 0.5;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover,
+  .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover,
+  .mod-left-split .workspace-tab-header-container .sidebar-toggle-button.mod-left:hover,
+  .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover {
+    opacity: 1;
+  }
+}
 .workspace-leaf-content[data-type=outline] .view-content {
   padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
 }
