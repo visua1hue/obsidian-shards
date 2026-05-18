@@ -63,7 +63,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .vertical-tab-nav-item {
   position: relative;
   white-space: nowrap;
-  overflow: scroll;
+  overflow-x: clip;
   padding: var(--size-2-1) var(--size-4-2);
   font-size: var(--font-ui-medium);
 }

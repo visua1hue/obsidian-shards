@@ -175,7 +175,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 .vertical-tab-nav-item {
   position: relative;
   white-space: nowrap;
-  overflow: scroll;
+  overflow-x: clip;
   padding: var(--size-2-1) var(--size-4-2);
   font-size: var(--font-ui-medium);
 }
@@ -587,16 +587,8 @@ body:not(.is-mobile) .prompt .suggestion-item {
   box-shadow: none;
   height: var(--tab-height);
   padding: 0 !important;
-  will-change: transform, opacity;
-  transition: transform var(--motion-dur-enter) var(--motion-ease-smooth), opacity var(--motion-dur-base) var(--motion-ease-out);
+  will-change: opacity;
   animation: tabEnter var(--motion-dur-base) var(--motion-ease-smooth) backwards;
-}
-@starting-style {
-  .mod-vertical:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
-  .mod-horizontal:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    transform: scale(0.95) translateY(-4px);
-    opacity: 0;
-  }
 }
 
 @keyframes tabEnter {
@@ -607,16 +599,6 @@ body:not(.is-mobile) .prompt .suggestion-item {
   to {
     transform: scale(1) translateY(0);
     opacity: 1;
-  }
-}
-@keyframes tabExit {
-  from {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: scale(0.85) translateY(8px);
-    opacity: 0;
   }
 }
 /* Tab max width */
