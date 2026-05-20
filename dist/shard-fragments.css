@@ -798,7 +798,6 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
 }
 
 .nav-file-title {
-  color: var(--text-faint);
   font-weight: 400;
 }
 
