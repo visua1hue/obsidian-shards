@@ -25,6 +25,7 @@ body:is(.theme-dark) {
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
+  --radius-squircle: 10px;
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
@@ -63,6 +64,7 @@ body:is(.theme-light) {
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
+  --radius-squircle: 10px;
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);

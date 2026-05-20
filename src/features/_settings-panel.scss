@@ -1,4 +1,6 @@
 .modal.mod-settings {
+  --button-radius: var(--radius-squircle);
+  --input-radius: var(--radius-squircle);
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   @starting-style {
     transform: scale(0.98);
