@@ -42,3 +42,12 @@
 .omnisearch-highlight {
   font-weight: 500;
 }
+
+.modal-container .omnisearch-modal.prompt .prompt-results:not(:has(.svelte-lazy)) {
+  padding: 0;
+  min-height: 0;
+}
+
+.modal-container .omnisearch-modal.prompt:has(.prompt-input:placeholder-shown) .prompt-results {
+  display: none;
+}

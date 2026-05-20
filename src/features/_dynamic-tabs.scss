@@ -78,8 +78,6 @@
   box-shadow: none;
   height: var(--tab-height);
   padding: 0 !important;
-  will-change: opacity;
-
   animation: tabEnter var(--motion-dur-base) var(--motion-ease-smooth) backwards;
 }
 
@@ -287,11 +285,6 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
-}
-
-.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
-.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-  color: var(--text-normal);
 }
 
 .workspace-tab-header-tab-list .clickable-icon,
