@@ -9,9 +9,8 @@
   opacity: 0; /* Hide collapse-indicator */
 }
 
-.markdown-source-view.mod-cm6 .cm-formatting-list-ul,
-.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-  padding-right: 0px;
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul {
+  margin-right: 0;
 }
 
 @keyframes bullet-pulse {
