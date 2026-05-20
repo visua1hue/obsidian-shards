@@ -23,7 +23,7 @@
     0 0 0 1px oklch(100% 0 0 / 0.03),
     0 30px 60px -10px oklch(20% 0.01 260 / 0.1),
     0 60px 120px -20px oklch(20% 0.01 260 / 0.05);
-  border-radius: 13px;
+  border-radius: var(--ext-radius-l);
   border: var(--divider-width) solid var(--divider-color);
 
   @starting-style {
@@ -113,7 +113,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 .suggestion-item,
 .suggestion-empty {
   font-size: var(--font-ui-medium);
-  border-radius: 10px;
+  border-radius: var(--ext-radius-m);
   margin-bottom: unset !important;
 }
 

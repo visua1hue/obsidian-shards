@@ -1,17 +1,19 @@
 .modal.mod-settings {
-  --button-radius: var(--radius-squircle);
-  --input-radius: var(--radius-squircle);
+  --modal-radius: var(--ext-radius-l);
+  --button-radius: var(--ext-radius-l);
+  --input-radius: var(--ext-radius-l);
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   @starting-style {
     transform: scale(0.98);
   }
 }
 
-/* SETTINGS :: Vertical Nav Header */
+/* SETTINGS :: Content Area */
 .vertical-tab-content {
-  padding: var(--size-4-3) var(--size-4-5);
+  padding: var(--size-4-5) var(--size-4-5);
 }
 
+/* SETTINGS :: Vertical Nav Header */
 .modal.mod-settings .vertical-tab-header {
   min-width: 200px;
   border-inline-end: 2px solid var(--divider-color);

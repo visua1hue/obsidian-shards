@@ -18,7 +18,8 @@ body {
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
-  --radius-squircle: 10px;
+  --ext-radius-l: 12px;
+  --ext-radius-m: 10px;
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
@@ -92,8 +93,9 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 }
 
 .modal.mod-settings {
-  --button-radius: var(--radius-squircle);
-  --input-radius: var(--radius-squircle);
+  --modal-radius: var(--ext-radius-l);
+  --button-radius: var(--ext-radius-l);
+  --input-radius: var(--ext-radius-l);
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
 }
 @starting-style {
@@ -102,11 +104,12 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
   }
 }
 
-/* SETTINGS :: Vertical Nav Header */
+/* SETTINGS :: Content Area */
 .vertical-tab-content {
-  padding: var(--size-4-3) var(--size-4-5);
+  padding: var(--size-4-5) var(--size-4-5);
 }
 
+/* SETTINGS :: Vertical Nav Header */
 .modal.mod-settings .vertical-tab-header {
   min-width: 200px;
   border-inline-end: 2px solid var(--divider-color);
@@ -294,7 +297,7 @@ button.mod-cta {
 .prompt {
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   box-shadow: 0 0 0 1px oklch(100% 0 0deg / 0.03), 0 30px 60px -10px oklch(20% 0.01 260deg / 0.1), 0 60px 120px -20px oklch(20% 0.01 260deg / 0.05);
-  border-radius: 13px;
+  border-radius: var(--ext-radius-l);
   border: var(--divider-width) solid var(--divider-color);
 }
 @starting-style {
@@ -382,7 +385,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 .suggestion-item,
 .suggestion-empty {
   font-size: var(--font-ui-medium);
-  border-radius: 10px;
+  border-radius: var(--ext-radius-m);
   margin-bottom: unset !important;
 }
 
