@@ -138,7 +138,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: unset;
   color: var(--text-normal);
-  transition: color var(--motion-dur-base) ease-in, opacity var(--motion-dur-base) ease-in;
+  transition: color var(--motion-dur-base) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .horizontal-tab-nav-item.is-active:hover,
@@ -260,7 +260,7 @@ body .checkbox-container.mod-small {
 
 /* SETTINGS :: Button Elements */
 button.mod-cta {
-  transition: background-color var(--motion-dur-base) ease, color var(--motion-dur-base) ease;
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out), color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* SETTINGS :: Hotkey List */
