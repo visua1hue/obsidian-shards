@@ -1,24 +1,19 @@
 body {
+  --color-accent: var(--interactive-accent);
+  --interactive-accent: var(--accent-ext-shinyfocus);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+
+  --accent-ext-linear: oklch(0.5712 0.1565 275.52);
+  --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
+  --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
+  --accent-ext-shinyfocus: oklch(0.6133 0.1011 202.85);
+
   --motion-dur-quick: 120ms;
   --motion-dur-base: 220ms;
   --motion-dur-enter: 500ms;
   --motion-ease-out:  cubic-bezier(0.23, 1, 0.32, 1);
   --motion-ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
   --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
-
-  font-optical-sizing: auto;
-}
-
-body:is(.theme-dark) {
-  --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
-  --text-normal: oklch(0.8491 0.0134 102.47);
-
-  --accent-ext-linear: oklch(0.5712 0.1565 275.52);
-  --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
-  --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
-  --accent-ext-shinyfocus: oklch(0.6133 0.1011 202.85);
 
   --divider-width: 2px;
   --header-height: 30px;
@@ -34,6 +29,12 @@ body:is(.theme-dark) {
   --link-color-hover: var(--interactive-accent-hover);
   --link-external-color: var(--interactive-accent);
   --link-external-color-hover: var(--interactive-accent-hover);
+
+  font-optical-sizing: auto;
+}
+
+body:is(.theme-dark) {
+  --text-normal: oklch(0.8491 0.0134 102.47);
 
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
@@ -49,30 +50,7 @@ body:is(.theme-dark) {
 }
 
 body:is(.theme-light) {
-  --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
   --text-normal: oklch(0.3565 0.006 106.7);
-
-  --accent-ext-linear: oklch(0.5712 0.1565 275.52);
-  --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
-  --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
-  --accent-ext-shinyfocus: oklch(0.6133 0.1011 202.85);
-
-  --divider-width: 2px;
-  --header-height: 30px;
-  --tab-height: calc(var(--header-height) - 12px);
-  --tab-outline-width: var(--divider-width);
-  --titlebar-background: var(--titlebar-background-focused);
-  --radius-squircle: 10px;
-  --list-marker-color-collapsed: var(--text-faint);
-  --list-bullet-size: 0.3em;
-  --checkbox-border-color: var(--text-muted);
-  --checkbox-radius: 25%;
-  --link-color: var(--interactive-accent);
-  --link-color-hover: var(--interactive-accent-hover);
-  --link-external-color: var(--interactive-accent);
-  --link-external-color-hover: var(--interactive-accent-hover);
 
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
