@@ -10,7 +10,6 @@ body {
 }
 
 body:is(.theme-dark) {
-  --radius-squircle: 10px;
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
@@ -24,6 +23,7 @@ body:is(.theme-dark) {
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
+  --radius-squircle: 10px;
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
@@ -46,7 +46,6 @@ body:is(.theme-dark) {
 }
 
 body:is(.theme-light) {
-  --radius-squircle: 10px;
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
@@ -60,6 +59,7 @@ body:is(.theme-light) {
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
+  --radius-squircle: 10px;
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
@@ -866,6 +866,10 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   padding: var(--size-2-2) var(--size-2-2);
   border-top: unset;
   order: 1;
+}
+
+html body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+  color: unset;
 }
 
 .workspace-drawer-vault-switcher {

@@ -12,6 +12,13 @@ body:not(.is-mobile)
   order: 1;
 }
 
+html body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile
+  .workspace-drawer-vault-switcher {
+  color: unset;
+}
+
 .workspace-drawer-vault-switcher {
   font-weight: 450;
   opacity: 0.5;
