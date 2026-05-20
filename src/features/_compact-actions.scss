@@ -33,7 +33,7 @@
   > .view-content
   > .nav-header
   svg.svg-icon {
-  transition: var(--motion-dur-base) var(--motion-ease-spring);
+  transition: var(--motion-dur-base) var(--motion-ease-smooth);
   transition-delay: 250ms;
 }
 

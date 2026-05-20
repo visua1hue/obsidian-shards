@@ -903,7 +903,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 .mod-sidedock .workspace-leaf-content > .view-content > .nav-header .nav-action-button::after,
 .mod-sidedock .workspace-leaf-content > .nav-header svg.svg-icon,
 .mod-sidedock .workspace-leaf-content > .view-content > .nav-header svg.svg-icon {
-  transition: var(--motion-dur-base) var(--motion-ease-spring);
+  transition: var(--motion-dur-base) var(--motion-ease-smooth);
   transition-delay: 250ms;
 }
 
