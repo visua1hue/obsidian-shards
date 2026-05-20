@@ -7,45 +7,23 @@
 }
 
 /* Base selectors for transition animations */
-.mod-sidedock .workspace-leaf-content > .nav-header,
-.mod-sidedock .workspace-leaf-content > .view-content > .nav-header,
-.mod-sidedock .workspace-leaf-content > .nav-header .nav-buttons-container,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header
-  .nav-buttons-container,
-.mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header
-  .nav-action-button,
-.mod-sidedock .workspace-leaf-content > .nav-header .nav-action-button::after,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header
-  .nav-action-button::after,
-.mod-sidedock .workspace-leaf-content > .nav-header svg.svg-icon,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header
-  svg.svg-icon {
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header),
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header) .nav-buttons-container,
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header) .nav-action-button,
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header) .nav-action-button::after,
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header) svg.svg-icon {
   transition: var(--motion-dur-base) var(--motion-ease-smooth);
   transition-delay: 250ms;
 }
 
 /* Compact state when not hovering */
-.mod-sidedock
-  .workspace-leaf-content
-  > .nav-header:not(:hover)
-  .nav-buttons-container,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header:not(:hover)
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header):not(:hover)
   .nav-buttons-container {
   gap: 4px;
   padding: 0;
@@ -53,15 +31,8 @@
   transition-delay: 0ms;
 }
 
-.mod-sidedock
-  .workspace-leaf-content
-  > .nav-header:not(:hover)
-  .nav-buttons-container
-  .nav-action-button,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header:not(:hover)
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header):not(:hover)
   .nav-buttons-container
   .nav-action-button {
   padding: 2px;
@@ -71,43 +42,22 @@
   transition-delay: 0ms;
 }
 
-.mod-sidedock
-  .workspace-leaf-content
-  > .nav-header:not(:hover)
-  .nav-buttons-container
-  .nav-action-button.is-active,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header:not(:hover)
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header):not(:hover)
   .nav-buttons-container
   .nav-action-button.is-active {
   background-color: var(--background-modifier-hover);
 }
 
-.mod-sidedock
-  .workspace-leaf-content
-  > .nav-header:not(:hover)
-  .nav-buttons-container
-  .nav-action-button.clickable-icon[aria-disabled="true"],
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header:not(:hover)
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header):not(:hover)
   .nav-buttons-container
   .nav-action-button.clickable-icon[aria-disabled="true"] {
   opacity: var(--icon-opacity);
 }
 
-.mod-sidedock
-  .workspace-leaf-content
-  > .nav-header:not(:hover)
-  .nav-buttons-container
-  .nav-action-button::after,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header:not(:hover)
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header):not(:hover)
   .nav-buttons-container
   .nav-action-button::after {
   opacity: 0;
@@ -116,15 +66,8 @@
   transition-delay: 0ms;
 }
 
-.mod-sidedock
-  .workspace-leaf-content
-  > .nav-header:not(:hover)
-  .nav-buttons-container
-  svg.svg-icon,
-.mod-sidedock
-  .workspace-leaf-content
-  > .view-content
-  > .nav-header:not(:hover)
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header):not(:hover)
   .nav-buttons-container
   svg.svg-icon {
   --icon-size: 0px;
