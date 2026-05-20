@@ -854,12 +854,12 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
 }
 /* Smooth side panels entrance transitions (desktop only) */
 body:not(.is-mobile) .mod-sidedock .workspace-leaf {
-  animation: 300ms cubic-bezier(0.3, 0.75, 0, 1) reveal-panels;
+  animation: var(--motion-dur-base) cubic-bezier(0.16, 1, 0.3, 1) reveal-panels backwards;
+  will-change: opacity;
 }
 
 @keyframes reveal-panels {
-  0% {
-    transform: scale(1.0625);
+  from {
     opacity: 0;
   }
 }
