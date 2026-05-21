@@ -111,11 +111,6 @@ body:not(.is-mobile) .prompt .suggestion-item {
   background-color: hsl(from var(--divider-color) h s l / 0.5);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .suggestion-item:not(.is-selected):hover {
-    color: var(--text-normal);
-  }
-}
 
 .suggestion-item,
 .suggestion-empty {
