@@ -73,7 +73,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 }
 
 .setting-item-description {
-  opacity: 0.5;
+  color: var(--text-faint);
 }
 
 /* SETTINGS :: Vertical Nav Container */
@@ -101,6 +101,16 @@ body:not(.native-scrollbars) .modal-close-button {
   font-size: calc(var(--font-ui-smaller) - 2px);
   padding: 2px 6px;
   border: 1px solid var(--divider-color);
+  margin-inline-end: 4px;
+}
+
+.setting-hotkey .setting-hotkey-icon svg.svg-icon {
+  width: 10px;
+  height: 10px;
+}
+
+.modal.mod-settings .setting-hotkey.mod-empty {
+  color: var(--text-faint);
 }
 
 /* SETTINGS :: Ext Plugins Highlight */
@@ -165,29 +175,51 @@ button.mod-cta {
 }
 
 /* SETTINGS :: Hotkey List */
+.hotkey-list-container {
+  --icon-opacity: 1;
+}
+
 .hotkey-list-container .setting-item {
   padding: 0.5em 0;
 }
 
 .hotkey-list-container .setting-item .setting-item-name {
   font-size: var(--font-ui-small);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.setting-item-control {
-  display: flex;
+.hotkey-list-container .setting-item-control {
+  display: grid;
+  grid-template-columns: 1fr 100px 26px 26px;
+  column-gap: 4px;
   align-items: center;
-  justify-content: flex-end;
-  gap: var(--size-4-2);
+  padding-inline-end: 8px;
 }
 
-.setting-item-control .clickable-icon[aria-label="Restore default"] {
-  order: -1;
+.hotkey-list-container .setting-command-hotkeys {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
 }
 
-.setting-item-control .setting-command-hotkeys {
-  order: 0;
+.hotkey-list-container .setting-restore-hotkey-button {
+  grid-column: 3;
+  grid-row: 1;
 }
 
-.setting-item-control .clickable-icon.setting-add-hotkey-button {
-  order: 1;
+.hotkey-list-container .setting-add-hotkey-button {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hotkey-list-container .clickable-icon {
+    transition: background-color 0ms;
+  }
+
+  .hotkey-list-container .clickable-icon:hover {
+    transition: background-color 50ms 200ms;
+  }
 }
