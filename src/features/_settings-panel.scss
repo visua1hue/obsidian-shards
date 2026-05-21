@@ -11,6 +11,7 @@
 /* SETTINGS :: Content Area */
 .vertical-tab-content {
   padding: var(--size-4-5) var(--size-4-5);
+  overflow-anchor: none;
 }
 
 /* SETTINGS :: Vertical Nav Header */
@@ -177,6 +178,7 @@ button.mod-cta {
 /* SETTINGS :: Hotkey List */
 .hotkey-list-container {
   --icon-opacity: 1;
+  overflow-anchor: none;
 }
 
 .hotkey-list-container .setting-item {
