@@ -783,7 +783,6 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
 }
 
 .nav-folder-title {
-  color: var(--text-muted);
   font-weight: 450;
 }
 
