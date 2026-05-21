@@ -24,7 +24,10 @@
   margin-inline-start: unset;
   max-width: calc(0.9 * var(--prompt-max-width));
   overflow: hidden;
-  height: 10vh !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: inherit;
 }
 
 .omnisearch-result__title svg.svg-icon {

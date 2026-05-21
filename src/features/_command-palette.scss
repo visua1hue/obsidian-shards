@@ -102,12 +102,19 @@ body:not(.is-mobile) .prompt .suggestion-item {
   padding: var(--size-2-3) var(--size-4-3);
   padding-left: 12px;
   white-space: unset !important;
-  color: var(--text-muted);
+  color: var(--text-faint);
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .suggestion-item.is-selected {
   color: var(--text-normal);
   background-color: hsl(from var(--divider-color) h s l / 0.5);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .suggestion-item:not(.is-selected):hover {
+    color: var(--text-normal);
+  }
 }
 
 .suggestion-item,
