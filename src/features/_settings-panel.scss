@@ -72,6 +72,10 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   font-size: var(--font-ui-medium);
 }
 
+.setting-item-description {
+  opacity: 0.5;
+}
+
 /* SETTINGS :: Vertical Nav Container */
 .setting-item {
   border-top: 1px solid var(--divider-color);
