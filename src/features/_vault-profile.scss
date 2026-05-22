@@ -19,6 +19,15 @@ html body:not(.is-mobile)
   color: unset;
 }
 
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  .workspace-sidedock-vault-profile
+  .workspace-drawer-vault-name {
+  font-weight: unset;
+  color: var(--text-faint);
+  transition: color var(--motion-dur-quick) var(--motion-ease-out);
+}
+
 .workspace-drawer-vault-switcher {
   font-weight: 450;
   opacity: 0.5;
@@ -41,6 +50,14 @@ html body:not(.is-mobile)
     .workspace-drawer-vault-switcher:hover {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  body:not(.is-mobile)
+    .workspace-split.mod-left-split
+    .workspace-sidedock-vault-profile
+    .workspace-drawer-vault-switcher:hover
+    .workspace-drawer-vault-name {
+    color: var(--text-muted);
   }
 
   body:not(.is-mobile)
