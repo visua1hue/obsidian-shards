@@ -5,6 +5,10 @@ Built with SCSS, each "shard fragment" is a modular component designed to enhanc
 <br>
 
 - [Features](#features)
+  - [Command Palette](#command-palette)
+  - [Settings](#settings)
+  - [Plugin: Omnisearch](#plugin-omnisearch)
+  - [Enhancements](#enhancements)
 - [Development](#development)
   - [Quick Start](#quick-start)
   - [Continuous Build](#continuous-build)
@@ -17,16 +21,32 @@ Built with SCSS, each "shard fragment" is a modular component designed to enhanc
 
 Consider using [Recursive Sans Linear](https://www.recursive.design/), which complements the design and enhances readability.
 
-- **Command Palette**: Custom adjustments for improved navigation and user focus within the interface
-- **Enhanced Core UI**: CSS modifications to hide unnecessary elements - no Hider plugin required anymore
-- **Settings**: Streamlined vertical navigation and enhanced highlighting for external plugins
-- **New Tab**: Redesigned empty state for new tabs page
-- **Editor**: Active line indicator for improved focus
-- **Bullet Lists**: Animated transitions for collapsed list bullets
-- **Unique Checkbox**: Animated playful transitions
-- **External Links**: Addition of Unicode symbols for enhanced recognition
-- **Internal Links**: Subtle opacity adjustments for a cleaner interface.
-  <br>...
+### Command Palette
+
+Focused navigation with reduced visual noise.
+
+![](.github/preview-command-palette.jpg)
+
+### Settings
+
+Streamlined vertical nav, external plugin highlights, and a hotkeys panel with custom sort order.
+
+![](.github/preview-settings-hotkeys.jpg)
+
+### Plugin: Omnisearch
+
+Full-vault search with reduced visual noise and focused results.
+
+![](.github/preview-plugin-omnisearch.jpg)
+
+### Enhancements
+
+Additional refinements applied across the interface:
+
+- **Core UI**: hides unnecessary chrome — no Hider plugin required
+- **New Tab**: redesigned empty state
+- **Editor**: active line indicator and playful animated bullet/checkbox transitions
+- **Links**: Unicode symbols on external links · subtle opacity on internal links
 
 ## Development
 
