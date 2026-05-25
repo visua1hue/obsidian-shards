@@ -208,15 +208,15 @@ body:not(.native-scrollbars) .modal-close-button {
 }
 
 /* SETTINGS :: Ext Plugins Highlight */
-.installed-plugins-container .setting-item .setting-item-name {
+.installed-plugins-container .setting-item:not(.setting-item-heading) .setting-item-name {
   transition: color var(--motion-dur-base) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
-.installed-plugins-container .setting-item:has(.checkbox-container.is-enabled) .setting-item-name {
+.installed-plugins-container .setting-item:not(.setting-item-heading):has(.checkbox-container.is-enabled) .setting-item-name {
   color: var(--interactive-accent);
 }
 
-.installed-plugins-container .setting-item:not(:has(.checkbox-container.is-enabled)) .setting-item-name {
+.installed-plugins-container .setting-item:not(.setting-item-heading):not(:has(.checkbox-container.is-enabled)) .setting-item-name {
   color: var(--text-muted);
   opacity: 0.5;
 }
