@@ -179,10 +179,13 @@ button.mod-cta {
 .hotkey-list-container {
   --icon-opacity: 1;
   overflow-anchor: none;
+  contain: layout style paint;
 }
 
 .hotkey-list-container .setting-item {
   padding: 0.5em 0;
+  content-visibility: auto;
+  contain-intrinsic-block-size: 34px;
 }
 
 .hotkey-list-container .setting-item .setting-item-name {
