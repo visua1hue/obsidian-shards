@@ -1,6 +1,8 @@
-![Preview](.github/preview.jpg)
+![Preview](.github/preview.png)
 
 Built with SCSS, each "shard fragment" is a modular component designed to enhance specific UI elements, optimizing the interface for productivity and visual clarity.
+
+Consider using [Recursive Sans Linear](https://www.recursive.design/), which complements the design and enhances readability.
 
 <br>
 
@@ -19,31 +21,32 @@ Built with SCSS, each "shard fragment" is a modular component designed to enhanc
 
 ## Features
 
-Consider using [Recursive Sans Linear](https://www.recursive.design/), which complements the design and enhances readability.
+Keyboard-driven, hotkey-first — Command Palette and Omnisearch, always. Each component is styled to support that flow.
 
 ### Command Palette
 
-Focused navigation with reduced visual noise.
+Focused navigation with reduced visual noise and custom SVG icons for pinned commands.
 
-![](.github/preview-command-palette.jpg)
+![](.github/preview-command-palette.png)
 
 ### Settings
 
 Streamlined vertical nav, external plugin highlights, and a hotkeys panel with custom sort order.
 
-![](.github/preview-settings-hotkeys.jpg)
+![](.github/preview-settings-plugins.png)
+![](.github/preview-settings-hotkeys.png)
 
 ### Plugin: Omnisearch
 
 Full-vault search with reduced visual noise and focused results.
 
-![](.github/preview-plugin-omnisearch.jpg)
+![](.github/preview-plugin-omnisearch.png)
 
 ### Enhancements
 
 Additional refinements applied across the interface:
 
-- **Core UI**: hides unnecessary chrome — no Hider plugin required
+- **Core UI**: hides unnecessary elements and replaces default icons with custom SVGs
 - **New Tab**: redesigned empty state
 - **Editor**: active line indicator and playful animated bullet/checkbox transitions
 - **Links**: Unicode symbols on external links · subtle opacity on internal links
