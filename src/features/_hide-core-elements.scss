@@ -1,5 +1,5 @@
 /* CORE UI :: Hider CSS Modifications */
-.workspace-ribbon.mod-left {
+body:not(.show-ribbon) .workspace-ribbon.mod-left {
   display: none; /* mod left */
 }
 
