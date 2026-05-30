@@ -578,6 +578,10 @@ body:not(.is-mobile) .prompt .suggestion-item {
   position: relative;
 }
 
+.workspace-split.mod-vertical:not(.mod-left-split):not(.mod-right-split) .workspace-tab-header-container {
+  border-bottom: unset;
+}
+
 .workspace-split.mod-vertical .workspace-tab-header-new-tab {
   position: absolute;
   right: 0;
