@@ -1128,6 +1128,14 @@ input.task-list-item-checkbox {
   top: -0.05em;
 }
 
+.markdown-reading-view ul > li.task-list-item > .task-list-item-checkbox {
+  margin-inline-start: -16px;
+}
+
+.markdown-source-view.mod-cm6 .task-list-label .task-list-item-checkbox {
+  margin-inline-start: calc(var(--checkbox-margin-inline-start) + 1px);
+}
+
 /*  Checkbox Hover State  */
 input.task-list-item-checkbox:hover {
   box-shadow: 0 0 0 1.5px var(--interactive-accent);
@@ -1195,8 +1203,17 @@ input.task-list-item-checkbox::after {
 
 .HyperMD-task-line[data-task=x],
 .task-list-item[data-task=x] {
-  text-decoration: none !important;
   color: var(--checklist-done-color);
+}
+
+.HyperMD-task-line[data-task=x] {
+  text-decoration: none !important;
+}
+
+.markdown-reading-view .task-list-item[data-task=x] {
+  text-decoration: line-through;
+  text-decoration-color: var(--checklist-done-color);
+  text-decoration-thickness: 1.5px;
 }
 
 .HyperMD-task-line span[class*=cm-list],
