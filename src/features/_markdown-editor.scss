@@ -64,3 +64,17 @@ strong,
 .markdown-source-view.mod-cm6 .is-unresolved {
   opacity: 0.5;
 }
+
+/* SCROLL :: Header Fade */
+@scope (body:not(.is-phone) .workspace-split.mod-root) to (.cm-contentContainer) {
+  .workspace-leaf-content::before {
+    content: "";
+    position: absolute;
+    width: stretch;
+    height: var(--header-fade-height);
+    margin-inline-end: var(--scrollbar-width);
+    background-image: linear-gradient(var(--background-primary), transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+}

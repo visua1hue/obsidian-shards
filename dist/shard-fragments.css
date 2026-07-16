@@ -15,6 +15,7 @@ body {
   --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
   --divider-width: 2px;
   --header-height: 30px;
+  --header-fade-height: calc(var(--header-height) + 16px);
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
@@ -1521,6 +1522,19 @@ strong,
   opacity: 0.5;
 }
 
+/* SCROLL :: Header Fade */
+@scope (body:not(.is-phone) .workspace-split.mod-root) to (.cm-contentContainer) {
+  .workspace-leaf-content::before {
+    content: "";
+    position: absolute;
+    width: stretch;
+    height: var(--header-fade-height);
+    margin-inline-end: var(--scrollbar-width);
+    background-image: linear-gradient(var(--background-primary), transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
 /* CODE BLOCK ELEMENT :: Adjustments */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock:not(.HyperMD-list-line) {
   padding-inline-start: calc(var(--size-4-4) * 1.6);
