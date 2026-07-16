@@ -34,6 +34,7 @@
     height: 72px;
     pointer-events: none;
     z-index: 2;
+    opacity: 0;
     animation-timeline: --nav-scroll;
     animation-fill-mode: both;
     animation-timing-function: linear;
@@ -75,6 +76,12 @@
 .modal.mod-settings .vertical-tab-header-group-container {
   padding-inline: 0;
   scrollbar-width: none;
+  scroll-timeline: --nav-scroll block;
+}
+
+/* Search results replace the group-container while searching — same named
+   timeline so the header fade still tracks scroll position in that view */
+.modal.mod-settings .setting-search-results {
   scroll-timeline: --nav-scroll block;
 }
 
