@@ -204,9 +204,12 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 }
 
 .vertical-tab-nav-item:focus-visible {
-  box-shadow: none;
-  outline: 1.5px solid var(--background-modifier-border-focus);
-  outline-offset: -1px;
+  /* inset box-shadow instead of outline: outline + negative outline-offset
+     doesn't shrink its own corner radius to match the smaller inset rect on
+     a rounded element, producing uneven corners — box-shadow always follows
+     border-radius exactly since it's part of the box's own paint geometry */
+  outline: none;
+  box-shadow: inset 0 0 0 1.25px var(--background-modifier-border-focus);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
