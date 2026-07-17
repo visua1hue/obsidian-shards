@@ -99,13 +99,10 @@
   display: none;
 }
 
-.vertical-tab-nav-item:focus-visible {
-  /* inset box-shadow instead of outline: outline + negative outline-offset
-     doesn't shrink its own corner radius to match the smaller inset rect on
-     a rounded element, producing uneven corners — box-shadow always follows
-     border-radius exactly since it's part of the box's own paint geometry */
+.vertical-tab-nav-item:not(.is-active):focus-visible {
   outline: none;
-  box-shadow: inset 0 0 0 1.25px var(--background-modifier-border-focus);
+  box-shadow: none;
+  background-color: color-mix(in oklch, var(--background-modifier-hover) 50%, transparent);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
@@ -123,6 +120,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: var(--background-modifier-hover);
 }
 
+body:not(.is-phone) .horizontal-tab-nav-item.is-active:focus-visible,
+body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
+  outline: none;
+  box-shadow: none;
+  background-color: color-mix(in oklch, var(--background-modifier-hover), black 12%);
+}
+
 .horizontal-tab-nav-item,
 .vertical-tab-nav-item:not(.vertical-tab-nav-item.is-active) {
   color: var(--text-muted);
@@ -130,6 +134,13 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   transition: color var(--motion-dur-base) var(--motion-ease-out),
     opacity var(--motion-dur-base) var(--motion-ease-out),
     background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .horizontal-tab-nav-item:not(.is-active):hover,
+  .vertical-tab-nav-item:not(.is-active):hover {
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 50%, transparent);
+  }
 }
 
 .vertical-tab-nav-item {
