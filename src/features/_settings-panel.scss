@@ -241,7 +241,7 @@ body:not(.native-scrollbars) .modal-close-button {
     background-color var(--motion-dur-base) var(--motion-ease-out),
     border-color var(--motion-dur-base) var(--motion-ease-out),
     box-shadow var(--motion-dur-base) var(--motion-ease-out),
-    transform var(--motion-dur-quick) var(--motion-ease-spring);
+    transform var(--motion-dur-quick) var(--motion-ease-out);
 }
 
 body .checkbox-container.mod-small {
@@ -259,9 +259,6 @@ body .checkbox-container.mod-small {
 .checkbox-container.is-enabled.is-enabled {
   background-color: var(--interactive-accent);
   border-color: var(--divider-color);
-  @starting-style {
-    background-color: transparent;
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -272,6 +269,10 @@ body .checkbox-container.mod-small {
   .checkbox-container.is-enabled:hover {
     box-shadow: 0 0 0 1px var(--divider-color);
   }
+}
+
+.modal .checkbox-container.checkbox-container:active {
+  transition: transform var(--motion-dur-quick) var(--motion-ease-spring);
 }
 
 .checkbox-container:active {
