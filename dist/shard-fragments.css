@@ -1333,7 +1333,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .workspace-leaf-content[data-type=outline] .tree-item-self.is-clickable:not(.is-active):hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
   }
 }
 /* CHECKBOX INPUT ELEMENT :: Unique Checkbox */
