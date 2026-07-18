@@ -73,7 +73,14 @@ strong,
     width: stretch;
     height: var(--header-fade-height);
     margin-inline-end: var(--scrollbar-width);
-    background-image: linear-gradient(var(--background-primary), transparent 100%);
+    background-image: linear-gradient(
+      var(--background-primary) 0%,
+      color-mix(in srgb, var(--background-primary) 64%, transparent) 15%,
+      color-mix(in srgb, var(--background-primary) 36%, transparent) 30%,
+      color-mix(in srgb, var(--background-primary) 16%, transparent) 45%,
+      color-mix(in srgb, var(--background-primary) 4%, transparent) 60%,
+      transparent 75%
+    );
     pointer-events: none;
     z-index: 1;
   }
