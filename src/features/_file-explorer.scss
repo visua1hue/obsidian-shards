@@ -23,6 +23,10 @@
 }
 
 .collapse-icon svg.svg-icon {
+  color: var(--text-faint);
+}
+
+.tree-item:not(.is-collapsed) .collapse-icon svg.svg-icon {
   color: unset;
 }
 

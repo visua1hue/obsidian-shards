@@ -1081,6 +1081,10 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
 }
 
 .collapse-icon svg.svg-icon {
+  color: var(--text-faint);
+}
+
+.tree-item:not(.is-collapsed) .collapse-icon svg.svg-icon {
   color: unset;
 }
 
