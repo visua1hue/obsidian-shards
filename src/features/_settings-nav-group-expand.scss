@@ -3,6 +3,7 @@ body {
   --nav-section-title-gap: 4px;
   --nav-section-dur-enter: 320ms;
   --nav-section-dur-exit: 180ms;
+  --nav-section-hover-delay: 150ms;
 }
 
 .vertical-tab-header-group-title {
@@ -92,6 +93,18 @@ body {
       opacity: 1;
       transition: transform var(--nav-section-dur-enter) var(--motion-ease-out),
         opacity var(--nav-section-dur-enter) var(--motion-ease-out);
+    }
+  }
+
+  /* Hover-only: delay the transition start so a fast pass-through
+     (e.g. section 1 -> 3 crossing section 2) never triggers it — the
+     transition only begins once the hover has actually held past the
+     delay. Active tab / keyboard focus stay undelayed above since
+     those reflect real state, not a hover guess. */
+  :scope:hover {
+    .vertical-tab-header-group-items,
+    .vertical-tab-header-group-title::after {
+      transition-delay: var(--nav-section-hover-delay);
     }
   }
 }
