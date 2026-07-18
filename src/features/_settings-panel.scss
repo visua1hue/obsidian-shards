@@ -107,7 +107,7 @@
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
-  background-color: var(--background-modifier-hover);
+  background-color: var(--nav-active-bg);
   color: var(--text-normal);
   border-radius: var(--search-input-radius);
   transition: color var(--motion-dur-base) var(--motion-ease-out),
@@ -117,14 +117,14 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 
 .horizontal-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item.is-active:hover {
-  background-color: var(--background-modifier-hover);
+  background-color: var(--nav-active-bg);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active:focus-visible,
 body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   outline: none;
   box-shadow: none;
-  background-color: color-mix(in oklch, var(--background-modifier-hover), black 12%);
+  background-color: color-mix(in oklch, var(--nav-active-bg), black 12%);
 }
 
 .horizontal-tab-nav-item,

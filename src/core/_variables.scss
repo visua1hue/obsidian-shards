@@ -23,6 +23,7 @@ body {
   --titlebar-background: var(--titlebar-background-focused);
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
+  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 55%, transparent);
   --code-radius: var(--radius-m);
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
