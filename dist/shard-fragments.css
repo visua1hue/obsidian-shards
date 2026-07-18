@@ -1203,19 +1203,14 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   transition-delay: 100ms;
 }
 
-/* Active button stays the same tint whether compact or expanded — real
-   state, not hover feedback. Specificity here beats core's own
-   .nav-action-button.is-active rule. */
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) .nav-buttons-container .nav-action-button.is-active {
   background-color: var(--nav-active-bg);
 }
 
-/* Plain buttons only tint on individual hover, not permanently — same
-   strength as hovering a non-active row elsewhere (file explorer,
-   vault switcher, outline), not the stronger active-state token */
 @media (hover: hover) and (pointer: fine) {
   .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) .nav-buttons-container .nav-action-button:not(.is-active):hover {
     background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    transition: background-color var(--motion-dur-base) var(--motion-ease-out);
   }
 }
 /* Compact state when not hovering */
