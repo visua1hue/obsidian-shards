@@ -50,7 +50,7 @@ body {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       /* half leaf items' mix % since this has no opacity:0.5 dimming to compound with */
-      background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+      background-color: var(--nav-hover-bg);
       color: var(--text-normal);
     }
   }

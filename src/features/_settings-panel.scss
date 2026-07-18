@@ -102,7 +102,7 @@
 .vertical-tab-nav-item:not(.is-active):focus-visible {
   outline: none;
   box-shadow: none;
-  background-color: color-mix(in oklch, var(--background-modifier-hover) 50%, transparent);
+  background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
@@ -139,7 +139,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
 @media (hover: hover) and (pointer: fine) {
   .horizontal-tab-nav-item:not(.is-active):hover,
   .vertical-tab-nav-item:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 50%, transparent);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
   }
 }
 

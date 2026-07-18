@@ -60,7 +60,7 @@ body:not(.show-sidebar-header-buttons)
 
   .workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left:hover .clickable-icon,
   .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover .clickable-icon {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 
@@ -81,6 +81,6 @@ body:not(.show-sidebar-header-buttons)
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .workspace-leaf-content[data-type="outline"] .tree-item-self.is-clickable:not(.is-active):hover {
     opacity: 1;
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }

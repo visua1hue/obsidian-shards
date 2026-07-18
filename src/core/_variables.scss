@@ -24,6 +24,8 @@ body {
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
   --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 55%, transparent);
+  --nav-hover-pct: 25%;
+  --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
   --code-radius: var(--radius-m);
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;

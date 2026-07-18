@@ -22,6 +22,8 @@ body {
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
   --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 55%, transparent);
+  --nav-hover-pct: 25%;
+  --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
   --code-radius: var(--radius-m);
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
@@ -207,7 +209,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 .vertical-tab-nav-item:not(.is-active):focus-visible {
   outline: none;
   box-shadow: none;
-  background-color: color-mix(in oklch, var(--background-modifier-hover) 50%, transparent);
+  background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
@@ -240,7 +242,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
 @media (hover: hover) and (pointer: fine) {
   .horizontal-tab-nav-item:not(.is-active):hover,
   .vertical-tab-nav-item:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 50%, transparent);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
   }
 }
 .vertical-tab-nav-item {
@@ -497,7 +499,7 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .vertical-tab-header-group-title:hover {
     /* half leaf items' mix % since this has no opacity:0.5 dimming to compound with */
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
     color: var(--text-normal);
   }
 }
@@ -998,7 +1000,7 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
 @media (hover: hover) and (pointer: fine) {
   .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner,
   .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 .workspace-tab-header-tab-list .clickable-icon,
@@ -1106,10 +1108,10 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title):hover {
     opacity: 1;
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
   body:not(.is-grabbing) .nav-folder-title:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 .nav-file-title.is-active,
@@ -1177,14 +1179,14 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover {
     opacity: 1;
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
   body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover .workspace-drawer-vault-name {
     color: var(--text-muted);
   }
   body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions .clickable-icon:hover {
     opacity: 1;
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 /* https://github.com/aaaaalexis/obsidian-baseline/blob/a15e86f21197bd9144413ee1e18400cc630f2d81/src/features/compact-actions.scss */
@@ -1209,7 +1211,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 @media (hover: hover) and (pointer: fine) {
   .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) .nav-buttons-container .nav-action-button:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
     transition: background-color var(--motion-dur-base) var(--motion-ease-out);
   }
 }
@@ -1341,7 +1343,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   }
   .workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left:hover .clickable-icon,
   .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover .clickable-icon {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 .workspace-leaf-content[data-type=outline] .view-content {
@@ -1359,7 +1361,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .workspace-leaf-content[data-type=outline] .tree-item-self.is-clickable:not(.is-active):hover {
     opacity: 1;
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 /* CHECKBOX INPUT ELEMENT :: Unique Checkbox */

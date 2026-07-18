@@ -54,11 +54,11 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title):hover {
     opacity: 1;
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 
   body:not(.is-grabbing) .nav-folder-title:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 

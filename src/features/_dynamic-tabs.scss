@@ -308,7 +308,7 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 @media (hover: hover) and (pointer: fine) {
   .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner,
   .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
   }
 }
 

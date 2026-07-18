@@ -33,7 +33,7 @@
     > :is(.nav-header, .view-content > .nav-header)
     .nav-buttons-container
     .nav-action-button:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
+    background-color: var(--nav-hover-bg);
     transition: background-color var(--motion-dur-base) var(--motion-ease-out);
   }
 }
