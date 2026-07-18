@@ -272,11 +272,11 @@ body .checkbox-container.mod-small {
 }
 
 .modal .checkbox-container.checkbox-container:active {
-  transition: transform var(--motion-dur-quick) var(--motion-ease-spring);
+  transition: transform calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-spring);
 }
 
 .checkbox-container:active {
-  transform: scale(0.88);
+  transform: scale(0.92);
 }
 
 .setting-group-filters {
