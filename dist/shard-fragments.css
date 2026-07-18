@@ -1325,7 +1325,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 }
 
 /* Left sidebar toggle — !important on delay only to escape 200ms bleed from outline rule */
-.mod-left-split .workspace-tab-header-container .sidebar-toggle-button.mod-left {
+.workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left {
   opacity: 0.5;
   transition: opacity var(--motion-dur-base) var(--motion-ease-out);
   transition-delay: 0s !important;
@@ -1340,9 +1340,13 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 @media (hover: hover) and (pointer: fine) {
   .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover,
   .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover,
-  .mod-left-split .workspace-tab-header-container .sidebar-toggle-button.mod-left:hover,
+  .workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left:hover,
   .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover {
     opacity: 1;
+  }
+  .workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left:hover .clickable-icon,
+  .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover .clickable-icon {
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
   }
 }
 .workspace-leaf-content[data-type=outline] .view-content {
