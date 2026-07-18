@@ -2,6 +2,7 @@ body {
   --nav-section-title-height: 29px;
   --nav-section-title-gap: 4px;
   --nav-section-dur-enter: 320ms;
+  --nav-section-dur-height-enter: 150ms;
   --nav-section-dur-exit: 180ms;
   --nav-section-hover-delay: 150ms;
 }
@@ -71,6 +72,7 @@ body {
   opacity: 0;
   will-change: opacity;
   interpolate-size: allow-keywords;
+  contain: layout;
   transition:
     height var(--nav-section-dur-exit) var(--motion-ease-out),
     opacity var(--nav-section-dur-exit) var(--motion-ease-out);
@@ -84,7 +86,7 @@ body {
       height: auto;
       opacity: 1;
       transition:
-        height var(--nav-section-dur-enter) var(--motion-ease-out),
+        height var(--nav-section-dur-height-enter) var(--motion-ease-out),
         opacity var(--nav-section-dur-enter) var(--motion-ease-out);
     }
 
