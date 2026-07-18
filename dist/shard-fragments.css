@@ -1160,13 +1160,14 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
   }
   body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover .workspace-drawer-vault-name {
     color: var(--text-muted);
   }
   body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions .clickable-icon:hover {
     opacity: 1;
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
   }
 }
 /* https://github.com/aaaaalexis/obsidian-baseline/blob/a15e86f21197bd9144413ee1e18400cc630f2d81/src/features/compact-actions.scss */
