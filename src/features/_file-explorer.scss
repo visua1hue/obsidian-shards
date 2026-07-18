@@ -1,8 +1,11 @@
 /* FEXP :: Adjustments */
-.tree-item-self {
+.tree-item-self,
+.tree-item-self.mod-collapsible {
   font-size: 0.9em;
   margin-bottom: 0.09em;
   margin-top: unset;
+  border-radius: var(--ext-radius-l);
+  padding-block: 6px;
 }
 
 .tree-item-children {
@@ -51,11 +54,11 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title):hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
   }
 
   body:not(.is-grabbing) .nav-folder-title:not(.is-active):hover {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) 25%, transparent);
   }
 }
 
