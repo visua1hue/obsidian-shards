@@ -24,10 +24,17 @@
 
 .collapse-icon svg.svg-icon {
   color: var(--text-faint);
+  transition: transform 320ms var(--motion-ease-spring),
+    color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .tree-item:not(.is-collapsed) .collapse-icon svg.svg-icon {
   color: unset;
+}
+
+.collapse-icon.is-collapsed svg.svg-icon {
+  transition: transform 100ms ease-in-out,
+    color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .nav-folder-title {

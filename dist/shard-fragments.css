@@ -458,7 +458,6 @@ body {
   --nav-section-dur-height-enter: 150ms;
   --nav-section-dur-exit: 180ms;
   --nav-section-hover-delay: 150ms;
-  --nav-section-ease-bounce: cubic-bezier(0.34, 1.15, 0.64, 1);
 }
 
 .vertical-tab-header-group-title {
@@ -536,7 +535,7 @@ body {
   :scope:hover .vertical-tab-header-group-title::after {
     transform: translateY(-50%) rotate(90deg);
     background-color: currentColor;
-    transition: transform var(--nav-section-dur-enter) var(--nav-section-ease-bounce), background-color var(--nav-section-dur-enter) var(--motion-ease-out);
+    transition: transform var(--nav-section-dur-enter) var(--motion-ease-spring), background-color var(--nav-section-dur-enter) var(--motion-ease-out);
   }
   /* Hover-only: delay the transition start so a fast pass-through
      (e.g. section 1 -> 3 crossing section 2) never triggers it — the
@@ -1081,10 +1080,15 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
 
 .collapse-icon svg.svg-icon {
   color: var(--text-faint);
+  transition: transform 320ms var(--motion-ease-spring), color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .tree-item:not(.is-collapsed) .collapse-icon svg.svg-icon {
   color: unset;
+}
+
+.collapse-icon.is-collapsed svg.svg-icon {
+  transition: transform 100ms ease-in-out, color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .nav-folder-title {
