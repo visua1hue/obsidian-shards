@@ -5,6 +5,7 @@ body {
   --nav-section-dur-height-enter: 150ms;
   --nav-section-dur-exit: 180ms;
   --nav-section-hover-delay: 150ms;
+  --nav-section-ease-bounce: cubic-bezier(0.34, 1.15, 0.64, 1);
 }
 
 .vertical-tab-header-group-title {
@@ -91,7 +92,7 @@ body {
     .vertical-tab-header-group-title::after {
       transform: translateY(-50%) rotate(90deg);
       background-color: currentColor;
-      transition: transform var(--nav-section-dur-enter) var(--motion-ease-out),
+      transition: transform var(--nav-section-dur-enter) var(--nav-section-ease-bounce),
         background-color var(--nav-section-dur-enter) var(--motion-ease-out);
     }
   }
