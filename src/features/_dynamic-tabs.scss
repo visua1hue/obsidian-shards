@@ -12,7 +12,7 @@
   --tab-font-size: 12px;
   --tab-height: calc(var(--header-height) * 0.7 + 2px);
   --tab-max-width: 120px;
-  --tab-max-width-active: 240px;
+  --tab-max-width-active: 200px;
 }
 
 /* Prevent tab jumping by hiding spacer; center new-tab button absolutely */
@@ -135,8 +135,8 @@
   opacity: 1;
 
   transition:
-    max-width var(--motion-dur-base) var(--motion-ease-out),
-    opacity var(--motion-dur-base) var(--motion-ease-out);
+    opacity var(--motion-dur-quick) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Inactive tabs — border only */
@@ -146,9 +146,7 @@
   background: transparent;
   box-shadow: inset 0 0 0 1.5px var(--nav-active-bg);
   opacity: 0.75;
-  transition:
-    max-width var(--motion-dur-quick) var(--motion-ease-out),
-    opacity var(--motion-dur-base) var(--motion-ease-out);
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .mod-root:not(.mod-left-split):not(.mod-right-split)
