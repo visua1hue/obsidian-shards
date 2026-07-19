@@ -131,7 +131,7 @@
   .workspace-tab-header.is-active {
   max-width: var(--tab-max-width-active);
   background-color: var(--nav-item-background-active);
-  box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
+  box-shadow: none;
   opacity: 1;
 
   transition:
@@ -144,7 +144,7 @@
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header:not(.is-active) {
   background: transparent;
-  box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
+  box-shadow: inset 0 0 0 1.5px var(--nav-hover-bg);
   opacity: 0.75;
   transition:
     max-width var(--motion-dur-quick) var(--motion-ease-out),

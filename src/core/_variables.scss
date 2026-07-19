@@ -23,7 +23,7 @@ body {
   --titlebar-background: var(--titlebar-background-focused);
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
-  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 55%, transparent);
+  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 45%, transparent);
   --nav-hover-pct: 25%;
   --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
   --code-radius: var(--radius-m);

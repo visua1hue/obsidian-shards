@@ -21,7 +21,7 @@ body {
   --titlebar-background: var(--titlebar-background-focused);
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
-  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 55%, transparent);
+  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 45%, transparent);
   --nav-hover-pct: 25%;
   --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
   --code-radius: var(--radius-m);
@@ -887,7 +887,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 .mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
   max-width: var(--tab-max-width-active);
   background-color: var(--nav-item-background-active);
-  box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
+  box-shadow: none;
   opacity: 1;
   transition: max-width var(--motion-dur-base) var(--motion-ease-spring), opacity var(--motion-dur-base) var(--motion-ease-out);
 }
@@ -895,7 +895,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 /* Inactive tabs — border only */
 .mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active) {
   background: transparent;
-  box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
+  box-shadow: inset 0 0 0 1.5px var(--nav-hover-bg);
   opacity: 0.75;
   transition: max-width var(--motion-dur-quick) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out);
 }
