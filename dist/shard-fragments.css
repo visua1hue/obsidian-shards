@@ -886,7 +886,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 /* Active tab */
 .mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
   max-width: var(--tab-max-width-active);
-  background-color: var(--interactive-hover);
+  background-color: var(--nav-item-background-active);
   box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
   opacity: 1;
   transition: max-width var(--motion-dur-base) var(--motion-ease-spring), opacity var(--motion-dur-base) var(--motion-ease-out);
@@ -922,13 +922,14 @@ body:not(.is-mobile) .prompt .suggestion-item {
 /* Active tab title accent */
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-title {
   color: var(--color-accent);
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner,
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-title,
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
   color: var(--text-faint);
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Active tab in focused window */
@@ -937,6 +938,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
 .mod-root .workspace-tabs:not(.mod-stacked).mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
   color: var(--color-accent) !important;
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Sidebar toggle buttons */
