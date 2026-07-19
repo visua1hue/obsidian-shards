@@ -1104,11 +1104,12 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
 .tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title) {
   opacity: 0.5;
   background-color: transparent;
-  transition: opacity var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out);
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out), color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .tree-item-self.is-active {
   opacity: 1;
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out), color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
