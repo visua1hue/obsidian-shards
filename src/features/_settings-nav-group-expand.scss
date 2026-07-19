@@ -16,14 +16,12 @@ body {
   position: relative;
   padding: 6px var(--size-4-3) 6px 15px;
   font-size: var(--font-ui-small);
-  font-weight: 400;
+  font-weight: 450;
   text-transform: capitalize;
   border-radius: var(--search-input-radius);
   color: var(--text-muted);
-  opacity: 0.5;
   cursor: var(--cursor-link);
   transition: color var(--motion-dur-base) var(--motion-ease-out),
-    opacity var(--motion-dur-base) var(--motion-ease-out),
     background-color var(--motion-dur-base) var(--motion-ease-out);
 
   &::before {
@@ -53,7 +51,6 @@ body {
     &:hover {
       background-color: var(--nav-hover-bg);
       color: var(--text-normal);
-      opacity: 1;
     }
   }
 }
