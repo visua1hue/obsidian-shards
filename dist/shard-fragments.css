@@ -473,8 +473,9 @@ body {
   text-transform: capitalize;
   border-radius: var(--search-input-radius);
   color: var(--text-muted);
+  opacity: 0.5;
   cursor: var(--cursor-link);
-  transition: color var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out);
+  transition: color var(--motion-dur-base) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 .vertical-tab-header-group-title::before {
   content: "";
@@ -500,6 +501,7 @@ body {
   .vertical-tab-header-group-title:hover {
     background-color: var(--nav-hover-bg);
     color: var(--text-normal);
+    opacity: 1;
   }
 }
 
