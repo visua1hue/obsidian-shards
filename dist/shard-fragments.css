@@ -861,11 +861,29 @@ body:not(.is-mobile) .prompt .suggestion-item {
     opacity: 1;
   }
 }
+/* Tab bar establishes a query context so max-width can adapt to available space */
+.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container {
+  container: tab-bar/inline-size;
+}
+
 /* Tab max width */
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   max-width: var(--tab-max-width);
 }
 
+/* Narrower panes shrink tabs so more stay visible before native overflow kicks in */
+@container tab-bar (width < 480px) {
+  .workspace-tab-header-container-inner {
+    --tab-max-width: 92px;
+    --tab-max-width-active: 160px;
+  }
+}
+@container tab-bar (width < 320px) {
+  .workspace-tab-header-container-inner {
+    --tab-max-width: 70px;
+    --tab-max-width-active: 130px;
+  }
+}
 /* Remove left margin from first tab */
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header:first-child {
   margin-left: 0;
