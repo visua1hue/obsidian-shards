@@ -977,7 +977,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 }
 
 .sidebar-toggle-button {
-  padding: 1px 0 7px;
+  padding: 3px 0 5px;
   margin: 2px 0 0 0;
 }
 
@@ -1041,13 +1041,18 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   color: var(--text-faint);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .workspace-tab-header-tab-list .clickable-icon:hover {
+    background-color: var(--nav-hover-bg);
+  }
+}
 .mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
   border-bottom: unset;
 }
 
-.mod-left-split .workspace-tab-header-container-inner,
-.mod-right-split .workspace-tab-header-container-inner {
-  padding: 1px 0 7px;
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header-container-inner {
+  padding: 2px 0 5px;
   margin: 2px 0 0 0 !important;
   gap: 3px;
 }
