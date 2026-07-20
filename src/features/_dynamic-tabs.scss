@@ -81,6 +81,18 @@
   box-shadow: none;
   height: var(--tab-height);
   padding: 0 !important;
+}
+
+/* Entrance animation targets -inner, not -header: Obsidian puts container-type/flex sizing
+   on .workspace-tab-header itself, so animating transform there drags width along with it */
+.mod-vertical:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header
+  .workspace-tab-header-inner,
+.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header
+  .workspace-tab-header-inner {
   animation: tabEnter var(--motion-dur-base) var(--motion-ease-smooth) backwards;
 }
 
