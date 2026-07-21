@@ -81,6 +81,12 @@ strong,
   opacity: 0.5;
 }
 
+/* INTERNAL LINK :: Hover Transition */
+.cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-rendered .internal-link {
+  transition: color var(--motion-dur-quick) ease;
+}
+
 /* FRONTMATTER :: Dim & Shrink */
 .cm-hmd-frontmatter {
   font-size: var(--font-smaller);

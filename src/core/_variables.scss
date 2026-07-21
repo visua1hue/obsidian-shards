@@ -1,7 +1,7 @@
 body {
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.075) c h);
 
   --accent-ext-things-base: oklch(0.616 0.182 258.851);
   --accent-ext-things-full: oklch(0.696 0.153 259.51);

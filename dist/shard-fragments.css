@@ -2,7 +2,7 @@
 body {
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.075) c h);
   --accent-ext-things-base: oklch(0.616 0.182 258.851);
   --accent-ext-things-full: oklch(0.696 0.153 259.51);
   --accent-ext-linear: oklch(0.5712 0.1565 275.52);
@@ -1740,6 +1740,12 @@ strong,
 /* INTERNAL LINK :: Opacity */
 .markdown-source-view.mod-cm6 .is-unresolved {
   opacity: 0.5;
+}
+
+/* INTERNAL LINK :: Hover Transition */
+.cm-s-obsidian span.cm-hmd-internal-link,
+.markdown-rendered .internal-link {
+  transition: color var(--motion-dur-quick) ease;
 }
 
 /* FRONTMATTER :: Dim & Shrink */
