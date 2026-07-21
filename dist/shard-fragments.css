@@ -3,6 +3,8 @@ body {
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
   --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+  --accent-ext-things-base: oklch(0.616 0.182 258.851);
+  --accent-ext-things-full: oklch(0.696 0.153 259.51);
   --accent-ext-linear: oklch(0.5712 0.1565 275.52);
   --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
   --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
@@ -31,8 +33,8 @@ body {
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
   --link-color-hover: var(--interactive-accent-hover);
-  --link-external-color: oklch(0.612 0.188 257.841);
-  --link-external-color-hover: oklch(0.723 0.13 257.111);
+  --link-external-color: var(--accent-ext-things-base);
+  --link-external-color-hover: var(--accent-ext-things-full);
   font-optical-sizing: auto;
 }
 
