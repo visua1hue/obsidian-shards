@@ -17,5 +17,6 @@
 @use '../features/markdown-header';
 @use '../features/markdown-editor';
 @use '../features/markdown-code-block';
+@use '../features/markdown-embed';
 
 @use '../plugins/omnisearch';

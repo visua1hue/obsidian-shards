@@ -1849,6 +1849,22 @@ code {
   font-feature-settings: "calt" 1, "liga" 1;
 }
 
+/* EXTERNAL EMBED :: iframe sizing */
+iframe.external-embed {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  border-radius: var(--radius-l);
+}
+
+/* EXTERNAL EMBED :: fit-content collapses without an intrinsic iframe width */
+.cm-content .image-embed:has(> .image-wrapper > iframe.external-embed) {
+  width: 100%;
+}
+.cm-content .image-embed:has(> .image-wrapper > iframe.external-embed) > .image-wrapper {
+  width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   .omnisearch-input-container {
     flex-direction: unset;
