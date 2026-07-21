@@ -1703,6 +1703,7 @@ strong,
 }
 
 .external-link::after {
+  display: inline-block;
   vertical-align: text-top;
   margin-right: unset;
   margin-left: 2px;
@@ -1711,6 +1712,7 @@ strong,
   font-family: "Inter";
   font-weight: 500;
   color: var(--text-faint);
+  text-decoration: none;
   transition: color var(--motion-dur-quick) ease;
 }
 
