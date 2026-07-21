@@ -52,13 +52,13 @@ body:not(.no-codeblock-line-numbers)
   text-align: right;
   content: counter(codeblock-line-numbers);
   counter-increment: codeblock-line-numbers;
-  width: 1.6em;
+  width: 1.8em;
   height: 100%;
   padding-right: 1.4em;
   font-size: 0.75em;
   line-height: 2;
   position: absolute;
-  left: 0;
+  left: 0.4em;
 }
 
 .expressive-code .frame.header::before {
