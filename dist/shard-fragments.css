@@ -31,8 +31,8 @@ body {
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
   --link-color-hover: var(--interactive-accent-hover);
-  --link-external-color: var(--interactive-accent);
-  --link-external-color-hover: var(--interactive-accent-hover);
+  --link-external-color: oklch(0.612 0.188 257.841);
+  --link-external-color-hover: oklch(0.723 0.13 257.111);
   font-optical-sizing: auto;
 }
 
@@ -1697,6 +1697,7 @@ strong,
 .external-link {
   background-image: none;
   padding-right: 0;
+  transition: color var(--motion-dur-quick) ease;
 }
 
 .external-link::after {
@@ -1706,7 +1707,22 @@ strong,
   content: "↗";
   font-size: 10px;
   font-family: "Inter";
-  color: var(--text-muted);
+  font-weight: 500;
+  color: var(--text-faint);
+  transition: color var(--motion-dur-quick) ease;
+}
+
+.external-link:hover::after,
+.cm-link:hover ~ .external-link::after {
+  color: var(--link-external-color-hover);
+}
+
+.cm-link .cm-underline {
+  transition: color var(--motion-dur-quick) ease;
+}
+
+.markdown-source-view.mod-cm6 .cm-link:has(~ .external-link:hover) .cm-underline {
+  color: var(--link-external-color-hover);
 }
 
 .cm-s-obsidian span.cm-formatting-link.cm-url,

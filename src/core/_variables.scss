@@ -33,8 +33,8 @@ body {
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
   --link-color-hover: var(--interactive-accent-hover);
-  --link-external-color: var(--interactive-accent);
-  --link-external-color-hover: var(--interactive-accent-hover);
+  --link-external-color: oklch(0.612 0.188 257.841);
+  --link-external-color-hover: oklch(0.723 0.13 257.111);
 
   font-optical-sizing: auto;
 }
