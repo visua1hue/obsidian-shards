@@ -147,7 +147,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   position: relative;
   white-space: nowrap;
   overflow-x: clip;
-  padding: 6px var(--size-4-3) 6px 15px;
+  padding-inline: 15px var(--size-4-3);
+  padding-block: 4px;
   font-size: var(--font-ui-small);
   border-radius: var(--search-input-radius);
 }

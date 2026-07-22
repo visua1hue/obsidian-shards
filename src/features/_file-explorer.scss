@@ -5,7 +5,7 @@
   margin-bottom: 2px;
   margin-top: unset;
   border-radius: var(--ext-radius-l);
-  padding-block: 6px;
+  padding-block: 4px;
 }
 
 .tree-item-children {
@@ -19,7 +19,7 @@
 }
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
-  padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
+  padding: var(--size-4-2) var(--size-2-3) var(--size-4-6) var(--size-2-2);
 }
 
 .collapse-icon svg.svg-icon {

@@ -1,5 +1,5 @@
 body {
-  --nav-section-title-height: 29px;
+  --nav-section-title-height: 25px;
   --nav-section-title-gap: 4px;
   --nav-section-dur-enter: 320ms;
   --nav-section-dur-height-enter: 150ms;
@@ -14,7 +14,8 @@ body {
   height: var(--nav-section-title-height);
   margin-bottom: var(--nav-section-title-gap);
   position: relative;
-  padding: 6px var(--size-4-3) 6px 15px;
+  padding-inline: 15px var(--size-4-3);
+  padding-block: 4px;
   font-size: var(--font-ui-small);
   font-weight: 450;
   text-transform: capitalize;

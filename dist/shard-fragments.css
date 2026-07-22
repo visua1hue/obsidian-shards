@@ -251,7 +251,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   position: relative;
   white-space: nowrap;
   overflow-x: clip;
-  padding: 6px var(--size-4-3) 6px 15px;
+  padding-inline: 15px var(--size-4-3);
+  padding-block: 4px;
   font-size: var(--font-ui-small);
   border-radius: var(--search-input-radius);
 }
@@ -454,7 +455,7 @@ button.mod-cta {
   }
 }
 body {
-  --nav-section-title-height: 29px;
+  --nav-section-title-height: 25px;
   --nav-section-title-gap: 4px;
   --nav-section-dur-enter: 320ms;
   --nav-section-dur-height-enter: 150ms;
@@ -469,7 +470,8 @@ body {
   height: var(--nav-section-title-height);
   margin-bottom: var(--nav-section-title-gap);
   position: relative;
-  padding: 6px var(--size-4-3) 6px 15px;
+  padding-inline: 15px var(--size-4-3);
+  padding-block: 4px;
   font-size: var(--font-ui-small);
   font-weight: 450;
   text-transform: capitalize;
@@ -1101,7 +1103,7 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
   margin-bottom: 2px;
   margin-top: unset;
   border-radius: var(--ext-radius-l);
-  padding-block: 6px;
+  padding-block: 4px;
 }
 
 .tree-item-children {
@@ -1115,7 +1117,7 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
 }
 
 .workspace-leaf-content[data-type=file-explorer] .nav-files-container {
-  padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
+  padding: var(--size-4-2) var(--size-2-3) var(--size-4-6) var(--size-2-2);
 }
 
 .collapse-icon svg.svg-icon {
