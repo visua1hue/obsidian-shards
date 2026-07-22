@@ -17,7 +17,7 @@ body {
   --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
   --divider-width: 2px;
   --header-height: 30px;
-  --header-fade-height: calc(var(--header-height) + 64px);
+  --header-fade-height: calc(var(--header-height) + 16px);
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
@@ -1765,7 +1765,11 @@ strong,
     width: stretch;
     height: var(--header-fade-height);
     margin-inline-end: var(--scrollbar-width);
-    background-image: linear-gradient(var(--background-primary) 0%, color-mix(in srgb, var(--background-primary) 64%, transparent) 15%, color-mix(in srgb, var(--background-primary) 36%, transparent) 30%, color-mix(in srgb, var(--background-primary) 16%, transparent) 45%, color-mix(in srgb, var(--background-primary) 4%, transparent) 60%, transparent 75%);
+    background-color: var(--background-primary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    mask-image: linear-gradient(to bottom, black 0%, color-mix(in oklch, black 94%, transparent) 15%, color-mix(in oklch, black 78%, transparent) 30%, color-mix(in oklch, black 57%, transparent) 45%, color-mix(in oklch, black 38%, transparent) 58%, color-mix(in oklch, black 22%, transparent) 70%, color-mix(in oklch, black 10%, transparent) 80%, color-mix(in oklch, black 5%, transparent) 87%, color-mix(in oklch, black 1%, transparent) 93%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.94) 15%, rgba(0, 0, 0, 0.78) 30%, rgba(0, 0, 0, 0.57) 45%, rgba(0, 0, 0, 0.38) 58%, rgba(0, 0, 0, 0.22) 70%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.05) 87%, rgba(0, 0, 0, 0.01) 93%, rgba(0, 0, 0, 0) 100%);
     pointer-events: none;
     z-index: 1;
   }
