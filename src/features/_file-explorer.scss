@@ -28,7 +28,7 @@
     color var(--motion-dur-base) var(--motion-ease-out);
 }
 
-.tree-item:not(.is-collapsed) .collapse-icon svg.svg-icon {
+.tree-item:not(.is-collapsed) > .tree-item-self .collapse-icon svg.svg-icon {
   color: unset;
 }
 
