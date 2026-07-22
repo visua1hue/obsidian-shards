@@ -13,6 +13,7 @@ body {
   --motion-dur-base: 220ms;
   --motion-dur-enter: 500ms;
   --motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --motion-ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
   --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
   --divider-width: 2px;
@@ -457,9 +458,11 @@ button.mod-cta {
 body {
   --nav-section-title-height: 25px;
   --nav-section-title-gap: 4px;
-  --nav-section-dur-enter: 320ms;
-  --nav-section-dur-height-enter: 150ms;
+  --nav-section-dur-height-enter: 130ms;
+  --nav-section-dur-chevron-enter: 220ms;
+  --nav-section-dur-content-enter: 220ms;
   --nav-section-dur-exit: 180ms;
+  --nav-section-dur-content-exit: 110ms;
   --nav-section-hover-delay: 150ms;
 }
 
@@ -523,7 +526,7 @@ body {
   will-change: opacity;
   interpolate-size: allow-keywords;
   contain: layout;
-  transition: height var(--nav-section-dur-exit) var(--motion-ease-out), opacity var(--nav-section-dur-exit) var(--motion-ease-out);
+  transition: height var(--nav-section-dur-exit) var(--motion-ease-out), opacity var(--nav-section-dur-content-exit) var(--motion-ease-out);
 }
 
 @scope (.vertical-tab-header-group) {
@@ -532,14 +535,14 @@ body {
   :scope:hover .vertical-tab-header-group-items {
     height: auto;
     opacity: 1;
-    transition: height var(--nav-section-dur-height-enter) var(--motion-ease-out), opacity var(--nav-section-dur-enter) var(--motion-ease-out);
+    transition: height var(--nav-section-dur-height-enter) var(--motion-ease-out), opacity var(--nav-section-dur-content-enter) var(--motion-ease-in);
   }
   :scope:has(.vertical-tab-nav-item.is-active) .vertical-tab-header-group-title::after,
   :scope:has(.vertical-tab-nav-item:focus-visible) .vertical-tab-header-group-title::after,
   :scope:hover .vertical-tab-header-group-title::after {
     transform: translateY(-50%) rotate(90deg);
     background-color: currentColor;
-    transition: transform var(--nav-section-dur-enter) var(--motion-ease-spring), background-color var(--nav-section-dur-enter) var(--motion-ease-out);
+    transition: transform var(--nav-section-dur-chevron-enter) var(--motion-ease-spring), background-color var(--nav-section-dur-chevron-enter) var(--motion-ease-out);
   }
   /* Hover-only: delay the transition start so a fast pass-through
      (e.g. section 1 -> 3 crossing section 2) never triggers it — the

@@ -1,9 +1,11 @@
 body {
   --nav-section-title-height: 25px;
   --nav-section-title-gap: 4px;
-  --nav-section-dur-enter: 320ms;
-  --nav-section-dur-height-enter: 150ms;
+  --nav-section-dur-height-enter: 130ms;
+  --nav-section-dur-chevron-enter: 220ms;
+  --nav-section-dur-content-enter: 220ms;
   --nav-section-dur-exit: 180ms;
+  --nav-section-dur-content-exit: 110ms;
   --nav-section-hover-delay: 150ms;
 }
 
@@ -74,7 +76,7 @@ body {
   contain: layout;
   transition:
     height var(--nav-section-dur-exit) var(--motion-ease-out),
-    opacity var(--nav-section-dur-exit) var(--motion-ease-out);
+    opacity var(--nav-section-dur-content-exit) var(--motion-ease-out);
 }
 
 @scope (.vertical-tab-header-group) {
@@ -86,14 +88,14 @@ body {
       opacity: 1;
       transition:
         height var(--nav-section-dur-height-enter) var(--motion-ease-out),
-        opacity var(--nav-section-dur-enter) var(--motion-ease-out);
+        opacity var(--nav-section-dur-content-enter) var(--motion-ease-in);
     }
 
     .vertical-tab-header-group-title::after {
       transform: translateY(-50%) rotate(90deg);
       background-color: currentColor;
-      transition: transform var(--nav-section-dur-enter) var(--motion-ease-spring),
-        background-color var(--nav-section-dur-enter) var(--motion-ease-out);
+      transition: transform var(--nav-section-dur-chevron-enter) var(--motion-ease-spring),
+        background-color var(--nav-section-dur-chevron-enter) var(--motion-ease-out);
     }
   }
 
