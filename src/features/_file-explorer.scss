@@ -75,6 +75,7 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
 
   body:not(.is-grabbing) .nav-folder-title:not(.is-active):hover {
     background-color: var(--nav-hover-bg);
+    font-weight: 450;
   }
 }
 
