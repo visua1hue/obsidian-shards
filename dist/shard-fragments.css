@@ -775,7 +775,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 .mod-root .empty-state-title::after {
   content: "✦";
   display: inline-block;
-  font-size: 2rem;
+  font-size: calc(2rem * var(--zoom-factor, 1));
   color: var(--text-faint);
   opacity: 0.9;
   transform: scale(0.96);
