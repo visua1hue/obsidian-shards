@@ -34,6 +34,16 @@ strong,
   color: var(--color-accent);
 }
 
+/* EMBED BLOCK :: Ease hover shadow instead of snapping */
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget, .cm-lang-base) {
+  transition: box-shadow var(--motion-dur-quick) var(--motion-ease-out);
+}
+
+/* EMBED BLOCK :: Keep callout hover shadow radius matched to resting radius */
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:hover {
+  border-radius: var(--callout-radius);
+}
+
 /* EXTERNAL LINK :: Unicode symbol */
 .external-link {
   background-image: none;
