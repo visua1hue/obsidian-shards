@@ -458,9 +458,12 @@ button.mod-cta {
 body {
   --nav-section-title-height: 25px;
   --nav-section-title-gap: 4px;
-  --nav-section-dur-height-enter: 180ms;
-  --nav-section-dur-chevron-enter: 220ms;
-  --nav-section-dur-content-enter: 280ms;
+  /* enter timings derived from one base via calc offsets */
+  --nav-section-dur-base: 180ms;
+  --nav-section-dur-height-enter: var(--nav-section-dur-base);
+  --nav-section-dur-chevron-enter: calc(var(--nav-section-dur-base) + 40ms);
+  --nav-section-dur-content-enter: calc(var(--nav-section-dur-base) + 40ms);
+  --nav-section-stagger-enter: calc(var(--nav-section-dur-height-enter) * 0.5); /* text holds until section ~half open */
   --nav-section-dur-exit: 180ms;
   --nav-section-dur-content-exit: 110ms;
   --nav-section-hover-delay: 150ms;
@@ -524,34 +527,31 @@ body {
   overflow: hidden;
   opacity: 0;
   will-change: opacity;
-  interpolate-size: allow-keywords;
+  interpolate-size: allow-keywords; /* lets height 0 -> auto animate */
   contain: layout;
   transition: height var(--nav-section-dur-exit) var(--motion-ease-out), opacity var(--nav-section-dur-content-exit) var(--motion-ease-out);
 }
 
 @scope (.vertical-tab-header-group) {
+  /* expand when the group holds the active tab, keyboard focus, or is hovered */
   :scope:has(.vertical-tab-nav-item.is-active) .vertical-tab-header-group-items,
   :scope:has(.vertical-tab-nav-item:focus-visible) .vertical-tab-header-group-items,
   :scope:hover .vertical-tab-header-group-items {
     height: auto;
     opacity: 1;
-    transition: height var(--nav-section-dur-height-enter) var(--motion-ease-smooth), opacity var(--nav-section-dur-content-enter) var(--motion-ease-in);
+    /* opacity linear = even dissolve; ease-in reads late, ease-out flashes */
+    transition: height var(--nav-section-dur-height-enter) var(--motion-ease-smooth) var(--nav-enter-delay, 0ms), opacity var(--nav-section-dur-content-enter) linear calc(var(--nav-enter-delay, 0ms) + var(--nav-section-stagger-enter));
   }
   :scope:has(.vertical-tab-nav-item.is-active) .vertical-tab-header-group-title::after,
   :scope:has(.vertical-tab-nav-item:focus-visible) .vertical-tab-header-group-title::after,
   :scope:hover .vertical-tab-header-group-title::after {
     transform: translateY(-50%) rotate(90deg);
     background-color: currentColor;
-    transition: transform var(--nav-section-dur-chevron-enter) var(--motion-ease-spring), background-color var(--nav-section-dur-chevron-enter) var(--motion-ease-out);
+    transition: transform var(--nav-section-dur-chevron-enter) var(--motion-ease-spring) var(--nav-enter-delay, 0ms), background-color var(--nav-section-dur-chevron-enter) var(--motion-ease-out) var(--nav-enter-delay, 0ms);
   }
-  /* Hover-only: delay the transition start so a fast pass-through
-     (e.g. section 1 -> 3 crossing section 2) never triggers it — the
-     transition only begins once the hover has actually held past the
-     delay. Active tab / keyboard focus stay undelayed above since
-     those reflect real state, not a hover guess. */
-  :scope:hover .vertical-tab-header-group-items,
-  :scope:hover .vertical-tab-header-group-title::after {
-    transition-delay: var(--nav-section-hover-delay);
+  /* delay only hover-triggered expand — guards against fast pass-through; active/focus stay instant */
+  :scope:hover {
+    --nav-enter-delay: var(--nav-section-hover-delay);
   }
 }
 @media (prefers-reduced-motion: reduce) {
