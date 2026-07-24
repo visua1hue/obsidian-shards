@@ -285,6 +285,34 @@
   margin: 2px 0 0 0;
 }
 
+/* Sidebar toggle icon — inner bar previews the click outcome on hover */
+.sidebar-toggle-icon-inner {
+  transition: width var(--motion-dur-base) var(--motion-ease-out);
+}
+
+/* re-wins width from _outline.scss's higher-specificity mod-left-split rule */
+.sidebar-toggle-button.mod-left .clickable-icon .sidebar-toggle-icon-inner {
+  transition: width var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left .clickable-icon:hover {
+    --sidebar-left-toggle-inner-width: var(--sidebar-left-toggle-inner-width-open);
+  }
+
+  .workspace.is-left-sidedock-open .sidebar-toggle-button.mod-left .clickable-icon:hover {
+    --sidebar-left-toggle-inner-width-open: var(--sidebar-left-toggle-inner-width);
+  }
+
+  .workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right .clickable-icon:hover {
+    --sidebar-right-toggle-inner-width: var(--sidebar-right-toggle-inner-width-open);
+  }
+
+  .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right .clickable-icon:hover {
+    --sidebar-right-toggle-inner-width-open: var(--sidebar-right-toggle-inner-width);
+  }
+}
+
 /* Focused window active tab accent color */
 .is-focused
   .mod-active
