@@ -5,6 +5,11 @@
   --dynamic-tab-radius: 8px;
 }
 
+/* body, not :root — --nav-hover-bg isn't defined at :root/html */
+body {
+  --dynamic-tab-active-shadow: inset 0 0 0 1.25px oklch(from var(--nav-hover-bg) l 0 h / calc(alpha * 0.5));
+}
+
 /* Base tab styling for horizontal tabs */
 .workspace-tabs:not(.mod-stacked) {
   --tab-background: var(--background-secondary);
@@ -165,12 +170,13 @@
   .workspace-tab-header.is-active {
   max-width: var(--tab-max-width-active);
   background-color: var(--nav-item-background-active);
-  box-shadow: none;
+  box-shadow: var(--dynamic-tab-active-shadow);
   opacity: 1;
 
   transition:
     opacity var(--motion-dur-quick) var(--motion-ease-out),
-    background-color var(--motion-dur-base) var(--motion-ease-out);
+    background-color var(--motion-dur-base) var(--motion-ease-out),
+    box-shadow var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Inactive tabs — border only */
