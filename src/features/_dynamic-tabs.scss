@@ -451,8 +451,11 @@ body:not(.reduce-motion, .is-mobile) {
   }
 }
 
+/* Opaque backdrop + own compositor layer — button is position:fixed over the tab bar, so
+   transparency or a shared paint pass with the reflowing tab list underneath causes flicker */
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-  background-color: transparent;
+  background-color: var(--tab-container-background);
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {

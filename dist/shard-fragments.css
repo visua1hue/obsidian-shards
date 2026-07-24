@@ -1131,8 +1131,11 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
   transition: scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
 }
 
+/* Opaque backdrop + own compositor layer — button is position:fixed over the tab bar, so
+   transparency or a shared paint pass with the reflowing tab list underneath causes flicker */
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-  background-color: transparent;
+  background-color: var(--tab-container-background);
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1431,7 +1434,7 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
 }
 
 /* Right sidebar toggle lives in mod-root top-right-space, outside mod-left/right-split */
-.workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right {
+.sidebar-toggle-button.mod-right {
   opacity: 0.5;
   transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 }
@@ -1440,11 +1443,11 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :i
   .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover,
   .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover,
   .workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left:hover,
-  .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover {
+  .sidebar-toggle-button.mod-right:hover {
     opacity: 1;
   }
   .workspace-tabs.mod-top-left-space .sidebar-toggle-button.mod-left:hover .clickable-icon,
-  .workspace-tabs.mod-top-right-space .sidebar-toggle-button.mod-right:hover .clickable-icon {
+  .sidebar-toggle-button.mod-right:hover .clickable-icon {
     background-color: var(--nav-hover-bg);
   }
 }
