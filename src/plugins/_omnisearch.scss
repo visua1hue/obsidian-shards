@@ -1,3 +1,7 @@
+body {
+  --omnisearch-highlight-color: var(--text-selection);
+}
+
 @media only screen and (max-width: 600px) {
   .omnisearch-input-container {
     flex-direction: unset;
