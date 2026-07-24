@@ -277,6 +277,7 @@
 .sidebar-toggle-button.mod-left .clickable-icon,
 .sidebar-toggle-button.mod-right .clickable-icon {
   height: var(--tab-height);
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .sidebar-toggle-button {
@@ -352,11 +353,16 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 
 .workspace-tab-header-tab-list .clickable-icon,
 .workspace-tab-header-new-tab .clickable-icon {
-  color: var(--text-faint);
+  opacity: 0.5;
+  transition:
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .workspace-tab-header-tab-list .clickable-icon:hover {
+  .workspace-tab-header-tab-list .clickable-icon:hover,
+  .workspace-tab-header-new-tab .clickable-icon:hover {
+    opacity: 1;
     background-color: var(--nav-hover-bg);
   }
 }
