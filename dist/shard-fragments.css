@@ -1047,6 +1047,19 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
   transform: scale(0.75);
 }
 
+.workspace-tab-header-inner-close-button {
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .workspace-tab-header-inner-close-button:hover {
+    background-color: var(--nav-hover-bg);
+  }
+  /* overrides core's stronger undiluted --background-modifier-hover here */
+  .workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover {
+    background-color: var(--nav-hover-bg);
+  }
+}
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
