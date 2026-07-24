@@ -420,11 +420,35 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   border-bottom: unset;
 }
 
+/* spacing for every sidebar tab bar, collapsible or not */
 .mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner,
 .mod-right-split .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding: 2px 0 5px;
   margin: 2px 0 0 0 !important;
   gap: 3px;
+}
+
+/* secondary collapsible bar only — margin-top keeps the icon clipped inside the 8px strip */
+body:not(.show-sidebar-header-buttons)
+  :is(.mod-left-split, .mod-right-split)
+  .workspace-tabs:not(.mod-top)
+  .workspace-tab-header-container
+  .workspace-tab-header-container-inner {
+  margin: 2px 0 0 0 !important;
+  /* re-declares opacity/height so adding margin-top doesn't clobber _outline.scss's transition */
+  transition:
+    opacity var(--motion-dur-base) ease 200ms,
+    height var(--motion-dur-base) ease 200ms,
+    margin-top var(--motion-dur-base) var(--motion-ease-out) 200ms !important;
+}
+
+/* expanded — margin-top is the only lever on this flex-centered icon; 0.5px centers it */
+body:not(.show-sidebar-header-buttons)
+  :is(.mod-left-split, .mod-right-split)
+  .workspace-tabs:not(.mod-top)
+  .workspace-tab-header-container:hover
+  .workspace-tab-header-container-inner {
+  margin-top: 0.5px !important;
 }
 
 .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable .workspace-tab-header-inner {
