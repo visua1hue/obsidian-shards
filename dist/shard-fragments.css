@@ -1145,11 +1145,18 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
 }
 
 /* Own compositor layer — button is position:fixed over the tab bar, so a shared paint
-   pass with the reflowing tab list underneath causes flicker. Overrides app.css's
-   --tab-container-background to match the sidebar's own bg instead of the tab bar's */
+   pass with the reflowing tab list underneath causes flicker. Bg must track what's
+   actually beneath the fixed position: root tab header when collapsed, sidebar when open */
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-  background-color: var(--background-primary);
   will-change: transform;
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right {
+  background-color: var(--background-primary);
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
+  background-color: var(--background-secondary);
 }
 
 @media (prefers-reduced-motion: reduce) {
