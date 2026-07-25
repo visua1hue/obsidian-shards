@@ -475,10 +475,11 @@ body:not(.reduce-motion, .is-mobile) {
   }
 }
 
-/* Opaque backdrop + own compositor layer — button is position:fixed over the tab bar, so
-   transparency or a shared paint pass with the reflowing tab list underneath causes flicker */
+/* Own compositor layer — button is position:fixed over the tab bar, so a shared paint
+   pass with the reflowing tab list underneath causes flicker. Overrides app.css's
+   --tab-container-background to match the sidebar's own bg instead of the tab bar's */
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-  background-color: var(--tab-container-background);
+  background-color: var(--background-primary);
   will-change: transform;
 }
 
