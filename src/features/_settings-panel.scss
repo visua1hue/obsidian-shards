@@ -349,12 +349,13 @@ button.mod-cta {
   grid-row: 1;
 }
 
+/* SETTINGS :: Button Hover (content pane only, vertical nav excluded) */
 @media (hover: hover) and (pointer: fine) {
-  .setting-group.mod-list.mod-hotkeys .clickable-icon {
-    transition: background-color 0ms;
+  .modal.mod-settings .vertical-tab-content .clickable-icon {
+    transition: background-color var(--motion-dur-base) var(--motion-ease-out);
   }
 
-  .setting-group.mod-list.mod-hotkeys .clickable-icon:hover {
-    transition: background-color 50ms 200ms;
+  .modal.mod-settings .vertical-tab-content .clickable-icon:hover {
+    background-color: var(--nav-hover-bg);
   }
 }
