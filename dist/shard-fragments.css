@@ -27,6 +27,7 @@ body {
   --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 45%, transparent);
   --nav-hover-pct: 25%;
   --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
+  --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --code-radius: var(--radius-m);
   --callout-radius: var(--code-radius);
   --embed-block-shadow-hover: inset 0 0 0 1.5px var(--background-modifier-hover);
