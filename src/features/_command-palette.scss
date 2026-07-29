@@ -82,7 +82,7 @@ kbd {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: clamp(200px, calc(20vw + 120px), 500px);
+  width: clamp(200px, calc(100% - 160px), 500px);
 }
 
 input.prompt-input::-webkit-input-placeholder {
@@ -98,7 +98,8 @@ body:not(.is-mobile) .prompt .suggestion-item {
   flex-direction: column;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: auto;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .suggestion-item {
