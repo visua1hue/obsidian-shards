@@ -169,6 +169,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
 
 .setting-item-description {
   color: var(--text-faint);
+  max-width: 60ch;
 }
 
 .setting-item > *:first-child {
@@ -219,6 +220,14 @@ body:not(.native-scrollbars) .modal-close-button {
 .setting-group.mod-list:not(.mod-hotkeys) .setting-item:not(.setting-item-heading):not(:has(.checkbox-container.is-enabled)) .setting-item-name {
   color: var(--text-muted);
   opacity: 0.5;
+}
+
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item.mod-toggle {
+  padding: var(--setting-items-padding-y) var(--setting-items-padding-x);
+}
+
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item-name .u-muted.u-small {
+  font-family: var(--font-monospace);
 }
 
 /* SETTINGS :: Toggles */
