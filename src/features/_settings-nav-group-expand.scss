@@ -1,0 +1,121 @@
+body {
+  --nav-section-title-height: 25px;
+  --nav-section-title-gap: 4px;
+
+  /* enter timings derived from one base via calc offsets */
+  --nav-section-dur-base: 180ms;
+  --nav-section-dur-height-enter: var(--nav-section-dur-base);
+  --nav-section-dur-chevron-enter: calc(var(--nav-section-dur-base) + 40ms);
+  --nav-section-dur-content-enter: calc(var(--nav-section-dur-base) + 40ms);
+  --nav-section-stagger-enter: calc(var(--nav-section-dur-height-enter) * 0.5); /* text holds until section ~half open */
+
+  --nav-section-dur-exit: 180ms;
+  --nav-section-dur-content-exit: 110ms;
+  --nav-section-hover-delay: 150ms;
+}
+
+.vertical-tab-header-group-title {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--nav-section-title-height);
+  margin-bottom: var(--nav-section-title-gap);
+  position: relative;
+  padding-inline: 15px var(--size-4-3);
+  padding-block: 4px;
+  font-size: var(--font-ui-small);
+  font-weight: 450;
+  text-transform: capitalize;
+  border-radius: var(--search-input-radius);
+  color: var(--text-muted);
+  cursor: var(--cursor-link);
+  transition: color var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -3px 0 -24px 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: var(--size-4-3);
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%) rotate(0deg);
+    background-color: var(--text-faint);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: transform var(--nav-section-dur-exit) var(--motion-ease-out),
+      background-color var(--nav-section-dur-exit) var(--motion-ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--nav-hover-bg);
+      color: var(--text-normal);
+    }
+  }
+}
+
+.vertical-tab-header-group {
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.modal.mod-settings .vertical-tab-header .vertical-tab-header-group-container {
+  padding-top: 12px;
+}
+
+.vertical-tab-header-group-items {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  will-change: opacity;
+  interpolate-size: allow-keywords; /* lets height 0 -> auto animate */
+  contain: layout;
+  transition:
+    height var(--nav-section-dur-exit) var(--motion-ease-out),
+    opacity var(--nav-section-dur-content-exit) var(--motion-ease-out);
+}
+
+@scope (.vertical-tab-header-group) {
+  /* expand when the group holds the active tab, keyboard focus, or is hovered */
+  :scope:has(.vertical-tab-nav-item.is-active),
+  :scope:has(.vertical-tab-nav-item:focus-visible),
+  :scope:hover {
+    .vertical-tab-header-group-items {
+      height: auto;
+      opacity: 1;
+      /* opacity linear = even dissolve; ease-in reads late, ease-out flashes */
+      transition:
+        height var(--nav-section-dur-height-enter) var(--motion-ease-smooth) var(--nav-enter-delay, 0ms),
+        opacity var(--nav-section-dur-content-enter) linear
+          calc(var(--nav-enter-delay, 0ms) + var(--nav-section-stagger-enter));
+    }
+
+    .vertical-tab-header-group-title::after {
+      transform: translateY(-50%) rotate(90deg);
+      background-color: currentColor;
+      transition: transform var(--nav-section-dur-chevron-enter) var(--motion-ease-spring) var(--nav-enter-delay, 0ms),
+        background-color var(--nav-section-dur-chevron-enter) var(--motion-ease-out) var(--nav-enter-delay, 0ms);
+    }
+  }
+
+  /* delay only hover-triggered expand — guards against fast pass-through; active/focus stay instant */
+  :scope:hover {
+    --nav-enter-delay: var(--nav-section-hover-delay);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vertical-tab-header-group-items,
+  .vertical-tab-header-group-title::after {
+    transition: none !important;
+  }
+}

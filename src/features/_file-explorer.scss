@@ -1,8 +1,11 @@
 /* FEXP :: Adjustments */
-.tree-item-self {
+.tree-item-self,
+.tree-item-self.mod-collapsible {
   font-size: 0.9em;
-  margin-bottom: 0.09em;
+  margin-bottom: 2px;
   margin-top: unset;
+  border-radius: var(--ext-radius-l);
+  padding-block: 4px;
 }
 
 .tree-item-children {
@@ -16,11 +19,22 @@
 }
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
-  padding: var(--size-4-2) calc(var(--size-2-2) + 2px) var(--size-4-6) var(--size-2-2);
+  padding: var(--size-4-2) var(--size-2-3) var(--size-4-6) var(--size-2-2);
 }
 
 .collapse-icon svg.svg-icon {
+  color: var(--text-faint);
+  transition: transform 320ms var(--motion-ease-spring),
+    color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+.tree-item:not(.is-collapsed) > .tree-item-self .collapse-icon svg.svg-icon {
   color: unset;
+}
+
+.collapse-icon.is-collapsed svg.svg-icon {
+  transition: transform 100ms ease-in-out,
+    color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .nav-folder-title {
@@ -41,21 +55,27 @@ body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
   background-color: transparent;
   transition:
     opacity var(--motion-dur-base) var(--motion-ease-out),
-    background-color var(--motion-dur-base) var(--motion-ease-out);
+    background-color var(--motion-dur-base) var(--motion-ease-out),
+    color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .tree-item-self.is-active {
   opacity: 1;
+  transition:
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out),
+    color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.nav-folder-title):hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: var(--nav-hover-bg);
   }
 
   body:not(.is-grabbing) .nav-folder-title:not(.is-active):hover {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: var(--nav-hover-bg);
+    font-weight: 450;
   }
 }
 

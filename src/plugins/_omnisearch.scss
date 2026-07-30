@@ -1,3 +1,7 @@
+body {
+  --omnisearch-highlight-color: var(--text-selection);
+}
+
 @media only screen and (max-width: 600px) {
   .omnisearch-input-container {
     flex-direction: unset;
@@ -10,10 +14,14 @@
 
 .omnisearch-default-highlight {
   color: var(--interactive-accent);
-  text-decoration: underline;
-  text-decoration-color: var(--interactive-accent);
-  text-decoration-thickness: 3px;
-  text-underline-offset: -1px;
+  background-color: var(--text-selection);
+  border-radius: var(--radius-s);
+  padding-left: 2px;
+  padding-right: 2px;
+  // text-decoration: underline;
+  // text-decoration-color: var(--interactive-accent);
+  // text-decoration-thickness: 1.5px;
+  // text-underline-offset: -1px;
 }
 
 .omnisearch-result__icon {
@@ -39,6 +47,13 @@
 }
 
 .omnisearch-result__folder-path {
+  font-family: var(--font-monospace);
+  opacity: 0.5;
+}
+
+.omnisearch-result__extension,
+.omnisearch-result__counter {
+  font-family: var(--font-monospace);
   opacity: 0.5;
 }
 

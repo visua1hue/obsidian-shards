@@ -5,6 +5,11 @@
   --dynamic-tab-radius: 8px;
 }
 
+/* body, not :root — --nav-hover-bg isn't defined at :root/html */
+body {
+  --dynamic-tab-active-shadow: inset 0 0 0 1.25px oklch(from var(--nav-hover-bg) l 0 h / calc(alpha * 0.5));
+}
+
 /* Base tab styling for horizontal tabs */
 .workspace-tabs:not(.mod-stacked) {
   --tab-background: var(--background-secondary);
@@ -12,7 +17,7 @@
   --tab-font-size: 12px;
   --tab-height: calc(var(--header-height) * 0.7 + 2px);
   --tab-max-width: 120px;
-  --tab-max-width-active: 240px;
+  --tab-max-width-active: 200px;
 }
 
 /* Prevent tab jumping by hiding spacer; center new-tab button absolutely */
@@ -69,7 +74,7 @@
   gap: var(--dynamic-tab-gap);
 }
 
-/* Individual tab — compositor-only transitions */
+/* Individual tab — compositor-only entrance (keyframe, not @starting-style: doesn't fire on Obsidian's tab nodes) */
 .mod-vertical:not(.mod-left-split):not(.mod-right-split)
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header,
@@ -81,6 +86,18 @@
   box-shadow: none;
   height: var(--tab-height);
   padding: 0 !important;
+}
+
+/* Entrance animation targets -inner, not -header: Obsidian puts container-type/flex sizing
+   on .workspace-tab-header itself, so animating transform there drags width along with it */
+.mod-vertical:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header
+  .workspace-tab-header-inner,
+.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header
+  .workspace-tab-header-inner {
   animation: tabEnter var(--motion-dur-base) var(--motion-ease-smooth) backwards;
 }
 
@@ -95,9 +112,31 @@
   }
 }
 
+/* Tab bar establishes a query context so max-width can adapt to available space */
+.mod-root:not(.mod-left-split):not(.mod-right-split)
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header-container {
+  container: tab-bar / inline-size;
+}
+
 /* Tab max width */
 .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
   max-width: var(--tab-max-width);
+}
+
+/* Narrower panes shrink tabs so more stay visible before native overflow kicks in */
+@container tab-bar (width < 480px) {
+  .workspace-tab-header-container-inner {
+    --tab-max-width: 92px;
+    --tab-max-width-active: 160px;
+  }
+}
+
+@container tab-bar (width < 320px) {
+  .workspace-tab-header-container-inner {
+    --tab-max-width: 70px;
+    --tab-max-width-active: 130px;
+  }
 }
 
 /* Remove left margin from first tab */
@@ -130,13 +169,14 @@
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active {
   max-width: var(--tab-max-width-active);
-  background-color: var(--interactive-hover);
-  box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
+  background-color: var(--nav-item-background-active);
+  box-shadow: var(--dynamic-tab-active-shadow);
   opacity: 1;
 
   transition:
-    max-width var(--motion-dur-base) var(--motion-ease-spring),
-    opacity var(--motion-dur-base) var(--motion-ease-out);
+    opacity var(--motion-dur-quick) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out),
+    box-shadow var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Inactive tabs — border only */
@@ -144,11 +184,9 @@
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header:not(.is-active) {
   background: transparent;
-  box-shadow: inset 0 0 0 1.5px color-mix(in oklch, var(--tab-outline-color) 60%, transparent);
+  box-shadow: inset 0 0 0 1.5px var(--nav-active-bg);
   opacity: 0.75;
-  transition:
-    max-width var(--motion-dur-quick) var(--motion-ease-out),
-    opacity var(--motion-dur-base) var(--motion-ease-out);
+  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .mod-root:not(.mod-left-split):not(.mod-right-split)
@@ -196,6 +234,7 @@
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-title {
   color: var(--color-accent);
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .mod-root
@@ -205,16 +244,13 @@
 .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active
-  .workspace-tab-header-inner-title,
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active
   .workspace-tab-header-inner-close-button,
 .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-icon {
   color: var(--text-faint);
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Active tab in focused window */
@@ -235,6 +271,7 @@
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-icon {
   color: var(--color-accent) !important;
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Sidebar toggle buttons */
@@ -246,11 +283,40 @@
 .sidebar-toggle-button.mod-left .clickable-icon,
 .sidebar-toggle-button.mod-right .clickable-icon {
   height: var(--tab-height);
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .sidebar-toggle-button {
-  padding: 1px 0 7px;
+  padding: 3px 0 5px;
   margin: 2px 0 0 0;
+}
+
+/* Sidebar toggle icon — inner bar previews the click outcome on hover */
+.sidebar-toggle-icon-inner {
+  transition: width var(--motion-dur-base) var(--motion-ease-out);
+}
+
+/* re-wins width from _outline.scss's higher-specificity mod-left-split rule */
+.sidebar-toggle-button.mod-left .clickable-icon .sidebar-toggle-icon-inner {
+  transition: width var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left .clickable-icon:hover {
+    --sidebar-left-toggle-inner-width: var(--sidebar-left-toggle-inner-width-open);
+  }
+
+  .workspace.is-left-sidedock-open .sidebar-toggle-button.mod-left .clickable-icon:hover {
+    --sidebar-left-toggle-inner-width-open: var(--sidebar-left-toggle-inner-width);
+  }
+
+  .workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right .clickable-icon:hover {
+    --sidebar-right-toggle-inner-width: var(--sidebar-right-toggle-inner-width-open);
+  }
+
+  .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right .clickable-icon:hover {
+    --sidebar-right-toggle-inner-width-open: var(--sidebar-right-toggle-inner-width);
+  }
 }
 
 /* Focused window active tab accent color */
@@ -263,6 +329,7 @@
   .workspace-tab-header.is-active
   .workspace-tab-header-inner-title {
   color: var(--color-accent);
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 /* Tab addon — frameless, sidebar tabs, active title */
@@ -289,25 +356,99 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   transform: scale(0.75);
 }
 
+.workspace-tab-header-inner-close-button {
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .workspace-tab-header-inner-close-button:hover {
+    background-color: var(--nav-hover-bg);
+  }
+
+  /* overrides core's stronger undiluted --background-modifier-hover here */
+  .workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover {
+    background-color: var(--nav-hover-bg);
+  }
+}
+
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
 }
 
+.mod-left-split .workspace-tab-header-container .workspace-tab-header.has-active-menu,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header.has-active-menu,
+.mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active,
+.mod-left-split .workspace-tab-header-container .workspace-tab-header.has-active-menu:hover,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header.has-active-menu:hover,
+.mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active:hover {
+  background-color: var(--nav-item-background-active);
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+.mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner,
+  .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+    background-color: var(--nav-hover-bg);
+  }
+}
+
 .workspace-tab-header-tab-list .clickable-icon,
 .workspace-tab-header-new-tab .clickable-icon {
-  color: var(--text-faint);
+  opacity: 0.5;
+  transition:
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .workspace-tab-header-tab-list .clickable-icon:hover,
+  .workspace-tab-header-new-tab .clickable-icon:hover {
+    opacity: 1;
+    background-color: var(--nav-hover-bg);
+  }
 }
 
 .mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
   border-bottom: unset;
 }
 
-.mod-left-split .workspace-tab-header-container-inner,
-.mod-right-split .workspace-tab-header-container-inner {
-  padding: 1px 0 7px;
+/* spacing for every sidebar tab bar, collapsible or not */
+.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header-container-inner {
+  padding: 2px 0 5px;
   margin: 2px 0 0 0 !important;
   gap: 3px;
+}
+
+/* secondary collapsible bar only — margin-top keeps the icon clipped inside the 8px strip */
+body:not(.show-sidebar-header-buttons)
+  :is(.mod-left-split, .mod-right-split)
+  .workspace-tabs:not(.mod-top)
+  .workspace-tab-header-container
+  .workspace-tab-header-container-inner {
+  margin: 2px 0 0 0 !important;
+  /* re-declares opacity/height so adding margin-top doesn't clobber _outline.scss's transition */
+  transition:
+    opacity var(--motion-dur-base) ease 200ms,
+    height var(--motion-dur-base) ease 200ms,
+    margin-top var(--motion-dur-base) var(--motion-ease-out) 200ms !important;
+}
+
+/* expanded — margin-top is the only lever on this flex-centered icon; 0.5px centers it */
+body:not(.show-sidebar-header-buttons)
+  :is(.mod-left-split, .mod-right-split)
+  .workspace-tabs:not(.mod-top)
+  .workspace-tab-header-container:hover
+  .workspace-tab-header-container-inner {
+  margin-top: 0.5px !important;
 }
 
 .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable .workspace-tab-header-inner {
@@ -328,14 +469,25 @@ body:not(.reduce-motion, .is-mobile) {
   .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
   .side-dock-ribbon-action:active svg.svg-icon,
   .sidebar-toggle-button .clickable-icon:active svg.svg-icon {
-    scale: 0.88;
+    scale: 0.92;
     opacity: 1;
-    transition: scale var(--motion-dur-quick) var(--motion-ease-smooth);
+    transition: scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
   }
 }
 
+/* Own compositor layer — button is position:fixed over the tab bar, so a shared paint
+   pass with the reflowing tab list underneath causes flicker. Bg must track what's
+   actually beneath the fixed position: root tab header when collapsed, sidebar when open */
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-  background-color: transparent;
+  will-change: transform;
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right {
+  background-color: var(--background-primary);
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
+  background-color: var(--background-secondary);
 }
 
 @media (prefers-reduced-motion: reduce) {

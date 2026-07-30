@@ -1,7 +1,8 @@
 .modal.mod-settings {
-  --modal-radius: var(--ext-radius-l);
+  --modal-radius: var(--radius-xl);
   --button-radius: var(--ext-radius-l);
   --input-radius: var(--ext-radius-l);
+  --search-input-radius: var(--input-radius);
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   @starting-style {
     transform: scale(0.98);
@@ -10,31 +11,120 @@
 
 /* SETTINGS :: Content Area */
 .vertical-tab-content {
-  padding: var(--size-4-5) var(--size-4-5);
+  padding-top: var(--size-4-8);
+  padding-bottom: var(--size-4-8);
+  border-radius: var(--radius-m);
   overflow-anchor: none;
 }
 
 /* SETTINGS :: Vertical Nav Header */
 .modal.mod-settings .vertical-tab-header {
-  min-width: 200px;
+  min-width: 234px;
   border-inline-end: 2px solid var(--divider-color);
-  padding: 0 var(--size-4-3);
+  padding: 0;
+  position: relative;
+  timeline-scope: --nav-scroll;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 72px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    animation-timeline: --nav-scroll;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+  }
+
+  /* Top fade: hidden at scrollTop 0, fades in over the first 31px of scroll */
+  &::after {
+    top: 40px;
+    background: linear-gradient(to bottom, var(--modal-sidebar-background), transparent);
+    animation-name: nav-top-fade;
+    animation-range: 0px 31px;
+  }
+
+  /* Bottom fade: fades out over the last 31px so it clears before the final nav item */
+  &::before {
+    bottom: 0;
+    background: linear-gradient(to top, var(--modal-sidebar-background), transparent);
+    animation-name: nav-bottom-fade;
+    animation-range: calc(100% - 31px) 100%;
+  }
+}
+
+.modal.mod-settings .search-input-container::before {
+  display: none;
+}
+
+.modal.mod-settings .search-input-container input {
+  height: 28px;
+  border-width: 1.5px;
+  padding-inline-start: 15px;
+  transition: box-shadow var(--motion-dur-base) var(--motion-ease-out);
+}
+
+.modal.mod-settings .search-input-container input[type="search"]:focus,
+.modal.mod-settings .search-input-container input[type="search"]:focus-visible {
+  box-shadow: 0 0 6px 2px oklch(from var(--divider-color) l c h / 0.35);
+}
+
+.modal.mod-settings .vertical-tab-header-group-container {
+  padding-inline: 0;
+  scrollbar-width: none;
+  scroll-timeline: --nav-scroll block;
+}
+
+/* Search results replace the group-container while searching — same named
+   timeline so the header fade still tracks scroll position in that view */
+.modal.mod-settings .setting-search-results {
+  scroll-timeline: --nav-scroll block;
+}
+
+@keyframes nav-top-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes nav-bottom-fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 .vertical-tab-header-group-title {
   display: none;
 }
 
+.vertical-tab-nav-item:not(.is-active):focus-visible {
+  outline: none;
+  box-shadow: none;
+  background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
+}
+
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
-  background-color: unset;
+  background-color: var(--nav-active-bg);
   color: var(--text-normal);
-  transition: color var(--motion-dur-base) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out);
+  border-radius: var(--search-input-radius);
+  transition: color var(--motion-dur-base) var(--motion-ease-out),
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .horizontal-tab-nav-item.is-active:hover,
 .vertical-tab-nav-item.is-active:hover {
-  background-color: unset;
+  background-color: var(--nav-active-bg);
+}
+
+body:not(.is-phone) .horizontal-tab-nav-item.is-active:focus-visible,
+body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
+  outline: none;
+  box-shadow: none;
+  background-color: color-mix(in oklch, var(--nav-active-bg), black 12%);
 }
 
 .horizontal-tab-nav-item,
@@ -42,50 +132,49 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   color: var(--text-muted);
   opacity: 0.5;
   transition: color var(--motion-dur-base) var(--motion-ease-out),
-    opacity var(--motion-dur-base) var(--motion-ease-out);
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
-.vertical-tab-nav-item::before {
-  position: absolute;
-  content: "|";
-  color: var(--text-normal);
-  font-weight: 700;
-  font-size: 0.7em;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
-  line-height: 0;
-  opacity: 0;
-  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
-}
-
-.vertical-tab-header-group-items:has(.vertical-tab-nav-item.is-active)
-  .vertical-tab-nav-item.is-active::before {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .horizontal-tab-nav-item:not(.is-active):hover,
+  .vertical-tab-nav-item:not(.is-active):hover {
+    background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
+  }
 }
 
 .vertical-tab-nav-item {
   position: relative;
   white-space: nowrap;
   overflow-x: clip;
-  padding: var(--size-2-1) var(--size-4-2);
-  font-size: var(--font-ui-medium);
+  padding-inline: 15px var(--size-4-3);
+  padding-block: 4px;
+  font-size: var(--font-ui-small);
+  border-radius: var(--search-input-radius);
+}
+
+.setting-item {
+  align-items: center;
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+.setting-item:focus-visible {
+  background-color: color-mix(in oklch, black 6%, transparent) !important;
+  border-radius: var(--radius-m) !important;
+}
+
+.setting-item:focus-visible::after {
+  display: none;
 }
 
 .setting-item-description {
   color: var(--text-faint);
+  max-width: 60ch;
 }
 
-/* SETTINGS :: Vertical Nav Container */
-.setting-item {
-  border-top: 1px solid var(--divider-color);
+.setting-item > *:first-child {
+  margin-inline-start: var(--size-4-4);
 }
-
-.setting-item:first-child {
-  border-top: none;
-}
-
 
 body:not(.native-scrollbars) .modal-close-button {
   display: none;
@@ -105,6 +194,11 @@ body:not(.native-scrollbars) .modal-close-button {
   margin-inline-end: 4px;
 }
 
+.search-input-container.mod-hotkey .input-right-decorator {
+  margin-inline-end: -3px;
+  border-radius: var(--search-input-radius);
+}
+
 .setting-hotkey .setting-hotkey-icon svg.svg-icon {
   width: 10px;
   height: 10px;
@@ -115,17 +209,25 @@ body:not(.native-scrollbars) .modal-close-button {
 }
 
 /* SETTINGS :: Ext Plugins Highlight */
-.installed-plugins-container .setting-item:not(.setting-item-heading) .setting-item-name {
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item:not(.setting-item-heading) .setting-item-name {
   transition: color var(--motion-dur-base) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out);
 }
 
-.installed-plugins-container .setting-item:not(.setting-item-heading):has(.checkbox-container.is-enabled) .setting-item-name {
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item:not(.setting-item-heading):has(.checkbox-container.is-enabled) .setting-item-name {
   color: var(--interactive-accent);
 }
 
-.installed-plugins-container .setting-item:not(.setting-item-heading):not(:has(.checkbox-container.is-enabled)) .setting-item-name {
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item:not(.setting-item-heading):not(:has(.checkbox-container.is-enabled)) .setting-item-name {
   color: var(--text-muted);
   opacity: 0.5;
+}
+
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item.mod-toggle {
+  padding: var(--setting-items-padding-y) var(--setting-items-padding-x);
+}
+
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item-name .u-muted.u-small {
+  font-family: var(--font-monospace);
 }
 
 /* SETTINGS :: Toggles */
@@ -137,7 +239,7 @@ body:not(.native-scrollbars) .modal-close-button {
   display: none;
 }
 
-.checkbox-container.checkbox-container {
+.modal .checkbox-container.checkbox-container {
   height: 22px;
   width: 22px;
   margin-left: 4px;
@@ -149,7 +251,7 @@ body:not(.native-scrollbars) .modal-close-button {
     background-color var(--motion-dur-base) var(--motion-ease-out),
     border-color var(--motion-dur-base) var(--motion-ease-out),
     box-shadow var(--motion-dur-base) var(--motion-ease-out),
-    transform var(--motion-dur-quick) var(--motion-ease-spring);
+    transform var(--motion-dur-quick) var(--motion-ease-out);
 }
 
 body .checkbox-container.mod-small {
@@ -157,16 +259,20 @@ body .checkbox-container.mod-small {
   width: var(--icon-l);
 }
 
+/* Obsidian core CSS resets toggle size inside .setting-group.mod-list (Core plugins,
+   Community plugins lists) at higher specificity than the rule above — reassert it */
+.modal .setting-group.mod-list .checkbox-container.checkbox-container {
+  height: 22px;
+  width: 22px;
+}
+
 .checkbox-container.is-enabled.is-enabled {
   background-color: var(--interactive-accent);
   border-color: var(--divider-color);
-  @starting-style {
-    background-color: transparent;
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .checkbox-container.checkbox-container:not(.is-enabled):hover {
+  .modal .checkbox-container.checkbox-container:not(.is-enabled):hover {
     border-color: var(--interactive-accent);
   }
 
@@ -175,8 +281,16 @@ body .checkbox-container.mod-small {
   }
 }
 
+.modal .checkbox-container.checkbox-container:active {
+  transition: transform calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-spring);
+}
+
 .checkbox-container:active {
-  transform: scale(0.88);
+  transform: scale(0.92);
+}
+
+.setting-group-filters {
+  padding-inline-start: var(--size-4-3);
 }
 
 /* SETTINGS :: Button Elements */
@@ -184,35 +298,47 @@ button.mod-cta {
   transition: background-color var(--motion-dur-base) var(--motion-ease-out), color var(--motion-dur-base) var(--motion-ease-out);
 }
 
+/* SETTINGS :: Select / Dropdown */
+.modal.mod-settings select,
+.modal.mod-settings .dropdown {
+  transition: box-shadow var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
+
+  &:hover {
+    box-shadow: var(--input-shadow-hover);
+    background-color: var(--dropdown-background-hover);
+  }
+}
+
 /* SETTINGS :: Hotkey List */
-.hotkey-list-container {
+.setting-group.mod-list.mod-hotkeys {
   --icon-opacity: 1;
   overflow-anchor: none;
   contain: layout style paint;
 }
 
-.hotkey-list-container .setting-item {
-  padding: 0.5em 0;
+.setting-group.mod-list.mod-hotkeys .setting-item {
+  padding: 0.5em 0 0.5em var(--size-4-3);
   content-visibility: auto;
   contain-intrinsic-block-size: 34px;
 }
 
-.hotkey-list-container .setting-item .setting-item-name {
+.setting-group.mod-list.mod-hotkeys .setting-item .setting-item-name {
   font-size: var(--font-ui-small);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.hotkey-list-container .setting-item-control {
+.setting-group.mod-list.mod-hotkeys .setting-item-control {
   display: grid;
   grid-template-columns: 1fr auto 26px 26px;
   column-gap: 4px;
   align-items: center;
-  padding-inline-end: 8px;
+  padding-inline-end: var(--size-4-6);
 }
 
-.hotkey-list-container .setting-command-hotkeys {
+.setting-group.mod-list.mod-hotkeys .setting-command-hotkeys {
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
@@ -222,22 +348,23 @@ button.mod-cta {
   gap: 4px;
 }
 
-.hotkey-list-container .setting-restore-hotkey-button {
+.setting-group.mod-list.mod-hotkeys .setting-restore-hotkey-button {
   grid-column: 3;
   grid-row: 1;
 }
 
-.hotkey-list-container .setting-add-hotkey-button {
+.setting-group.mod-list.mod-hotkeys .setting-add-hotkey-button {
   grid-column: 4;
   grid-row: 1;
 }
 
+/* SETTINGS :: Button Hover (content pane only, vertical nav excluded) */
 @media (hover: hover) and (pointer: fine) {
-  .hotkey-list-container .clickable-icon {
-    transition: background-color 0ms;
+  .modal.mod-settings .vertical-tab-content .clickable-icon {
+    transition: background-color var(--motion-dur-base) var(--motion-ease-out);
   }
 
-  .hotkey-list-container .clickable-icon:hover {
-    transition: background-color 50ms 200ms;
+  .modal.mod-settings .vertical-tab-content .clickable-icon:hover {
+    background-color: var(--nav-hover-bg);
   }
 }

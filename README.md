@@ -31,8 +31,9 @@ Focused navigation with reduced visual noise and custom SVG icons for pinned com
 
 ### Settings
 
-Streamlined vertical nav, external plugin highlights, and a hotkeys panel with custom sort order.
+Vertical nav groups that expand on hover and collapse when idle, dimmed inactive plugins, and a hotkeys panel with a new layout that reduces shift.
 
+![](.github/preview-settings-vertical-nav.png)
 ![](.github/preview-settings-plugins.png)
 ![](.github/preview-settings-hotkeys.png)
 

@@ -1,8 +1,10 @@
 body {
   --color-accent: var(--interactive-accent);
   --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.05) c h);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.075) c h);
 
+  --accent-ext-things-base: oklch(0.616 0.182 258.851);
+  --accent-ext-things-full: oklch(0.696 0.153 259.51);
   --accent-ext-linear: oklch(0.5712 0.1565 275.52);
   --accent-ext-anysphere: oklch(0.745 0.1307 288.14);
   --accent-ext-obsidian: oklch(0.7069 0.161594 294.1621);
@@ -12,24 +14,33 @@ body {
   --motion-dur-base: 220ms;
   --motion-dur-enter: 500ms;
   --motion-ease-out:  cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --motion-ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
   --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
 
   --divider-width: 2px;
   --header-height: 30px;
+  --header-fade-height: calc(var(--header-height) + 16px);
   --tab-height: calc(var(--header-height) - 12px);
   --tab-outline-width: var(--divider-width);
   --titlebar-background: var(--titlebar-background-focused);
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
+  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 45%, transparent);
+  --nav-hover-pct: 25%;
+  --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
+  --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
+  --code-radius: var(--radius-m);
+  --callout-radius: var(--code-radius);
+  --embed-block-shadow-hover: inset 0 0 0 1.5px var(--background-modifier-hover);
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
   --checkbox-border-color: var(--text-muted);
   --checkbox-radius: 25%;
   --link-color: var(--interactive-accent);
   --link-color-hover: var(--interactive-accent-hover);
-  --link-external-color: var(--interactive-accent);
-  --link-external-color-hover: var(--interactive-accent-hover);
+  --link-external-color: var(--accent-ext-things-base);
+  --link-external-color-hover: var(--accent-ext-things-full);
 
   font-optical-sizing: auto;
 }

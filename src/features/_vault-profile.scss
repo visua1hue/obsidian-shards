@@ -30,17 +30,16 @@ body:not(.is-mobile)
 
 .workspace-drawer-vault-switcher {
   font-weight: 450;
-  opacity: 0.5;
   background-color: transparent;
   border-radius: var(--radius-s);
-  transition:
-    opacity var(--motion-dur-quick) var(--motion-ease-out),
-    background-color var(--motion-dur-base) var(--motion-ease-out);
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 .workspace-drawer-vault-actions .clickable-icon {
   opacity: 0;
-  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
+  transition:
+    opacity var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -48,8 +47,7 @@ body:not(.is-mobile)
     .workspace-split.mod-left-split
     .workspace-sidedock-vault-profile
     .workspace-drawer-vault-switcher:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: var(--nav-hover-bg);
   }
 
   body:not(.is-mobile)
@@ -66,5 +64,6 @@ body:not(.is-mobile)
     .workspace-drawer-vault-actions
     .clickable-icon:hover {
     opacity: 1;
+    background-color: var(--nav-hover-bg);
   }
 }

@@ -23,7 +23,7 @@
     0 0 0 1px oklch(100% 0 0 / 0.03),
     0 30px 60px -10px oklch(20% 0.01 260 / 0.1),
     0 60px 120px -20px oklch(20% 0.01 260 / 0.05);
-  border-radius: var(--ext-radius-l);
+  border-radius: var(--modal-radius);
   border: var(--divider-width) solid var(--divider-color);
 
   @starting-style {
@@ -34,6 +34,10 @@
 .modal-container:hover .modal-bg,
 .modal-container:focus-within .modal-bg {
   opacity: 1;
+}
+
+.modal-container {
+  --modal-radius: var(--radius-xl);
 }
 
 .modal {
@@ -78,7 +82,7 @@ kbd {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: clamp(200px, calc(20vw + 120px), 500px);
+  width: clamp(200px, calc(100% - 160px), 500px);
 }
 
 input.prompt-input::-webkit-input-placeholder {
@@ -94,7 +98,8 @@ body:not(.is-mobile) .prompt .suggestion-item {
   flex-direction: column;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: auto;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .suggestion-item {

@@ -16,7 +16,7 @@ input.task-list-item-checkbox {
   vertical-align: middle;
   top: -2px;
   transition: box-shadow var(--motion-dur-base) ease, transform var(--motion-dur-base) ease;
-  transform: scale(1) translateZ(0);
+  transform: scale(1);
 }
 
 .markdown-reading-view .task-list-item-checkbox {
@@ -32,7 +32,7 @@ input.task-list-item-checkbox {
 /*  Checkbox Hover State  */
 input.task-list-item-checkbox:hover {
   box-shadow: 0 0 0 1.5px var(--interactive-accent);
-  transform: scale(1.1) translateZ(0);
+  transform: scale(1.1);
 }
 
 /*  Animated Fill Element (Linear Fade)  */
@@ -50,21 +50,21 @@ input.task-list-item-checkbox::before {
 }
 
 /*  SVG Checkmark Symbol  */
-input[type="checkbox"]:checked:after {
-  top: 0;
-  inset-inline-start: -0.5px;
-  transform: scale(0.9) translate(-12%, -12%) !important;
-}
-
+/* Core's input[type="checkbox"]:checked::after ties width/height to
+   --checkbox-size (= --font-text-size), which drifts from our fixed
+   10px box as font size changes. Force our own box-relative sizing to
+   win instead of hand-tuning a position offset per font size. */
 input.task-list-item-checkbox::after {
   content: "";
   position: absolute;
+  top: 0 !important;
+  inset-inline-start: 0 !important;
   z-index: 2;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  -webkit-mask-position: center;
-  -webkit-mask-size: 60%;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: white !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-size: 90% !important;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>') !important;
   opacity: 0;

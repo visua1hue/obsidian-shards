@@ -18,7 +18,24 @@
 .mod-sidedock .workspace-leaf-content
   > :is(.nav-header, .view-content > .nav-header) svg.svg-icon {
   transition: var(--motion-dur-base) var(--motion-ease-smooth);
-  transition-delay: 250ms;
+  transition-delay: 100ms;
+}
+
+.mod-sidedock .workspace-leaf-content
+  > :is(.nav-header, .view-content > .nav-header)
+  .nav-buttons-container
+  .nav-action-button.is-active {
+  background-color: var(--nav-active-bg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mod-sidedock .workspace-leaf-content
+    > :is(.nav-header, .view-content > .nav-header)
+    .nav-buttons-container
+    .nav-action-button:not(.is-active):hover {
+    background-color: var(--nav-hover-bg);
+    transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+  }
 }
 
 /* Compact state when not hovering */
@@ -27,7 +44,6 @@
   .nav-buttons-container {
   gap: 4px;
   padding: 0;
-  background-color: transparent;
   transition-delay: 0ms;
 }
 
@@ -37,16 +53,9 @@
   .nav-action-button {
   padding: 2px;
   flex: 0;
-  background-color: var(--background-modifier-hover);
+  background-color: var(--nav-active-bg);
   box-shadow: none;
   transition-delay: 0ms;
-}
-
-.mod-sidedock .workspace-leaf-content
-  > :is(.nav-header, .view-content > .nav-header):not(:hover)
-  .nav-buttons-container
-  .nav-action-button.is-active {
-  background-color: var(--background-modifier-hover);
 }
 
 .mod-sidedock .workspace-leaf-content
