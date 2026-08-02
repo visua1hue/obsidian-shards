@@ -1848,6 +1848,16 @@ strong,
   transition: color var(--motion-dur-quick) ease;
 }
 
+/* BARE BRACKET :: "[Text]" note convention, not a real link */
+.cm-s-obsidian span.cm-hmd-barelink {
+  color: var(--interactive-accent);
+  transition: color var(--motion-dur-quick) ease;
+}
+
+.cm-s-obsidian span.cm-hmd-barelink:hover {
+  color: var(--interactive-accent-hover);
+}
+
 /* FRONTMATTER :: Dim & Shrink */
 .cm-hmd-frontmatter {
   font-size: var(--font-smaller);
