@@ -1170,6 +1170,16 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
   opacity: 1;
   transition: scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
 }
+body:not(.reduce-motion, .is-mobile) {
+  /* Close button — press punch folded into its own bg-color transition */
+}
+body:not(.reduce-motion, .is-mobile) .workspace-tab-header-inner-close-button {
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out), scale var(--motion-dur-base) var(--motion-ease-spring);
+}
+body:not(.reduce-motion, .is-mobile) .workspace-tab-header-inner-close-button:active {
+  scale: 0.92;
+  transition: background-color var(--motion-dur-base) var(--motion-ease-out), scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
+}
 
 /* Own compositor layer — button is position:fixed over the tab bar, so a shared paint
    pass with the reflowing tab list underneath causes flicker. Bg must track what's
@@ -1193,7 +1203,8 @@ body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:acti
   }
   .workspace-tab-header.tappable svg.svg-icon,
   .side-dock-ribbon-action svg.svg-icon,
-  .sidebar-toggle-button .clickable-icon svg.svg-icon {
+  .sidebar-toggle-button .clickable-icon svg.svg-icon,
+  .workspace-tab-header-inner-close-button {
     transition: none !important;
     scale: 1 !important;
   }
