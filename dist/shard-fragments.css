@@ -261,6 +261,21 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   border-radius: var(--search-input-radius);
 }
 
+.vertical-tab-nav-item-title {
+  text-transform: capitalize;
+}
+
+/* "Files and links" -> capitalize would yield "Files And Links"; override
+   with the correct title case since text-transform can't skip minor words */
+.vertical-tab-nav-item[data-setting-id=file] .vertical-tab-nav-item-title {
+  font-size: 0;
+}
+.vertical-tab-nav-item[data-setting-id=file] .vertical-tab-nav-item-title::before {
+  content: "Files and Links";
+  font-size: var(--font-ui-small);
+  text-transform: none;
+}
+
 .setting-item {
   align-items: center;
   transition: background-color var(--motion-dur-base) var(--motion-ease-out);
