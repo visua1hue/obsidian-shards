@@ -188,8 +188,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   max-width: 60ch;
 }
 
-.setting-item > *:first-child {
-  margin-inline-start: var(--size-4-4);
+.setting-group .setting-item-heading {
+  padding-inline: var(--setting-items-padding-x);
 }
 
 body:not(.native-scrollbars) .modal-close-button {
@@ -238,8 +238,31 @@ body:not(.native-scrollbars) .modal-close-button {
   opacity: 0.5;
 }
 
-.setting-group.mod-list:not(.mod-hotkeys) .setting-item.mod-toggle {
-  padding: var(--setting-items-padding-y) var(--setting-items-padding-x);
+/* Core narrows list rows to 16px; match the 20px of regular setting rows */
+.setting-group.mod-list {
+  --setting-items-padding-x: var(--size-4-5);
+}
+
+.setting-group.mod-list:not(.mod-hotkeys) {
+  --setting-items-padding-y: var(--size-4-3);
+}
+
+/* Search field overhangs the row content by 4px on each side */
+.setting-group .setting-group-search > .search-input-container {
+  margin-inline: calc(var(--setting-items-padding-x) - var(--size-4-1));
+}
+
+/* One-line descriptions keep every plugin row the same height */
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item-info {
+  min-width: 0;
+  margin-inline-end: var(--size-4-12);
+}
+
+.setting-group.mod-list:not(.mod-hotkeys) .setting-item-description {
+  max-width: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .setting-group.mod-list:not(.mod-hotkeys) .setting-item-name .u-muted.u-small {
@@ -334,7 +357,7 @@ button.mod-cta {
 }
 
 .setting-group.mod-list.mod-hotkeys .setting-item {
-  padding: 0.5em 0 0.5em var(--size-4-3);
+  padding: 0.5em 0 0.5em var(--setting-items-padding-x);
   content-visibility: auto;
   contain-intrinsic-block-size: 34px;
 }
@@ -351,7 +374,7 @@ button.mod-cta {
   grid-template-columns: 1fr auto 26px 26px;
   column-gap: 4px;
   align-items: center;
-  padding-inline-end: var(--size-4-6);
+  padding-inline-end: var(--setting-items-padding-x);
 }
 
 .setting-group.mod-list.mod-hotkeys .setting-command-hotkeys {
