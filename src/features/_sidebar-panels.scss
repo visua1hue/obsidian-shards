@@ -1,0 +1,7 @@
+/* SIDEDOCK :: Background */
+.workspace-split:is(.mod-left-split, .mod-right-split) {
+  --background-secondary: var(--sidedock-background);
+  --tab-container-background: var(--sidedock-background);
+  --sidebar-tab-container-background: var(--sidedock-background);
+  --titlebar-background: var(--sidedock-background);
+}

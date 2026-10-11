@@ -46,6 +46,7 @@ body {
 
 body:is(.theme-dark) {
   --text-normal: oklch(0.8491 0.0134 102.47);
+  --sidedock-background: color-mix(in srgb, var(--color-base-05), var(--color-base-10));
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
   --code-function: var(--accent-ext-linear);
@@ -61,6 +62,7 @@ body:is(.theme-dark) {
 
 body:is(.theme-light) {
   --text-normal: oklch(0.3565 0.006 106.7);
+  --sidedock-background: color-mix(in srgb, var(--color-base-05), var(--color-base-10));
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
   --code-function: var(--accent-ext-linear);
@@ -1218,7 +1220,7 @@ body:not(.reduce-motion, .is-mobile) .workspace-tab-header-inner-close-button:ac
 }
 
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
-  background-color: var(--background-secondary);
+  background-color: var(--sidedock-background);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1330,6 +1332,14 @@ body:not(.is-mobile) .mod-sidedock .workspace-leaf {
 /* Hidden system folders */
 .nav-folder-title:is([data-path$=_ i], [data-path=Attachments i], [data-path=Assets i]) {
   display: none;
+}
+
+/* SIDEDOCK :: Background */
+.workspace-split:is(.mod-left-split, .mod-right-split) {
+  --background-secondary: var(--sidedock-background);
+  --tab-container-background: var(--sidedock-background);
+  --sidebar-tab-container-background: var(--sidedock-background);
+  --titlebar-background: var(--sidedock-background);
 }
 
 /* SIDEDOCK :: Vault Profiles */

@@ -501,7 +501,7 @@ body:not(.reduce-motion, .is-mobile) {
 }
 
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
-  background-color: var(--background-secondary);
+  background-color: var(--sidedock-background);
 }
 
 @media (prefers-reduced-motion: reduce) {
