@@ -192,7 +192,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   padding-inline: var(--setting-items-padding-x);
 }
 
-body:not(.native-scrollbars) .modal-close-button {
+body:not(.native-scrollbars) :is(.modal-close-button, .modal > .modal-header-button) {
   display: none;
 }
 
