@@ -386,11 +386,11 @@ body:not(.native-scrollbars) .modal-close-button {
 }
 
 /* SETTINGS :: Toggles */
-.checkbox-container {
+.modal .checkbox-container {
   background-color: unset;
 }
 
-.checkbox-container::after {
+.modal .checkbox-container::after {
   display: none;
 }
 
@@ -403,11 +403,6 @@ body:not(.native-scrollbars) .modal-close-button {
   cursor: var(--cursor-link);
   border-radius: 12px;
   transition: background-color var(--motion-dur-base) var(--motion-ease-out), border-color var(--motion-dur-base) var(--motion-ease-out), box-shadow var(--motion-dur-base) var(--motion-ease-out), transform var(--motion-dur-quick) var(--motion-ease-out);
-}
-
-body .checkbox-container.mod-small {
-  height: var(--icon-l);
-  width: var(--icon-l);
 }
 
 /* Obsidian core CSS resets toggle size inside .setting-group.mod-list (Core plugins,
