@@ -74,7 +74,8 @@ This repository includes snippets and inspirations from various sources. Arigato
 - [@chrisgrieser · Shimmering Focus](https://github.com/chrisgrieser)
 - [@kepano · Minimal](https://github.com/kepano)
 - [@AnubisNekhet · AnuPpuccin](https://github.com/AnubisNekhet)
+- [@aaaaalexis · Baseline](https://github.com/aaaaalexis/obsidian-baseline)
 
 ## License
 
-Built for personal use only, from MIT-licensed sources (see [Credits](#credits)). **Not intended for, and will not be submitted to**, the [Obsidian](https://obsidian.md/) store.
+[MIT](LICENSE). Notices for adapted MIT-licensed code are in [NOTICE](NOTICE). Built for personal use. **Not intended for, and will not be submitted to**, the [Obsidian](https://obsidian.md/) store.
