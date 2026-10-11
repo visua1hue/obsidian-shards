@@ -1,8 +1,5 @@
 @charset "UTF-8";
 body {
-  --color-accent: var(--interactive-accent);
-  --interactive-accent: var(--accent-ext-shinyfocus);
-  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.075) c h);
   --accent-ext-things-base: oklch(0.616 0.182 258.851);
   --accent-ext-things-full: oklch(0.696 0.153 259.51);
   --accent-ext-linear: oklch(0.5712 0.1565 275.52);
@@ -29,7 +26,6 @@ body {
   --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
   --nav-item-background-active: var(--nav-active-bg);
   --nav-item-background-hover: var(--nav-hover-bg);
-  --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --code-radius: var(--radius-m);
   --callout-radius: var(--code-radius);
   --hotkey-radius: var(--radius-m);
@@ -47,6 +43,10 @@ body {
 }
 
 body:is(.theme-dark) {
+  --color-accent: var(--interactive-accent);
+  --interactive-accent: var(--accent-ext-shinyfocus);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.075) c h);
+  --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --text-normal: oklch(0.8491 0.0134 102.47);
   --sidedock-background: color-mix(in srgb, var(--color-base-05), var(--color-base-10));
   --sidedock-edge-highlight: var(--color-base-00);
@@ -64,6 +64,10 @@ body:is(.theme-dark) {
 }
 
 body:is(.theme-light) {
+  --color-accent: var(--interactive-accent);
+  --interactive-accent: var(--accent-ext-shinyfocus);
+  --interactive-accent-hover: oklch(from var(--interactive-accent) calc(l + 0.075) c h);
+  --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --text-normal: oklch(0.3565 0.006 106.7);
   --sidedock-background: color-mix(in srgb, var(--color-base-05), var(--color-base-10));
   --sidedock-edge-highlight: var(--color-base-00);
