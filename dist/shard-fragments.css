@@ -32,6 +32,8 @@ body {
   --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --code-radius: var(--radius-m);
   --callout-radius: var(--code-radius);
+  --hotkey-radius: var(--radius-m);
+  --hotkey-corner-shape: var(--corner-shape);
   --embed-block-shadow-hover: inset 0 0 0 1.5px var(--background-modifier-hover);
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
@@ -315,7 +317,7 @@ body:not(.native-scrollbars) .modal-close-button {
 
 /* SETTINGS :: Hotkeys */
 .setting-hotkey {
-  background-color: var(--code-background);
+  background-color: var(--hotkey-background);
   font-family: var(--font-interface);
   font-size: calc(var(--font-ui-smaller) - 2px);
   padding: 2px 6px;
@@ -334,6 +336,7 @@ body:not(.native-scrollbars) .modal-close-button {
 }
 
 .modal.mod-settings .setting-hotkey.mod-empty {
+  background-color: var(--code-background);
   color: var(--text-faint);
 }
 
@@ -667,7 +670,10 @@ body {
   font-size: calc(var(--font-ui-smaller) - 2px);
   text-transform: uppercase;
   opacity: 0.5;
-  margin-right: 3px;
+}
+
+.modal-container .prompt .suggestion-item.mod-complex .suggestion-aux .suggestion-flair {
+  margin-inline-end: 0;
 }
 
 kbd {
@@ -675,6 +681,8 @@ kbd {
   font-size: calc(var(--font-ui-smaller) - 2px);
   padding: 2px 6px;
   border: 1px solid var(--divider-color);
+  border-radius: var(--hotkey-radius);
+  corner-shape: var(--hotkey-corner-shape);
 }
 
 .suggestion-item :is(.suggestion-note, .suggestion-prefix) {
