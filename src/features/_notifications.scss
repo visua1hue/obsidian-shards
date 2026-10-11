@@ -2,6 +2,8 @@
   --notice-spacing: 10px;
   padding: var(--notice-spacing);
   top: 0;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .notice {
