@@ -3,7 +3,7 @@
   visibility: hidden;
 }
 
-.workspace-tab-header[aria-label="New tab"] {
+.workspace-tab-header[data-type="empty"] {
   visibility: hidden;
 }
 
