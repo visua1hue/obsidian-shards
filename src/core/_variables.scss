@@ -26,9 +26,11 @@ body {
   --titlebar-background: var(--titlebar-background-focused);
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
-  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 45%, transparent);
-  --nav-hover-pct: 25%;
+  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 80%, transparent);
+  --nav-hover-pct: 40%;
   --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
+  --nav-item-background-active: var(--nav-active-bg);
+  --nav-item-background-hover: var(--nav-hover-bg);
   --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --code-radius: var(--radius-m);
   --callout-radius: var(--code-radius);
