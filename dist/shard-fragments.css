@@ -634,7 +634,6 @@ body {
   opacity: 0;
   will-change: opacity;
   transition: opacity var(--motion-dur-base) var(--motion-ease-out);
-  pointer-events: none;
 }
 
 .prompt {
