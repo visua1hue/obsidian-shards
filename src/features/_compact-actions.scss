@@ -14,8 +14,6 @@
 .mod-sidedock .workspace-leaf-content
   > :is(.nav-header, .view-content > .nav-header) .nav-action-button,
 .mod-sidedock .workspace-leaf-content
-  > :is(.nav-header, .view-content > .nav-header) .nav-action-button::after,
-.mod-sidedock .workspace-leaf-content
   > :is(.nav-header, .view-content > .nav-header) svg.svg-icon {
   transition: var(--motion-dur-base) var(--motion-ease-smooth);
   transition-delay: 100ms;
@@ -63,16 +61,6 @@
   .nav-buttons-container
   .nav-action-button.clickable-icon[aria-disabled="true"] {
   opacity: var(--icon-opacity);
-}
-
-.mod-sidedock .workspace-leaf-content
-  > :is(.nav-header, .view-content > .nav-header):not(:hover)
-  .nav-buttons-container
-  .nav-action-button::after {
-  opacity: 0;
-  font-size: 0 !important;
-  margin-left: 0px !important;
-  transition-delay: 0ms;
 }
 
 .mod-sidedock .workspace-leaf-content

@@ -4,14 +4,6 @@
   top: 0;
 }
 
-.notices-at-bottom-right .notice-container {
-  /* reverse order of notices, stacking from bottom to top */
-  bottom: calc(var(--status-bar-font-size) + var(--notice-spacing));
-  top: unset;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
 .notice {
   min-width: 10rem;
   padding: 6px 12px;

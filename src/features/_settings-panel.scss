@@ -95,10 +95,6 @@
   to { opacity: 0; }
 }
 
-.vertical-tab-header-group-title {
-  display: none;
-}
-
 .vertical-tab-nav-item:not(.is-active):focus-visible {
   outline: none;
   box-shadow: none;
@@ -192,7 +188,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   padding-inline: var(--setting-items-padding-x);
 }
 
-body:not(.native-scrollbars) :is(.modal-close-button, .modal > .modal-header-button) {
+:is(.modal-close-button, .modal > .modal-header-button) {
   display: none;
 }
 

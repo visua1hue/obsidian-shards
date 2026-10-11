@@ -321,7 +321,7 @@ body:not(.show-sidebar-header-buttons)
   }
 }
 
-body:not(.reduce-motion, .is-mobile) {
+body:not(.is-mobile) {
   /* Release — slow spring glide back */
   .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
   .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
