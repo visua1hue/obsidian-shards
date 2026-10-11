@@ -33,6 +33,8 @@ body:not(.show-sidebar-header-buttons)
 .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active),
 .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active) {
   opacity: 0.5;
+  /* Core app.css paints an inset --divider-color bottom line on inactive tab hover */
+  box-shadow: none;
   transition: opacity var(--motion-dur-base) var(--motion-ease-out);
   transition-delay: 0s !important;
 }
