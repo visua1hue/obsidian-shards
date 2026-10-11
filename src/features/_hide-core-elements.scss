@@ -3,26 +3,8 @@ body:not(.show-ribbon) .workspace-ribbon.mod-left {
   display: none; /* mod left */
 }
 
-:is(
-    .pt-nav-header-left-sidebar-align-center .workspace-split.mod-left-split,
-    .pt-nav-header-right-sidebar-align-center .workspace-split.mod-right-split,
-    .pt-nav-header-left-sidebar-align-center .workspace-drawer.mod-left,
-    .pt-nav-header-right-sidebar-align-center .workspace-drawer.mod-right
-  )
-  .workspace-leaf-content
-  .nav-header {
-  display: none; /* interaction div */
-}
-
-body:not(.native-scrollbars) ::-webkit-scrollbar {
-  display: none; /* native-scrollbars */
-}
-
-.CodeMirror-vscrollbar,
-.CodeMirror-hscrollbar,
 ::-webkit-scrollbar {
-  width: 0px; /* native-scrollbars */
-  height: 0px; /* native-scrollbars */
+  display: none;
 }
 
 .tooltip:not(.mod-top, .mod-error) {

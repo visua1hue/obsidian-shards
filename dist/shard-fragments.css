@@ -89,22 +89,8 @@ body:not(.show-ribbon) .workspace-ribbon.mod-left {
   display: none; /* mod left */
 }
 
-:is(.pt-nav-header-left-sidebar-align-center .workspace-split.mod-left-split,
-.pt-nav-header-right-sidebar-align-center .workspace-split.mod-right-split,
-.pt-nav-header-left-sidebar-align-center .workspace-drawer.mod-left,
-.pt-nav-header-right-sidebar-align-center .workspace-drawer.mod-right) .workspace-leaf-content .nav-header {
-  display: none; /* interaction div */
-}
-
-body:not(.native-scrollbars) ::-webkit-scrollbar {
-  display: none; /* native-scrollbars */
-}
-
-.CodeMirror-vscrollbar,
-.CodeMirror-hscrollbar,
 ::-webkit-scrollbar {
-  width: 0px; /* native-scrollbars */
-  height: 0px; /* native-scrollbars */
+  display: none;
 }
 
 .tooltip:not(.mod-top, .mod-error) {
@@ -220,10 +206,6 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     opacity: 0;
   }
 }
-.vertical-tab-header-group-title {
-  display: none;
-}
-
 .vertical-tab-nav-item:not(.is-active):focus-visible {
   outline: none;
   box-shadow: none;
@@ -311,7 +293,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   padding-inline: var(--setting-items-padding-x);
 }
 
-body:not(.native-scrollbars) :is(.modal-close-button, .modal > .modal-header-button) {
+:is(.modal-close-button, .modal > .modal-header-button) {
   display: none;
 }
 
@@ -784,12 +766,6 @@ body:not(.is-mobile) .prompt .suggestion-item {
   --notice-spacing: 10px;
   padding: var(--notice-spacing);
   top: 0;
-}
-
-.notices-at-bottom-right .notice-container {
-  /* reverse order of notices, stacking from bottom to top */
-  bottom: calc(var(--status-bar-font-size) + var(--notice-spacing));
-  top: unset;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -1126,33 +1102,33 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .w
   margin-top: 0.5px !important;
 }
 
-body:not(.reduce-motion, .is-mobile) {
+body:not(.is-mobile) {
   /* Release — slow spring glide back */
 }
-body:not(.reduce-motion, .is-mobile) .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
-body:not(.reduce-motion, .is-mobile) .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
-body:not(.reduce-motion, .is-mobile) .side-dock-ribbon-action svg.svg-icon,
-body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon svg.svg-icon {
+body:not(.is-mobile) .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
+body:not(.is-mobile) .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
+body:not(.is-mobile) .side-dock-ribbon-action svg.svg-icon,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon svg.svg-icon {
   transition: scale var(--motion-dur-base) var(--motion-ease-spring);
 }
-body:not(.reduce-motion, .is-mobile) {
+body:not(.is-mobile) {
   /* Press — snappy down, defines release target */
 }
-body:not(.reduce-motion, .is-mobile) .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
-body:not(.reduce-motion, .is-mobile) .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
-body:not(.reduce-motion, .is-mobile) .side-dock-ribbon-action:active svg.svg-icon,
-body:not(.reduce-motion, .is-mobile) .sidebar-toggle-button .clickable-icon:active svg.svg-icon {
+body:not(.is-mobile) .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
+body:not(.is-mobile) .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
+body:not(.is-mobile) .side-dock-ribbon-action:active svg.svg-icon,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:active svg.svg-icon {
   scale: 0.92;
   opacity: 1;
   transition: scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
 }
-body:not(.reduce-motion, .is-mobile) {
+body:not(.is-mobile) {
   /* Close button — press punch folded into its own bg-color transition */
 }
-body:not(.reduce-motion, .is-mobile) .workspace-tab-header-inner-close-button {
+body:not(.is-mobile) .workspace-tab-header-inner-close-button {
   transition: color var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out), scale var(--motion-dur-base) var(--motion-ease-spring);
 }
-body:not(.reduce-motion, .is-mobile) .workspace-tab-header-inner-close-button:active {
+body:not(.is-mobile) .workspace-tab-header-inner-close-button:active {
   scale: 0.92;
   transition: color var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out), scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
 }
@@ -1372,7 +1348,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split > .workspace-leaf-resize-ha
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header),
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) .nav-buttons-container,
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) .nav-action-button,
-.mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) .nav-action-button::after,
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header) svg.svg-icon {
   transition: var(--motion-dur-base) var(--motion-ease-smooth);
   transition-delay: 100ms;
@@ -1405,13 +1380,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split > .workspace-leaf-resize-ha
 
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header):not(:hover) .nav-buttons-container .nav-action-button.clickable-icon[aria-disabled=true] {
   opacity: var(--icon-opacity);
-}
-
-.mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header):not(:hover) .nav-buttons-container .nav-action-button::after {
-  opacity: 0;
-  font-size: 0 !important;
-  margin-left: 0px !important;
-  transition-delay: 0ms;
 }
 
 .mod-sidedock .workspace-leaf-content > :is(.nav-header, .view-content > .nav-header):not(:hover) .nav-buttons-container svg.svg-icon {
@@ -1781,7 +1749,7 @@ h6, .markdown-rendered h6, .HyperMD-header-6, .HyperMD-list-line .cm-header-6 {
 }
 
 /* EDITOR :: Active Line Indicator */
-body:not(.no-active-line-highlight, .active-line-background) .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+.cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
   position: absolute;
   left: -1.125em;
   height: 100%;
@@ -1919,7 +1887,7 @@ strong,
   padding-inline-start: calc(var(--size-4-4) * 1.6);
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,
+.HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,
 .HyperMD-codeblock-end) {
   padding-left: 2.8em;
 }
@@ -1955,15 +1923,15 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-cod
   font-size: 11px;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
+.HyperMD-codeblock-begin {
   counter-reset: codeblock-line-numbers;
 }
 
-body:not(.no-codeblock-line-numbers) .is-live-preview .HyperMD-codeblock-end span:nth-child(2):before {
+.is-live-preview .HyperMD-codeblock-end span:nth-child(2):before {
   display: none;
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin,
+.HyperMD-codeblock:not(.HyperMD-codeblock-begin,
 .HyperMD-codeblock-end):before {
   color: var(--text-muted);
   text-align: right;
@@ -1976,16 +1944,6 @@ body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-b
   line-height: 2;
   position: absolute;
   left: 0.4em;
-}
-
-.expressive-code .frame.header::before {
-  display: none;
-}
-
-.expressive-code .frame .header {
-  display: none !important;
-  padding-block: unset;
-  padding-block-end: unset;
 }
 
 .cm-s-obsidian .HyperMD-codeblock,
