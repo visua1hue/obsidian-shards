@@ -1,0 +1,35 @@
+/* SIDEDOCK :: Edge Highlight */
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  > .workspace-leaf-resize-handle {
+  width: calc(var(--divider-width) + var(--sidedock-edge-highlight-width));
+  box-shadow: inset calc(var(--sidedock-edge-highlight-width) * -1) 0 0 var(--sidedock-edge-highlight);
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split {
+  --sidedock-edge-highlight-width: 2px;
+
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in srgb, var(--sidedock-edge-highlight) 50%, transparent)
+  );
+  /* Ends under the highlight, butting against it leaves a subpixel gap at fractional zoom */
+  background-position: right var(--divider-width) top;
+  background-repeat: no-repeat;
+  background-size: var(--size-4-3) 100%;
+}
+
+/* Core repaints these with the dock colour, which would cover the falloff */
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  :is(.workspace-leaf, .workspace-sidedock-vault-profile) {
+  background-color: transparent;
+}
+
+/* Core fills the handle with the accent on hover and drag */
+body:not(.is-mobile)
+  .workspace-split.mod-left-split
+  > .workspace-leaf-resize-handle:is(:hover, .is-active) {
+  box-shadow: none;
+}
