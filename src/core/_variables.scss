@@ -50,6 +50,7 @@ body {
 body:is(.theme-dark) {
   --text-normal: oklch(0.8491 0.0134 102.47);
   --sidedock-background: color-mix(in srgb, var(--color-base-05), var(--color-base-10));
+  --sidedock-edge-highlight: var(--color-base-00);
 
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
@@ -67,6 +68,7 @@ body:is(.theme-dark) {
 body:is(.theme-light) {
   --text-normal: oklch(0.3565 0.006 106.7);
   --sidedock-background: color-mix(in srgb, var(--color-base-05), var(--color-base-10));
+  --sidedock-edge-highlight: var(--color-base-00);
 
   --code-normal: var(--text-normal);
   --code-comment: var(--text-faint);
