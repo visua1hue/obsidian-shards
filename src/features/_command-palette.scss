@@ -55,7 +55,10 @@
   font-size: calc(var(--font-ui-smaller) - 2px);
   text-transform: uppercase;
   opacity: 0.5;
-  margin-right: 3px;
+}
+
+.modal-container .prompt .suggestion-item.mod-complex .suggestion-aux .suggestion-flair {
+  margin-inline-end: 0;
 }
 
 kbd {
@@ -63,6 +66,8 @@ kbd {
   font-size: calc(var(--font-ui-smaller) - 2px);
   padding: 2px 6px;
   border: 1px solid var(--divider-color);
+  border-radius: var(--hotkey-radius);
+  corner-shape: var(--hotkey-corner-shape);
 }
 
 .suggestion-item :is(.suggestion-note, .suggestion-prefix) {

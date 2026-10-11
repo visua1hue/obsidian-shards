@@ -34,6 +34,8 @@ body {
   --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --code-radius: var(--radius-m);
   --callout-radius: var(--code-radius);
+  --hotkey-radius: var(--radius-m);
+  --hotkey-corner-shape: var(--corner-shape);
   --embed-block-shadow-hover: inset 0 0 0 1.5px var(--background-modifier-hover);
   --list-marker-color-collapsed: var(--text-faint);
   --list-bullet-size: 0.3em;
