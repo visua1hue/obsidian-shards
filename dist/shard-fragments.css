@@ -24,9 +24,11 @@ body {
   --titlebar-background: var(--titlebar-background-focused);
   --ext-radius-l: 12px;
   --ext-radius-m: 10px;
-  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 45%, transparent);
-  --nav-hover-pct: 25%;
+  --nav-active-bg: color-mix(in oklch, var(--background-modifier-hover) 80%, transparent);
+  --nav-hover-pct: 40%;
   --nav-hover-bg: color-mix(in oklch, var(--background-modifier-hover) var(--nav-hover-pct), transparent);
+  --nav-item-background-active: var(--nav-active-bg);
+  --nav-item-background-hover: var(--nav-hover-bg);
   --text-selection: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
   --code-radius: var(--radius-m);
   --callout-radius: var(--code-radius);
@@ -215,7 +217,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 .vertical-tab-nav-item:not(.is-active):focus-visible {
   outline: none;
   box-shadow: none;
-  background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
+  background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 1.5), transparent);
 }
 
 body:not(.is-phone) .horizontal-tab-nav-item.is-active,
@@ -248,7 +250,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
 @media (hover: hover) and (pointer: fine) {
   .horizontal-tab-nav-item:not(.is-active):hover,
   .vertical-tab-nav-item:not(.is-active):hover {
-    background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 2), transparent);
+    background-color: color-mix(in oklch, var(--background-modifier-hover) calc(var(--nav-hover-pct) * 1.5), transparent);
   }
 }
 .vertical-tab-nav-item {
