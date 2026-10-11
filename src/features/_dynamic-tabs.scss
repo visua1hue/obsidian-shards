@@ -1,104 +1,126 @@
-:root {
-  --tab-stacked-header-width: 40px;
+body {
   --dynamic-tab-align: center;
   --dynamic-tab-gap: 8px;
   --dynamic-tab-radius: 8px;
-}
-
-/* body, not :root — --nav-hover-bg isn't defined at :root/html */
-body {
   --dynamic-tab-active-shadow: inset 0 0 0 1.25px oklch(from var(--nav-hover-bg) l 0 h / calc(alpha * 0.5));
 }
 
-/* Base tab styling for horizontal tabs */
 .workspace-tabs:not(.mod-stacked) {
-  --tab-background: var(--background-secondary);
-  --tab-background-active: var(--background-primary);
-  --tab-font-size: 12px;
-  --tab-height: calc(var(--header-height) * 0.7 + 2px);
-  --tab-max-width: 120px;
-  --tab-max-width-active: 200px;
+  --tab-font-size: var(--font-ui-smaller);
 }
 
 /* Prevent tab jumping by hiding spacer; center new-tab button absolutely */
-.workspace-split.mod-vertical .workspace-tab-header-spacer {
-  display: none;
+.workspace-split.mod-vertical {
+  .workspace-tab-header-spacer {
+    display: none;
+  }
+
+  &:not(.mod-left-split):not(.mod-right-split) .workspace-tab-header-container {
+    border-bottom: unset;
+  }
+
+  .workspace-tab-header-new-tab {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
-.workspace-split.mod-vertical .workspace-tab-header-container {
-  position: relative;
-}
-.workspace-split.mod-vertical:not(.mod-left-split):not(.mod-right-split)
+.workspace .workspace-split.mod-root .workspace-tabs:not(.mod-stacked) {
+  --tab-max-width: 120px;
+  --tab-max-width-active: 200px;
+  --tab-radius: var(--dynamic-tab-radius);
+  --tab-radius-active: var(--dynamic-tab-radius);
+  --tab-background-active: var(--nav-item-background-active);
+  --tab-inner-background-hover: transparent;
+  --dynamic-tab-ink: var(--text-muted);
+  --dynamic-tab-label: var(--text-faint);
+  --dynamic-tab-close: var(--text-faint);
+
+  &.mod-active .workspace-tab-header.is-active {
+    --dynamic-tab-ink: var(--color-accent);
+    --dynamic-tab-close: var(--color-accent);
+  }
+
+  /* Tab bar establishes a query context so max-width can adapt to available space */
   .workspace-tab-header-container {
-  border-bottom: unset;
-}
+    container: tab-bar / inline-size;
+    background-color: var(--background-primary);
+  }
 
-.workspace-split.mod-vertical .workspace-tab-header-new-tab {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Remove default tab decorations */
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header::after,
-.workspace
-  .mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-inner::after {
-  display: none;
-}
-
-/* Tab bar always matches editor — inactive tabs (secondary) float on it, active blends in */
-.mod-vertical:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container,
-.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container {
-  background-color: var(--background-primary);
-}
-
-/* Tab container alignment */
-.mod-vertical:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container-inner,
-.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header-container-inner {
-  align-items: center;
-  justify-content: var(--dynamic-tab-align);
-  margin: 0;
-  flex: 1 1 0;
-  gap: var(--dynamic-tab-gap);
-}
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: var(--dynamic-tab-align);
+    gap: var(--dynamic-tab-gap);
+    margin: 0;
+  }
 
-/* Individual tab — compositor-only entrance (keyframe, not @starting-style: doesn't fire on Obsidian's tab nodes) */
-.mod-vertical:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header,
-.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header {
-  background: var(--tab-background);
-  border-radius: var(--dynamic-tab-radius);
-  box-shadow: none;
-  height: var(--tab-height);
-  padding: 0 !important;
-}
+    height: var(--tab-height);
+    padding: 0;
+    box-shadow: inset 0 0 0 1.5px var(--nav-active-bg);
+    opacity: 0.75;
+    transition: opacity var(--motion-dur-base) var(--motion-ease-out);
 
-/* Entrance animation targets -inner, not -header: Obsidian puts container-type/flex sizing
-   on .workspace-tab-header itself, so animating transform there drags width along with it */
-.mod-vertical:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header
-  .workspace-tab-header-inner,
-.mod-horizontal:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header
-  .workspace-tab-header-inner {
-  animation: tabEnter var(--motion-dur-base) var(--motion-ease-smooth) backwards;
+    &::before,
+    &::after,
+    .workspace-tab-header-inner::after {
+      display: none;
+    }
+
+    &.is-active {
+      --tab-max-width: var(--tab-max-width-active);
+      --dynamic-tab-ink: var(--text-faint);
+      --dynamic-tab-label: var(--color-accent);
+      box-shadow: var(--dynamic-tab-active-shadow);
+      opacity: 1;
+      transition:
+        opacity var(--motion-dur-quick) var(--motion-ease-out),
+        background-color var(--motion-dur-base) var(--motion-ease-out),
+        box-shadow var(--motion-dur-base) var(--motion-ease-out);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:not(.is-active):hover {
+        --dynamic-tab-label: var(--text-normal);
+        --dynamic-tab-close: var(--text-normal);
+        opacity: 1;
+      }
+    }
+
+    /* Entrance animation targets -inner, not -header: Obsidian puts container-type/flex sizing
+       on .workspace-tab-header itself, so animating transform there drags width along with it.
+       Keyframe, not @starting-style: doesn't fire on Obsidian's tab nodes */
+    .workspace-tab-header-inner {
+      padding-inline: var(--size-4-2) var(--size-2-2);
+      animation: tabEnter var(--motion-dur-base) var(--motion-ease-smooth) backwards;
+    }
+
+    /* Obsidian closes a tab via a placeholder carrying these inline styles; an opening tab uses the opposite pair */
+    &[style$="opacity: 1;"],
+    &[style*="opacity: 0; transition"] {
+      visibility: hidden;
+      animation: tabExitGap 200ms ease-in-out forwards;
+    }
+
+    .workspace-tab-header-inner,
+    .workspace-tab-header-inner-icon,
+    .workspace-tab-header-inner-title {
+      color: var(--dynamic-tab-ink);
+      transition: color var(--motion-dur-base) var(--motion-ease-out);
+    }
+
+    .workspace-tab-header-inner-title {
+      color: var(--dynamic-tab-label);
+      text-rendering: geometricPrecision;
+    }
+
+    .workspace-tab-header-inner-close-button {
+      color: var(--dynamic-tab-close);
+    }
+  }
 }
 
 @keyframes tabEnter {
@@ -112,16 +134,10 @@ body {
   }
 }
 
-/* Tab bar establishes a query context so max-width can adapt to available space */
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-container {
-  container: tab-bar / inline-size;
-}
-
-/* Tab max width */
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-  max-width: var(--tab-max-width);
+@keyframes tabExitGap {
+  to {
+    margin-inline-end: calc(var(--dynamic-tab-gap) * -1);
+  }
 }
 
 /* Narrower panes shrink tabs so more stay visible before native overflow kicks in */
@@ -139,156 +155,15 @@ body {
   }
 }
 
-/* Remove left margin from first tab */
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header:first-child {
-  margin-left: 0;
-}
-
-/* Tab inner content padding */
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-inner {
-  padding: 0 4px 0 8px;
-  border-radius: inherit;
-}
-
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-inner,
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-inner-close-button,
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header-inner-icon {
-  color: var(--text-muted);
-}
-
-/* Active tab */
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active {
-  max-width: var(--tab-max-width-active);
-  background-color: var(--nav-item-background-active);
-  box-shadow: var(--dynamic-tab-active-shadow);
-  opacity: 1;
-
-  transition:
-    opacity var(--motion-dur-quick) var(--motion-ease-out),
-    background-color var(--motion-dur-base) var(--motion-ease-out),
-    box-shadow var(--motion-dur-base) var(--motion-ease-out);
-}
-
-/* Inactive tabs — border only */
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active) {
-  background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--nav-active-bg);
-  opacity: 0.75;
-  transition: opacity var(--motion-dur-base) var(--motion-ease-out);
-}
-
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active)
-  .workspace-tab-header-inner-title,
-.mod-root:not(.mod-left-split):not(.mod-right-split)
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header:not(.is-active)
-  .workspace-tab-header-inner-close-button {
-  color: var(--text-faint);
-  transition: color var(--motion-dur-base) var(--motion-ease-out);
-}
-
-/* Hover — inactive tabs */
-@media (hover: hover) and (pointer: fine) {
-  .mod-root:not(.mod-left-split):not(.mod-right-split)
-    .workspace-tabs:not(.mod-stacked)
-    .workspace-tab-header:not(.is-active):hover {
-    opacity: 1;
-  }
-
-  .mod-root:not(.mod-left-split):not(.mod-right-split)
-    .workspace-tabs:not(.mod-stacked)
-    .workspace-tab-header:not(.is-active):hover
-    .workspace-tab-header-inner {
-    background-color: transparent;
-  }
-
-  .mod-root:not(.mod-left-split):not(.mod-right-split)
-    .workspace-tabs:not(.mod-stacked)
-    .workspace-tab-header:not(.is-active):hover
-    .workspace-tab-header-inner-title,
-  .mod-root:not(.mod-left-split):not(.mod-right-split)
-    .workspace-tabs:not(.mod-stacked)
-    .workspace-tab-header:not(.is-active):hover
-    .workspace-tab-header-inner-close-button {
-    color: var(--text-normal);
-  }
-}
-
-/* Active tab title accent */
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-title {
-  color: var(--color-accent);
-  transition: color var(--motion-dur-base) var(--motion-ease-out);
-}
-
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner,
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-close-button,
-.mod-root
-  .workspace-tabs:not(.mod-stacked)
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-icon {
-  color: var(--text-faint);
-  transition: color var(--motion-dur-base) var(--motion-ease-out);
-}
-
-/* Active tab in focused window */
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner,
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-title,
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-close-button,
-.mod-root
-  .workspace-tabs:not(.mod-stacked).mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-icon {
-  color: var(--color-accent) !important;
-  transition: color var(--motion-dur-base) var(--motion-ease-out);
-}
-
-/* Sidebar toggle buttons */
-.sidebar-toggle-button.mod-left,
-.sidebar-toggle-button.mod-right {
-  align-items: center;
-}
-
-.sidebar-toggle-button.mod-left .clickable-icon,
-.sidebar-toggle-button.mod-right .clickable-icon {
-  height: var(--tab-height);
-  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
-}
-
 .sidebar-toggle-button {
+  align-items: center;
   padding: 3px 0 5px;
   margin: 2px 0 0 0;
+
+  .clickable-icon {
+    height: var(--tab-height);
+    transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+  }
 }
 
 /* Sidebar toggle icon — inner bar previews the click outcome on hover */
@@ -319,19 +194,6 @@ body {
   }
 }
 
-/* Focused window active tab accent color */
-.is-focused
-  .mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-icon,
-.is-focused
-  .mod-active
-  .workspace-tab-header.is-active
-  .workspace-tab-header-inner-title {
-  color: var(--color-accent);
-  transition: color var(--motion-dur-base) var(--motion-ease-out);
-}
-
 /* Tab addon — frameless, sidebar tabs, active title */
 .is-hidden-frameless:not(.is-fullscreen)
   .workspace-tabs.mod-top-right-space
@@ -346,6 +208,10 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   background-color: unset;
 }
 
+.workspace-tabs.mod-active .workspace-tab-header.is-active :is(.workspace-tab-header-inner-icon, .workspace-tab-header-inner-title) {
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
+}
+
 .is-active .workspace-tab-header-inner-title {
   font-weight: 500;
   text-rendering: geometricPrecision;
@@ -357,7 +223,9 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 }
 
 .workspace-tab-header-inner-close-button {
-  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+  transition:
+    color var(--motion-dur-base) var(--motion-ease-out),
+    background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -371,32 +239,50 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   }
 }
 
-.mod-left-split .workspace-tab-header,
-.mod-right-split .workspace-tab-header {
-  height: var(--tab-height);
+.mod-left-split,
+.mod-right-split {
+  .workspace-tab-header {
+    height: var(--tab-height);
+  }
+
+  .workspace-tab-header-container {
+    .workspace-tab-header {
+      &.has-active-menu,
+      &.is-active {
+        &,
+        &:hover {
+          background-color: var(--nav-item-background-active);
+          transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+        }
+      }
+
+      &:not(.is-active) .workspace-tab-header-inner {
+        transition: background-color var(--motion-dur-base) var(--motion-ease-out);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:not(.is-active):hover .workspace-tab-header-inner {
+          background-color: var(--nav-hover-bg);
+        }
+      }
+    }
+
+    /* spacing for every sidebar tab bar, collapsible or not */
+    .workspace-tab-header-container-inner {
+      padding: 2px 0 5px;
+      margin: 2px 0 0 0 !important;
+      gap: 3px;
+    }
+  }
 }
 
-.mod-left-split .workspace-tab-header-container .workspace-tab-header.has-active-menu,
-.mod-right-split .workspace-tab-header-container .workspace-tab-header.has-active-menu,
-.mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active,
-.mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active,
-.mod-left-split .workspace-tab-header-container .workspace-tab-header.has-active-menu:hover,
-.mod-right-split .workspace-tab-header-container .workspace-tab-header.has-active-menu:hover,
-.mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
-.mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active:hover {
-  background-color: var(--nav-item-background-active);
-  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
-}
+.mod-left-split {
+  .workspace-tabs.mod-top .workspace-tab-header-container {
+    border-bottom: unset;
+  }
 
-.mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
-.mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-  transition: background-color var(--motion-dur-base) var(--motion-ease-out);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .mod-left-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner,
-  .mod-right-split .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-    background-color: var(--nav-hover-bg);
+  .workspace-tab-header-container-inner .workspace-tab-header.tappable .workspace-tab-header-inner {
+    padding: var(--size-2-2) var(--size-2-3);
   }
 }
 
@@ -406,57 +292,37 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
   transition:
     opacity var(--motion-dur-base) var(--motion-ease-out),
     background-color var(--motion-dur-base) var(--motion-ease-out);
-}
 
-@media (hover: hover) and (pointer: fine) {
-  .workspace-tab-header-tab-list .clickable-icon:hover,
-  .workspace-tab-header-new-tab .clickable-icon:hover {
-    opacity: 1;
-    background-color: var(--nav-hover-bg);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 1;
+      background-color: var(--nav-hover-bg);
+    }
   }
-}
-
-.mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container {
-  border-bottom: unset;
-}
-
-/* spacing for every sidebar tab bar, collapsible or not */
-.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner,
-.mod-right-split .workspace-tab-header-container .workspace-tab-header-container-inner {
-  padding: 2px 0 5px;
-  margin: 2px 0 0 0 !important;
-  gap: 3px;
 }
 
 /* secondary collapsible bar only — margin-top keeps the icon clipped inside the 8px strip */
 body:not(.show-sidebar-header-buttons)
   :is(.mod-left-split, .mod-right-split)
   .workspace-tabs:not(.mod-top)
-  .workspace-tab-header-container
+  .workspace-tab-header-container {
   .workspace-tab-header-container-inner {
-  margin: 2px 0 0 0 !important;
-  /* re-declares opacity/height so adding margin-top doesn't clobber _outline.scss's transition */
-  transition:
-    opacity var(--motion-dur-base) ease 200ms,
-    height var(--motion-dur-base) ease 200ms,
-    margin-top var(--motion-dur-base) var(--motion-ease-out) 200ms !important;
-}
+    margin: 2px 0 0 0 !important;
+    /* re-declares opacity/height so adding margin-top doesn't clobber _outline.scss's transition */
+    transition:
+      opacity var(--motion-dur-base) ease 200ms,
+      height var(--motion-dur-base) ease 200ms,
+      margin-top var(--motion-dur-base) var(--motion-ease-out) 200ms !important;
+  }
 
-/* expanded — margin-top is the only lever on this flex-centered icon; 0.5px centers it */
-body:not(.show-sidebar-header-buttons)
-  :is(.mod-left-split, .mod-right-split)
-  .workspace-tabs:not(.mod-top)
-  .workspace-tab-header-container:hover
-  .workspace-tab-header-container-inner {
-  margin-top: 0.5px !important;
-}
-
-.mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable .workspace-tab-header-inner {
-  padding: var(--size-2-2) var(--size-2-3);
+  /* expanded — margin-top is the only lever on this flex-centered icon; 0.5px centers it */
+  &:hover .workspace-tab-header-container-inner {
+    margin-top: 0.5px !important;
+  }
 }
 
 body:not(.reduce-motion, .is-mobile) {
-  // Release — slow spring glide back
+  /* Release — slow spring glide back */
   .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
   .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable svg.svg-icon,
   .side-dock-ribbon-action svg.svg-icon,
@@ -464,7 +330,7 @@ body:not(.reduce-motion, .is-mobile) {
     transition: scale var(--motion-dur-base) var(--motion-ease-spring);
   }
 
-  // Press — snappy down, defines release target
+  /* Press — snappy down, defines release target */
   .mod-left-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
   .mod-right-split .workspace-tab-header-container-inner .workspace-tab-header.tappable:active svg.svg-icon,
   .side-dock-ribbon-action:active svg.svg-icon,
@@ -477,6 +343,7 @@ body:not(.reduce-motion, .is-mobile) {
   /* Close button — press punch folded into its own bg-color transition */
   .workspace-tab-header-inner-close-button {
     transition:
+      color var(--motion-dur-base) var(--motion-ease-out),
       background-color var(--motion-dur-base) var(--motion-ease-out),
       scale var(--motion-dur-base) var(--motion-ease-spring);
   }
@@ -484,6 +351,7 @@ body:not(.reduce-motion, .is-mobile) {
   .workspace-tab-header-inner-close-button:active {
     scale: 0.92;
     transition:
+      color var(--motion-dur-base) var(--motion-ease-out),
       background-color var(--motion-dur-base) var(--motion-ease-out),
       scale calc(var(--motion-dur-quick) / 1.5) var(--motion-ease-smooth);
   }
@@ -492,22 +360,27 @@ body:not(.reduce-motion, .is-mobile) {
 /* Own compositor layer — button is position:fixed over the tab bar, so a shared paint
    pass with the reflowing tab list underneath causes flicker. Bg must track what's
    actually beneath the fixed position: root tab header when collapsed, sidebar when open */
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-  will-change: transform;
-}
+.mod-macos.is-hidden-frameless:not(.is-popout-window) {
+  .sidebar-toggle-button.mod-right {
+    will-change: transform;
+  }
 
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right {
-  background-color: var(--background-primary);
-}
+  .workspace:not(.is-right-sidedock-open) .sidebar-toggle-button.mod-right {
+    background-color: var(--background-primary);
+  }
 
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
-  background-color: var(--sidedock-background);
+  .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
+    background-color: var(--sidedock-background);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .workspace-tab-header {
-    animation: none !important;
     transition: opacity 0.2s ease !important;
+  }
+
+  .workspace-tab-header-inner {
+    animation: none !important;
   }
 
   .workspace-tab-header.tappable svg.svg-icon,
