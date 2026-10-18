@@ -73,6 +73,14 @@
   border-radius: var(--settings-nav-radius);
 }
 
+.modal.mod-settings .setting-search-container input::placeholder {
+  transition: color var(--motion-dur-base) var(--motion-ease-out);
+}
+
+.modal.mod-settings .setting-search-container input:focus::placeholder {
+  color: transparent;
+}
+
 .modal.mod-settings .search-input-container input[type="search"]:focus,
 .modal.mod-settings .search-input-container input[type="search"]:focus-visible {
   box-shadow: 0 0 6px 2px oklch(from var(--divider-color) l c h / 0.35);
