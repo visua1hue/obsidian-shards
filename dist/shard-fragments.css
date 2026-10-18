@@ -1207,7 +1207,6 @@ body:not(.is-mobile) .workspace-tab-header-inner-close-button:active {
 }
 
 body:not(.is-phone) .workspace-leaf.mod-active .tree-item-self.has-focus {
-  border-radius: unset;
   box-shadow: unset;
 }
 
