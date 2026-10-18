@@ -1,7 +1,7 @@
 body {
   --dynamic-tab-align: center;
   --dynamic-tab-gap: 8px;
-  --dynamic-tab-radius: 8px;
+  --dynamic-tab-radius: var(--ext-radius-m);
   --dynamic-tab-active-shadow: inset 0 0 0 1.25px oklch(from var(--nav-hover-bg) l 0 h / calc(alpha * 0.5));
 }
 
@@ -241,6 +241,9 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless
 
 .mod-left-split,
 .mod-right-split {
+  --tab-radius: var(--dynamic-tab-radius);
+  --tab-radius-active: var(--dynamic-tab-radius);
+
   .workspace-tab-header {
     height: var(--tab-height);
   }

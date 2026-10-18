@@ -26,7 +26,7 @@ body {
   font-size: var(--font-ui-small);
   font-weight: 450;
   text-transform: capitalize;
-  border-radius: var(--search-input-radius);
+  border-radius: var(--settings-nav-radius);
   color: var(--text-muted);
   cursor: var(--cursor-link);
   transition: color var(--motion-dur-base) var(--motion-ease-out),
