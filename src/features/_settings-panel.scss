@@ -3,6 +3,7 @@
   --button-radius: var(--ext-radius-l);
   --input-radius: var(--ext-radius-l);
   --search-input-radius: var(--input-radius);
+  --settings-nav-radius: var(--ext-radius-m);
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
   @starting-style {
     transform: scale(0.98);
@@ -68,6 +69,10 @@
   transition: box-shadow var(--motion-dur-base) var(--motion-ease-out);
 }
 
+.modal.mod-settings .setting-search-container .search-input-container input {
+  border-radius: var(--settings-nav-radius);
+}
+
 .modal.mod-settings .search-input-container input[type="search"]:focus,
 .modal.mod-settings .search-input-container input[type="search"]:focus-visible {
   box-shadow: 0 0 6px 2px oklch(from var(--divider-color) l c h / 0.35);
@@ -105,7 +110,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: var(--nav-active-bg);
   color: var(--text-normal);
-  border-radius: var(--search-input-radius);
+  border-radius: var(--settings-nav-radius);
   transition: color var(--motion-dur-base) var(--motion-ease-out),
     opacity var(--motion-dur-base) var(--motion-ease-out),
     background-color var(--motion-dur-base) var(--motion-ease-out);
@@ -146,7 +151,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   padding-inline: 15px var(--size-4-3);
   padding-block: 4px;
   font-size: var(--font-ui-small);
-  border-radius: var(--search-input-radius);
+  border-radius: var(--settings-nav-radius);
 }
 
 .vertical-tab-nav-item-title {

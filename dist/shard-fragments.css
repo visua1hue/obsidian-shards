@@ -106,6 +106,7 @@ body:not(.show-ribbon) .workspace-ribbon.mod-left {
   --button-radius: var(--ext-radius-l);
   --input-radius: var(--ext-radius-l);
   --search-input-radius: var(--input-radius);
+  --settings-nav-radius: var(--ext-radius-m);
   transition: transform var(--motion-dur-enter) var(--motion-ease-spring);
 }
 @starting-style {
@@ -173,6 +174,10 @@ body:not(.show-ribbon) .workspace-ribbon.mod-left {
   transition: box-shadow var(--motion-dur-base) var(--motion-ease-out);
 }
 
+.modal.mod-settings .setting-search-container .search-input-container input {
+  border-radius: var(--settings-nav-radius);
+}
+
 .modal.mod-settings .search-input-container input[type=search]:focus,
 .modal.mod-settings .search-input-container input[type=search]:focus-visible {
   box-shadow: 0 0 6px 2px oklch(from var(--divider-color) l c h/0.35);
@@ -216,7 +221,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active,
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
   background-color: var(--nav-active-bg);
   color: var(--text-normal);
-  border-radius: var(--search-input-radius);
+  border-radius: var(--settings-nav-radius);
   transition: color var(--motion-dur-base) var(--motion-ease-out), opacity var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out);
 }
 
@@ -252,7 +257,7 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus-visible {
   padding-inline: 15px var(--size-4-3);
   padding-block: 4px;
   font-size: var(--font-ui-small);
-  border-radius: var(--search-input-radius);
+  border-radius: var(--settings-nav-radius);
 }
 
 .vertical-tab-nav-item-title {
@@ -522,7 +527,7 @@ body {
   font-size: var(--font-ui-small);
   font-weight: 450;
   text-transform: capitalize;
-  border-radius: var(--search-input-radius);
+  border-radius: var(--settings-nav-radius);
   color: var(--text-muted);
   cursor: var(--cursor-link);
   transition: color var(--motion-dur-base) var(--motion-ease-out), background-color var(--motion-dur-base) var(--motion-ease-out);
@@ -830,7 +835,7 @@ body:not(.is-mobile) .prompt .suggestion-item {
 body {
   --dynamic-tab-align: center;
   --dynamic-tab-gap: 8px;
-  --dynamic-tab-radius: 8px;
+  --dynamic-tab-radius: var(--ext-radius-m);
   --dynamic-tab-active-shadow: inset 0 0 0 1.25px oklch(from var(--nav-hover-bg) l 0 h / calc(alpha * 0.5));
 }
 
@@ -1036,6 +1041,11 @@ body:not(.is-grabbing):not(.is-fullscreen).is-hidden-frameless .mod-top .workspa
     background-color: var(--nav-hover-bg);
   }
 }
+.mod-left-split,
+.mod-right-split {
+  --tab-radius: var(--dynamic-tab-radius);
+  --tab-radius-active: var(--dynamic-tab-radius);
+}
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
   height: var(--tab-height);
@@ -1167,7 +1177,7 @@ body:not(.is-mobile) .workspace-tab-header-inner-close-button:active {
   font-size: 0.9em;
   margin-bottom: 2px;
   margin-top: unset;
-  border-radius: var(--ext-radius-l);
+  border-radius: var(--ext-radius-m);
   padding-block: 4px;
 }
 
