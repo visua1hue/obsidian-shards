@@ -17,9 +17,56 @@
 
 
 /* Obsidian CORE :: File Explorer */
-.workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon svg {
-  background-color: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg%3E%3Cpath fill='currentColor' d='M23 3c-6.62-.1-10.38 2.421-13.05 6.03C7.29 12.61 6 17.331 6 22h2c0-1.007.07-2.012.19-3H12c4.1 0 7.48-3.082 7.94-7.054C22.79 10.147 23.17 6.359 23 3zm-7 8h-1.5v2H16c.63-.016 1.2-.08 1.72-.188C16.95 15.24 14.68 17 12 17H8.55c.57-2.512 1.57-4.851 3-6.78 2.16-2.912 5.29-4.911 9.45-5.187C20.95 8.079 19.9 11 16 11zM4 9V6H1V4h3V1h2v3h3v2H6v3H4z'/%3E%3C/g%3E%3C/svg%3E%0A");
+.workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon svg path {
+  fill: currentColor;
+  stroke: none;
+
+  &:first-child {
+    d: path("M23 3c-6.62-.1-10.38 2.421-13.05 6.03C7.29 12.61 6 17.331 6 22h2c0-1.007.07-2.012.19-3H12c4.1 0 7.48-3.082 7.94-7.054C22.79 10.147 23.17 6.359 23 3zm-7 8h-1.5v2H16c.63-.016 1.2-.08 1.72-.188C16.95 15.24 14.68 17 12 17H8.55c.57-2.512 1.57-4.851 3-6.78 2.16-2.912 5.29-4.911 9.45-5.187C20.95 8.079 19.9 11 16 11z");
+    transform-origin: 7px 22px;
+  }
+
+  &:last-child {
+    d: path("M4 9V6H1V4h3V1h2v3h3v2H6v3H4z");
+    transform-origin: 5px 5px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .workspace-tab-header[data-type="file-explorer"]:hover .workspace-tab-header-inner-icon svg path {
+    &:first-child {
+      animation: sprout-dip var(--motion-dur-enter) var(--motion-ease-smooth);
+    }
+
+    &:last-child {
+      animation: sprout-pop var(--motion-dur-enter) var(--motion-ease-in-out);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon svg path {
+    animation: none !important;
+  }
+}
+
+@keyframes sprout-dip {
+  25% {
+    rotate: 3deg;
+  }
+  60% {
+    rotate: -1deg;
+  }
+}
+
+@keyframes sprout-pop {
+  0%,
+  25% {
+    scale: 0;
+  }
+  70% {
+    scale: 1.08;
+  }
 }
 
 /* Obsidian CORE :: Search */

@@ -11,6 +11,7 @@ body {
   --motion-dur-enter: 500ms;
   --motion-ease-out:  cubic-bezier(0.23, 1, 0.32, 1);
   --motion-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --motion-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
   --motion-ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
   --motion-ease-spring: cubic-bezier(0.32, 0.72, 0, 1.1);
 
