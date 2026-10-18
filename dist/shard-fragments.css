@@ -1464,12 +1464,6 @@ body:not(.is-mobile) .workspace-split.mod-left-split > .workspace-leaf-resize-ha
     scale: 1.08;
   }
 }
-/* Obsidian CORE :: Search */
-.workspace-tab-header[data-type=search] .workspace-tab-header-inner-icon svg {
-  background-color: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath stroke-linecap='round' d='M11 8a3 3 0 0 0-3 3m12 9l-3-3'/%3E%3C/g%3E%3C/svg%3E");
-}
-
 /* Obsidian CORE :: Command palette command (pinned) */
 .suggestion-item.mod-complex .suggestion-flair svg {
   background-color: currentColor;
